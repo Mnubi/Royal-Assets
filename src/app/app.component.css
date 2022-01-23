@@ -1,3 +1,13 @@
 .navbar{
   font-family: 'Tenor Sans', sans-serif;
 }
+
+.btn1{
+  background-color: rgb(79, 74, 125);
+}
+
+.btn2{
+  background-color: white;
+  color: rgb(79, 74, 125);
+  border: 2px solid rgb(79, 74, 125); /* Green */
+}
