@@ -10,7 +10,7 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'registration',component:RegistrationComponent},
-  {path: 'users/:id',component: UserprofileComponent},
+  {path:'users/:id',component: UserprofileComponent},
   {path: 'users/edit-profile/:id', component: UserEditComponent}
 ];
 
