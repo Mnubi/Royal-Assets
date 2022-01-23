@@ -19,7 +19,8 @@ section{
 }
 
 #form{
-    font-size: small;
+    padding-left: 50px;
+    padding-top: 50px;
 }
 #login{
     background-color: purple;
@@ -27,4 +28,10 @@ section{
     justify-content: center;
     margin-left: 50px;
     color: white;
+}
+#form3Example3{
+    font-size: small; 
+}
+#form3Example4{
+    font-size: small; 
 }
