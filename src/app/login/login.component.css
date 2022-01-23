@@ -1,4 +1,8 @@
 .divider:after,
+
+section{
+    font-size: small;
+}
 .divider:before {
   content: "";
   flex: 1;
@@ -12,4 +16,15 @@
   .h-custom {
     height: 100%;
   }
+}
+
+#form{
+    font-size: small;
+}
+#login{
+    background-color: purple;
+    text-align: center;
+    justify-content: center;
+    margin-left: 50px;
+    color: white;
 }
