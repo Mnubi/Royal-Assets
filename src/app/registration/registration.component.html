@@ -1,8 +1,67 @@
-<section> 
+<section class="container"> 
   <div class="row">
-    <div class="col-md-5 mx-5">
-      <img src="../../assets/undraw_secure_login_pdn4.svg" height="600" width="600" alt="">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-5">
+      <img class="mt-5 me-5" src="../../assets/undraw_secure_login_pdn4.svg" width="500
+      " alt="">
     </div>
-    <div class="col-md-7"></div>
+    
+    <div class="col-sm-5 px-5">
+      <div class=" container">
+        <div class="text-center">
+          <h1>Sign up</h1>
+          <h6 class="text-muted">Create your account in seconds</h6>
+        </div>
+        <form [formGroup]="signupForm" (ngSubmit)="signUp">
+          <div class="mb-2 col-xs-4 ">
+            <input formControlName="fullname" type="text" class="form-control" name="user" placeholder="Fullname">
+          </div>
+          
+          <div class="mb-2 pt-2">
+            
+            <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            
+          </div>
+          <div class="input-group mb-2 pt-2">
+            <select formControlName="role" class="form-select" id="">
+              <option class="text-muted" selected> <span class="text-muted"></span> Role</option>
+              <option value="1">Manager</option>
+              <option value="2">Staff</option>
+            </select>
+          </div>
+          <div class="mb-2 pt-2">
+            
+            <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="mb-2 pt-2">
+            
+            <input formControlName="confirmPassword" type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm password">
+          </div>
+          <div class="mb-2 pt-2">
+            <button type="submit" class="btn btn-primary form-control">Create an account</button>
+          </div>
+          
+          
+        </form>
+        <h6 class="text-muted text-center pt-3">Already have an account? <a routerLink="/login"><span style="color: rgb(119, 84, 246);">Log in</span></a>  </h6>
+        <h6 class=" text-muted text-center pt-2">..........or continue with..........</h6>
+        <div class="d-flex justify-content-evenly pt-3">
+          <div>
+            <img src="../../assets/834722_facebook_icon.png" width="50" alt="">
+          </div>
+          <div>
+            <img src="../../assets/toppng.com-twitter-logo-1252x1018.png" width="50" alt="">
+          </div>
+          <div>
+            <img src="../../assets/2993685_brand_brands_google_logo_logos_icon.png" width="50" alt="">
+          </div>
+          
+          
+          
+
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
