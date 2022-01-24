@@ -10,6 +10,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { UserprofileComponent } from './user-profile/userprofile.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     RegistrationComponent,
     UserprofileComponent,
+    UserEditComponent,
   ],
   imports: [
     BrowserModule,
