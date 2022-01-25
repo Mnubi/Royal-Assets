@@ -2,7 +2,7 @@
     <!-- Sidebar -->
     <div id="sidebar">
         <header>
-            <a href="#">My App</a>
+            <a href="#">Manager Profile</a>
         </header>
         <ul class="nav">
             <li>
@@ -38,16 +38,71 @@
                         <a href="#"><i class="zmdi zmdi-notifications text-danger"></i>
                         </a>
                     </li>
-                    <li><a href="#">Test User</a></li>
                 </ul>
             </div>
         </nav>
-        <div class="container-fluid">
+        <div class=" tabs container-fluid">
             <h1>Simple Sidebar</h1>
-            <p>
-                Make sure to keep all page content within the
-                <code>#content</code>.
-            </p>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                  <div class="card h-100">
+                   <div class="card-body">
+                      <h5 class="card-title">Staffs</h5>
+                      <h5>25</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h5 class="card-title">Assets</h5>
+                      <h5>15</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title">Repairs</h5>
+                      <h5>10</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="inventory">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Item</th>
+                      <th scope="col">Category</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">Status</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td colspan="2">Larry the Bird</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tbody>
+              </table>
         </div>
     </div>
 </div>
