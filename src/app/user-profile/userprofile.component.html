@@ -5,10 +5,12 @@
     <div class="d-flex flex-row white">
         <div style="width: 70vw;" class="p-left">
             <h4 class="">Profile Information</h4>
-            <p>Name: </p>
-            <p>Email: </p>
-            <p>Phone: </p>
-            <p>Role: </p>
+            <ul [ngClass]="'repo'" *ngFor="let cred of creds">
+                <p class="purple-text"><span class="text-dark">Full Name: </span> {{cred.full_name}}</p>
+                <p class="purple-text"><span class="text-dark">Email: </span> {{cred.email}}</p>
+                <p class="purple-text"><span class="text-dark">Phone: </span> {{cred.phone}}</p>
+                <p class="text-dark">Role: <a href="{{cred.user}}" [ngClass]="'link'" target="_blank">{{cred.user}}</a></p>
+            </ul>
             <button class="btn purple" routerLink="/users/edit-profile/:id" type="submit">Edit</button>
         </div>
         <div style="width: 30vw;" class="mt-3">
@@ -16,3 +18,5 @@
         </div>
     </div>
 </div>
+
+
