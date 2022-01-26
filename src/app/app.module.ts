@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UserprofileComponent } from './user-profile/userprofile.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { HttpClientModule } from '@angular/common/http';
+import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     RegistrationComponent,
     UserprofileComponent,
     UserEditComponent,
+    StaffDashboardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

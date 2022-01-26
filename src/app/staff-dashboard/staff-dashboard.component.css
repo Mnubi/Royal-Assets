@@ -14,6 +14,21 @@
     margin-top: 0vh;
     padding-bottom: 2vh;
 }
-.p-left{
-    padding-left: 5vw;
+.left-side{
+    width: 30vw;
+}
+.right-side{
+    width: 60vw;
+}
+.down-side{
+    background-color: rgb(245, 243, 240);
+}
+.text-purple{
+    color: rgb(79, 74, 125);
+}
+.cen{
+    align-items: center;
+}
+.img{
+    margin-right: 3vh;
 }
