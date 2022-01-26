@@ -1,3 +1,4 @@
+
 <div class="container mt-5 d-flex flex-row">
     <div class="left-side green">
         <img alt="logo">
@@ -37,7 +38,7 @@
                     <div class="col-md-12 text-center">
                       <button class="green">
                       <a
-                      routerLink="/users/:id"
+                      routerLink="/user/:id/dashboard"
                       routerLinkActive="active"
                       id="2"
                       type="button"
@@ -93,24 +94,13 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Laptop</td>
-                        <td>1</td>
-                        <td>Cleared</td>
+                      <tr  *ngFor='let request of requests;let i = index'>
+                        <th scope="row"></th>
+                        <td>{{ request.Item }}</td>
+                        <td>{{ request.Quantity }}</td>
+                        <td>{{ request.Urgency }}</td>
                       </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Modem</td>
-                        <td>1</td>
-                        <td>Pending</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Stepler</td>
-                        <td>1</td>
-                        <td>Pending</td>
-                      </tr>
+
                     </tbody>
                   </table>
             </div>
@@ -135,85 +125,12 @@
                     </tbody>
                 </table>    
             </div>
-            <div class="col-md-12 text-center">
-              <button
-              id="1"
-              type="button"
-              class="btn btn-primary purple mt-2"
-              (click)="openPopup()">Add Request
-            </button>
+            <div>
+              <app-request-form (addRequest)="addNewRequest($event)"></app-request-form>
+            </div>
             </div>
     </div>
-    
-    <div
-      class="modal"
-      tabindex="-1"
-      role="dialog"
-      [ngStyle]="{'display':displayStyle}">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Add New Request</h4>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Item</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="" placeholder="">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Quantity</label>
-                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="">
-              </div>
-             <div>
-               <h6>Request type</h6>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                  New Request
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Repair Request
-                </label>
-              </div>
-             </div>
-             <div>
-              <h6>Urgency</h6>
-             <div class="form-check">
-               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-               <label class="form-check-label" for="flexRadioDefault1">
-                 Very Urgent
-               </label>
-             </div>
-             <div class="form-check">
-               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-               <label class="form-check-label" for="flexRadioDefault2">
-                 Urgent
-               </label>
-             </div>
-             <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-              <label class="form-check-label" for="flexRadioDefault2">
-                Not Urgent
-              </label>
-            </div>
-            </div>
-              <button type="submit" class="btn btn-primary mt-3">Submit</button>
-            </form>
-      
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" 
-                    (click)="closePopup()">
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+
 
     <div
       class="modal"

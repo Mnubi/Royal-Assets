@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Request } from './../requests';
+import { Component, OnInit} from '@angular/core';
 
 
 
@@ -10,20 +11,23 @@ import { Component, OnInit } from '@angular/core';
 export class StaffDashboardComponent implements OnInit {
 
 
+  requests: Request[] = [
+    new Request('Laptop', 1, 'new', 'urgent'),
+    new Request('Hard Drive 1tb', 1, 'new', 'urgent'),
+    new Request('Water dispenser', 1, 'repair', 'urgent')
+  ];
+  addNewRequest(request: any){
+    let requestLength = this.requests.length;
+    request.id = requestLength+1;
+    this.requests.push(request)
+  }
+
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  displayStyle = "none";
-
-  openPopup() {
-    this.displayStyle = "block";
-  }
-
-  closePopup() {
-    this.displayStyle = "none";
-  }
   
   displatyle = "none";
  
@@ -44,5 +48,6 @@ export class StaffDashboardComponent implements OnInit {
   closePop() {
     this.dispstyle = "none";
   }
+  
 
 }
