@@ -11,6 +11,9 @@ import { UserprofileComponent } from './user-profile/userprofile.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { ManagerComponent } from './manager/manager.component';
+import { AuthService } from './auth.service';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +23,7 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     RegistrationComponent,
     UserprofileComponent,
     UserEditComponent,
+    ManagerComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,8 +32,9 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule
+    
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 
