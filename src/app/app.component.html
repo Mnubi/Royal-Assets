@@ -1,30 +1,46 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="">RoyalAssets</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto ">
-        
-        <li class="nav-item">
-          <button class="btn btn2 me-4 " routerLink="registration" type="submit">Sign Up</button>
+<!--Main Navigation-->
+<header>
+  <!-- Navbar -->
+  <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+        aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Brand -->
+      <a class="navbar-brand" href="#">
+        <img src="../../assets/" height="25" alt="Royal Logo" loading="lazy" />
+      </a>
+      <!-- Search form -->
+
+
+      <!-- Right links -->
+      <ul class="navbar-nav ms-auto d-flex flex-row">
+        <!-- Notification dropdown -->
+        <li>
+          <form class="d-none d-md-flex input-group w-auto my-auto" style=" margin-right:200px;">
+            <input autocomplete="off" type="search" class="form-control rounded"
+              placeholder='Search' style="min-width: 225px;"  />
+            <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+          </form>
         </li>
+        <!-- Avatar -->
         <li class="nav-item">
-          <button class="btn btn1 text-light me-4 pe-3" routerLink="login" type="submit">
-            Login
-          </button>
+          <a class="nav-link d-flex align-items-center" href="#"
+            id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle" height="22"
+              alt="Avatar" loading="lazy" />
+          </a>
+
         </li>
+
       </ul>
     </div>
-  </div>
-</nav>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+</header>
 <router-outlet></router-outlet>
