@@ -6,7 +6,7 @@
         </header>
         <ul class="nav">
             <li>
-                <a href="#">
+                <a href="#" routerLink="/users/id">
                     <img src="../../assets/man.png" width="90"alt=""> Dashboard
                 </a>
             </li>
@@ -73,10 +73,12 @@
                 </div>
               </div>
         </div>
+        
         <div class="inventory">
+          <h3>New Request List</h3>
             <table class="table table-striped">
                 <thead>
-                    <tr>
+                    <tr id="scope">
                       <th scope="col">#</th>
                       <th scope="col">Item</th>
                       <th scope="col">Category</th>
@@ -88,24 +90,70 @@
                   <tbody>
                     <tr>
                       <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
+                      <td>Hp Laptops</td>
+                      <td>Electonics</td>
+                      <td>5</td>
+                      <td>pending</td>
                     </tr>
                     <tr>
                       <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
+                      <td>Office Desks</td>
+                      <td>Furniture</td>
+                      <td>3</td>
+                      <td>Approved</td>
                     </tr>
                     <tr>
                       <th scope="row">3</th>
-                      <td colspan="2">Larry the Bird</td>
-                      <td>@twitter</td>
+                      <td>Coffee Makers</td>
+                      <td>Kitchen</td>
+                      <td>2</td>
+                      <td>Declined</td>
                     </tr>
                   </tbody>
               </table>
               <button id="assets">view requests</button>
+        </div>
+
+        <hr>
+
+        <div class="inventory">
+          <h3>List of repair items</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr id="scope">
+                      <th scope="col">#</th>
+                      <th scope="col">Item</th>
+                      <th scope="col">Category</th>
+                      <th scope="col">Urgencey</th>
+                      <th scope="col">Status</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Desktop</td>
+                      <td>Electonics</td>
+                      <td>urgent</td>
+                      <td>pending</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Waiting Bench</td>
+                      <td>Furniture</td>
+                      <td>Very urgent</td>
+                      <td>Approved</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Printer</td>
+                      <td>Electonics</td>
+                      <td>Moderate</td>
+                      <td>Pending</td>
+                    </tr>
+                  </tbody>
+              </table>
+              <button id="assets">view repair</button>
         </div>
     </div>
 </div>
