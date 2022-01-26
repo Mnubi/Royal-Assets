@@ -3,10 +3,66 @@
         <img alt="logo">
         <nav class="pt-5">
             <ul type="none">
-                <li class="pt-4"><i class="fas fa-user-tie"></i><a> Managers</a></li>
-                <li class="pt-4"><i class="fas fa-envelope"></i><a> Messages</a></li>
-                <li class="pt-4"><i class="fa-solid fa-memo"></i><a> Requests</a></li>
-                <li class="pt-4"><i class="fas fa-bell"></i><a> Notifications</a></li>
+                <li class="">
+                  <div class="col-md-12 text-center">
+                    <button class="green">
+                    <a
+                    routerLink="/users/:id"
+                    routerLinkActive="active"
+                    id="2"
+                    type="button"
+                    class="btn onet">
+                    <img class="yyy" style="height: 70px; width: 130px;" src="../../assets/man.png">
+                    Profile
+                    </a>
+                  </button>
+                  </div>
+                </li>
+                <li class="">
+                <div class="col-md-12 text-center">
+                  <button class="green">
+                  <a
+                  id="2"
+                  type="button green"
+                  class="btn onet"
+                  (click)="openPopu()">
+                  <img class="yyy" style="height: 90px; width: 130px;" src="../../assets/message.png">
+                  Messages
+                </a>
+                </button>
+                </div>
+                </li>
+                <div class="twe">
+                  <li class="">
+                    <div class="col-md-12 text-center">
+                      <button class="green">
+                      <a
+                      routerLink="/users/:id"
+                      routerLinkActive="active"
+                      id="2"
+                      type="button"
+                      class="btn onet twe">
+                      <img class="yyy" style="height: 70px; width: 130px;" src="../../assets/request.png">
+                      Requests
+                      </a>
+                    </button>
+                    </div>
+                  </li>
+                  <li class="">
+                      <div class="col-md-12 text-center">
+                        <button class="green">
+                        <a
+                        id="2"
+                        type="button"
+                        class="btn onet"
+                        (click)="openPop()">
+                        <img class="yyy" src="../../assets/not.png">
+                        Notifications
+                        </a>
+                      </button>
+                      </div>
+                  </li>
+                </div>
             </ul>
         </nav>
     </div>
@@ -26,6 +82,7 @@
         </div>
              
             <div class="down-side">
+              <h4 class="text-center">New Assets</h4>
                 <table class="table">
                     <thead>
                       <tr>
@@ -56,11 +113,9 @@
                       </tr>
                     </tbody>
                   </table>
-                    <div class="col-md-12 text-center">
-                        <button class="btn purple mt-2">Add Request</button>
-                    </div>
             </div>
-            <div class="mt-2">
+            <div class="mt-2 down-side">
+              <h4 class="text-center">Repairs</h4>
                 <table class="table">
                     <thead>
                       <tr>
@@ -79,9 +134,129 @@
                       </tr>
                     </tbody>
                 </table>    
-                <div class="col-md-12 text-center">
-                    <button class="btn purple mt-2">Add Repair</button>
-                </div>
+            </div>
+            <div class="col-md-12 text-center">
+              <button
+              id="1"
+              type="button"
+              class="btn btn-primary purple mt-2"
+              (click)="openPopup()">Add Request
+            </button>
             </div>
     </div>
-</div>
+    
+    <div
+      class="modal"
+      tabindex="-1"
+      role="dialog"
+      [ngStyle]="{'display':displayStyle}">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Add New Request</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Item</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Quantity</label>
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="">
+              </div>
+             <div>
+               <h6>Request type</h6>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  New Request
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Repair Request
+                </label>
+              </div>
+             </div>
+             <div>
+              <h6>Urgency</h6>
+             <div class="form-check">
+               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+               <label class="form-check-label" for="flexRadioDefault1">
+                 Very Urgent
+               </label>
+             </div>
+             <div class="form-check">
+               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+               <label class="form-check-label" for="flexRadioDefault2">
+                 Urgent
+               </label>
+             </div>
+             <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                Not Urgent
+              </label>
+            </div>
+            </div>
+              <button type="submit" class="btn btn-primary mt-3">Submit</button>
+            </form>
+      
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" 
+                    (click)="closePopup()">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal"
+      tabindex="-1"
+      role="dialog"
+      [ngStyle]="{'display':displatyle}">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Messages</h4>
+          </div>
+          <div class="modal-body">
+            <h6>No Messages Yet</h6>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" 
+                    (click)="closePopu()">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal"
+      tabindex="-1"
+      role="dialog"
+      [ngStyle]="{'display':dispstyle}">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Notifications</h4>
+          </div>
+          <div class="modal-body">
+            <h6>No Notifications Yet</h6>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" 
+                    (click)="closePop()">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>

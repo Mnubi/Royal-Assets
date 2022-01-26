@@ -32,3 +32,17 @@
 .img{
     margin-right: 3vh;
 }
+.yyy{
+    width: 8vw;
+    height: 10vh;
+}
+.bck{
+    background-color: transparent;
+}
+.onet{
+    width: 20vw;
+    height: 12vh;
+    align-items: center;
+    display: flex;
+    margin-top: 1vh;
+}
