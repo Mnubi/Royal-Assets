@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { ManagerComponent } from './manager/manager.component';
 import { AuthService } from './auth.service';
+import { ProductComponent } from './product/product.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { AuthService } from './auth.service';
     UserprofileComponent,
     UserEditComponent,
     ManagerComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
