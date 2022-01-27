@@ -1,10 +1,11 @@
 <section class="container"> 
   <div class="row">
-    <div class="col-sm-2"></div>
+    
     <div class="col-sm-5">
-      <img class="mt-5 me-5" src="../../assets/undraw_secure_login_pdn4.svg" class="img-fluid" width="500
+      <img class="mt-5 me-5" src="../../assets/undraw_secure_login_pdn4.svg" width="650
       " alt="">
     </div>
+    <div class="col-sm-2"></div>
     
     <div class="col-sm-5 px-5">
       <div class=" container">
@@ -12,9 +13,9 @@
           <h1>Sign up</h1>
           <h6 class="text-muted">Create your account in seconds</h6>
         </div>
-        <form [formGroup]="signupForm" (ngSubmit)="signUp">
+        <form [formGroup]="form" (submit)="submit()">
           <div class="mb-2 col-xs-4 ">
-            <input formControlName="fullname" type="text" class="form-control" name="user" placeholder="Fullname">
+            <input formControlName="name" type="text" class="form-control" name="user" placeholder="Fullname">
           </div>
           
           <div class="mb-2 pt-2">
@@ -25,6 +26,7 @@
           <div class="input-group mb-2 pt-2">
             <select formControlName="role" class="form-select" id="">
               <option class="text-muted" selected> <span class="text-muted"></span> Role</option>
+              <option value="1">Admin</option>
               <option value="1">Manager</option>
               <option value="2">Staff</option>
             </select>
@@ -33,10 +35,10 @@
             
             <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
           </div>
-          <div class="mb-2 pt-2">
+          <!-- <div class="mb-2 pt-2">
             
-            <input formControlName="confirmPassword" type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm password">
-          </div>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm password">
+          </div> -->
           <div class="mb-2 pt-2">
             <button type="submit" class="btn btn-primary form-control">Create an account</button>
           </div>
