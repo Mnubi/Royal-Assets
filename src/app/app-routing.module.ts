@@ -6,6 +6,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { UserprofileComponent } from './user-profile/userprofile.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { ManagerComponent } from './manager/manager.component';
+import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'registration',component:RegistrationComponent},
   {path:'users/:id',component: UserprofileComponent},
   {path: 'users/edit-profile/:id', component: UserEditComponent},
-  {path: 'managers/:id',component:ManagerComponent}
+  {path: 'managers/:id',component:ManagerComponent},
+  {path: 'product',component:ProductComponent},
 ];
 
 @NgModule({
