@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormBuilder, Validators} from "@angular/forms"
-import { Router } from '@angular/router';
+
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -9,36 +10,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-
-  public signupForm !: FormGroup
-
-  constructor(private formBuilder : FormBuilder, private http : HttpClient, private router:Router) { }
+  form!: FormGroup;
+  
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private router: Router
+  ) {
+  }
 
   ngOnInit(): void {
-    this.signupForm = this.formBuilder.group({
-      fullname:['',[Validators.required]],
-      email:['',[
-        Validators.required,
-        Validators.email,
-        Validators.minLength(6)
-      ]],
-      role:['', [Validators.required]],
-      password:['', [
-        Validators.required,
-        Validators.minLength(3),
-      ]],
-      confirmPasword:['']
-    })
+    this.form = this.formBuilder.group({
+      name: '',
+      email: '',
+      role: '',
+      password: ''
+    });
   }
-  signUp(){
-    this.http.post<any>("/registration",this.signupForm.value)
-    .subscribe(res=>{
-      alert("Signup successful");
-      this.signupForm.reset();
-      this.router.navigate(['login'])
-    },err=>{
-      alert("Something went wrong")
-    })
 
+  submit(): void {
+    console.log(this.form.getRawValue());
+      
+  }
 }
-}
+
+
+// submit(): void {
+//   this.http.post('http://localhost:8000/api/register', this.form.getRawValue())
+//     .subscribe(() => this.router.navigate(['/login']));
+// }

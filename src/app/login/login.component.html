@@ -5,7 +5,7 @@
                 <img src="../../assets/undraw_secure_login_pdn4.svg" class="img-fluid" height="600" width="600" alt="Sample image">
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <form id="form" [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+                <form id="form" [formGroup]="myForm" (Submit)="Submit()">
                     <h4>Login</h4>
                     <p>Please enter your login details to sign up</p>
                     <!-- Email input -->
@@ -19,6 +19,9 @@
                         <input formControlName="password" type="password" id="form3Example4" class="form-control form-control-lg"
                             placeholder="Enter password" />
                     </div>
+                    <button id="login" type="submit" class="btn btn-primary form-control"
+                           >Submit</button>
+                </form>
 
                     <div class="d-flex justify-content-between align-items-center">
                         <!-- Checkbox -->
@@ -32,8 +35,7 @@
                     </div>
 
                     <div class="text-center text-lg-start mt-4 pt-2">
-                        <button id="login" type="submit" class="btn btn-primary form-control"
-                           >Login</button>
+                        
                         <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
                                 class="link-danger">Register</a></p>
                     </div>
@@ -59,7 +61,7 @@
                     </div>
                         
 
-                </form>
+                
             </div>
         </div>
     </div>

@@ -1,11 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
-
-body {
-  overflow-x: hidden;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+.container{
+  font-family: 'Tenor Sans', sans-serif;
 }
-
 /* Toggle Styles */
 
 #viewport {
@@ -78,4 +73,12 @@ body {
 }
 .inventory{
     padding-left: 40px;
+}
+
+.btn1{
+  background-color: rgb(79, 74, 125);
+}
+
+.title{
+  color: rgb(79, 74, 125);
 }
