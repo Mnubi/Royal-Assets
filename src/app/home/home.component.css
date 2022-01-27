@@ -1,6 +1,11 @@
+.home{
+  overflow-x: hidden;
+  padding: 30px;
+}
 .home-section{
   background: rgb(20, 99, 86);
   border-radius: 25px;
+  
 }
 .home-section{
   font-family: 'Tenor Sans', sans-serif;
