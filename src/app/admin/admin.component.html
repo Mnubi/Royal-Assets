@@ -1,160 +1,118 @@
 <div id="viewport">
   <!-- Sidebar -->
   <div id="sidebar">
-      <header>
-          <a href="#">Admin Profile</a>
-      </header>
-      <ul class="nav">
-          <li>
-              <a href="#" routerLink="/users/id">
-                  <img src="../../assets/man.png" width="90"alt=""> Dashboard
-              </a>
-          </li>
-          
-          <li>
-              <a href="#">
-                  <img src="../../assets/message.png" width="80"alt=""> Messages
-              </a>
-          </li>
-          <li>
-              <a href="#">
-                  <img src="../../assets/request.png" width="65"alt="" style="margin-left: 13px;"> Dashboard
-              </a>
-          </li>
-          
-          <li>
-              <a href="#">
-                  <img src="../../assets/not.png" width="55"alt="" style="margin-left: 13px; padding-top: 15px;"> Messages
-              </a>
-          </li>
-      </ul>
+    <header>
+      <a href="#">Admin Profile</a>
+    </header>
+    <ul class="nav">
+      <li>
+        <a href="#" routerLink="/users/id">
+          <img src="../../assets/man.png" width="90" alt=""> Dashboard
+        </a>
+      </li>
+
+      <li>
+        <a (click)="openPopu()">
+          <img src="../../assets/message.png" width="80" alt=""> Messages
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="../../assets/request.png" width="65" alt="" style="margin-left: 13px;"> Dashboard
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <img src="../../assets/not.png" width="55" alt="" style="margin-left: 13px; padding-top: 15px;"> Messages
+        </a>
+      </li>
+    </ul>
   </div>
   <!-- Content -->
   <div id="content">
-      <nav class="navbar navbar-default">
-          <div class="container-fluid">
-              <ul class="nav navbar-nav navbar-right">
-                  <li>
-                      <a href="#"><i class="zmdi zmdi-notifications text-danger"></i>
-                      </a>
-                  </li>
-              </ul>
-          </div>
-      </nav>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#"><i class="zmdi zmdi-notifications text-danger"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-      <!-- MAin section -->
-      <div class=" tabs container-fluid">
-        
-          <div class="row row-cols-1 row-cols-md-3 g-4">
-              <div class="col">
-                <div class="card h-100">
-                 <div class="card-body">
-                    <h5 class="card-title"><a href="">Staff</a></h5>
-                    <h5>25</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title"><a href="">Assets</a></h5>
-                    <h5>15</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card h-100">
-                  
-                  <div class="card-body">
-                    <h5 class="card-title"><a href="">Repairs</a></h5>
-                    <h5>10</h5>
-                  </div>
-                </div>
-              </div>
+    <!-- MAin section -->
+    <div class=" tabs container-fluid">
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><a href="">Staff</a></h5>
+              <h5>25</h5>
             </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title"><a href="">Assets</a></h5>
+              <h5>15</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
 
+            <div class="card-body">
+              <h5 class="card-title"><a href="">Repairs</a></h5>
+              <h5>10</h5>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="container mt-5" >
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              
-              <th class="title" scope="col">NAME</th>
-              <th class="title" scope="col">DEPARTMENT</th>
-              <th class="title" scope="col">CONTACT</th>
-              <th class="title" scope="col">TITLE</th>
-              <th class="title" scope="col">ACTION</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
-              <td>
-                <button class="btn btn-sm btn-dark me-3">Edit</button>
-                <button class="btn btn-sm btn-dark me-3">Delete</button>
-              </td>
-            </tr>
-            
-          </tbody>
-        </table>
-      </div>
+    </div>
 
-      <!-- Button trigger modal -->
+    <div class="container mt-5">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th class="title" scope="col">#</th>
+            <th class="title" scope="col">NAME</th>
+            <th class="title" scope="col">DEPARTMENT</th>
+            <th class="title" scope="col">CONTACT</th>
+            <th class="title" scope="col">TITLE</th>
+            <th class="title" scope="col">ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let employee of employees;let i = index'>
+            <th scope="row"></th>
+            <td>{{ employee.Name }}</td>
+            <td>{{ employee.Department }}</td>
+            <td>{{ employee.Contact }}</td>
+            <td>{{ employee.Role}}</td>
+          </tr>
 
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Staff</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form [formGroup]="formValue">
-          <div class="mb-3">
-            <label class="form-label">Full name</label>
-            <input formControlName="fullName" type="text" class="form-control" >
-            
-          </div>
-          <div class="mb-3">
-            <label  class="form-label">Department</label>
-            <input formControlName="department" type="text" class="form-control">
-          </div>
-          <div class="mb-3">
-            <label  class="form-label">Contact</label>
-            <input formControlName="contact" type="text" class="form-control">
-          </div>
-          <div class="mb-3">
-            <label  class="form-label">Role</label>
-            <input formControlName="role" type="text" class="form-control">
-          </div>
-         
-         
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Add</button>
+        </tbody>
+      </table>
+      <div>
+        <app-add-staff (addStaff)="addNewEmployee($event)"></app-add-staff>
       </div>
     </div>
-  </div>
-</div>
 
-      
-      <div class="text-center">
-        <button type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn1 text-light">Add Staff</button>
-      </div>
 
-      
-      
-      
+    <!-- Button trigger modal -->
 
-      
+
+
+
+
+
+
+
+
   </div>
 </div>

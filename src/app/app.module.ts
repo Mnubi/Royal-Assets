@@ -18,6 +18,7 @@ import { ProductComponent } from './product/product.component';
 import { NavComponent } from './nav/nav.component';
 import { AdminComponent } from './admin/admin.component';
 import { RequestFormComponent } from './request-form/request-form.component';
+import { AddStaffComponent } from './add-staff/add-staff.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { RequestFormComponent } from './request-form/request-form.component';
     NavComponent,
     AdminComponent,
     RequestFormComponent,
+    AddStaffComponent,
   ],
   imports: [
     BrowserModule,
