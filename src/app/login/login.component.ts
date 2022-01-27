@@ -9,9 +9,9 @@ import { FormBuilder, FormControl, FormGroup, Validators  } from '@angular/forms
 export class LoginComponent implements OnInit {
   myForm: any;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.myForm = new FormGroup({
       email: new FormControl(null, [
         Validators.required,
@@ -26,9 +26,9 @@ export class LoginComponent implements OnInit {
   }
 
   
-  onSubmit(form: FormGroup) {
-    console.log('Valid?', form.valid); // true or false
-    console.log('Email', form.value.email);
-    console.log('passord', form.value.message);
+  Submit(): void {
+    // console.log('Valid?', form.valid); // true or false
+    console.log(this.myForm.getRawValue());
+    // console.log('passord', myForm.value.message);
   }
 }

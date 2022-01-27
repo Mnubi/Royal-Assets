@@ -14,7 +14,11 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
 import { ManagerComponent } from './manager/manager.component';
 import { AuthService } from './auth.service';
+import { ProductComponent } from './product/product.component';
+import { NavComponent } from './nav/nav.component';
 import { AdminComponent } from './admin/admin.component';
+import { RequestFormComponent } from './request-form/request-form.component';
+import { AddStaffComponent } from './add-staff/add-staff.component';
 
 
 @NgModule({
@@ -27,7 +31,11 @@ import { AdminComponent } from './admin/admin.component';
     UserEditComponent,
     StaffDashboardComponent,
     ManagerComponent,
+    ProductComponent,
+    NavComponent,
     AdminComponent,
+    RequestFormComponent,
+    AddStaffComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +43,6 @@ import { AdminComponent } from './admin/admin.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    HttpClientModule,
     BrowserAnimationsModule
     
   ],

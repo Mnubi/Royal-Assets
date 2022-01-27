@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{ FormBuilder, FormGroup} from '@angular/forms'
+import { Employee } from '../requests';
 
 @Component({
   selector: 'app-admin',
@@ -9,15 +10,42 @@ import{ FormBuilder, FormGroup} from '@angular/forms'
 export class AdminComponent implements OnInit {
   formValue! : FormGroup;
 
-  constructor(private formbuilder: FormBuilder) { }
+  employees: Employee[] = [
+    new Employee('Mary jane','new',72342342,  'urgent'),
+    
+  ];
+  addNewEmployee(employee: any){
+    let employeeLength = this.employees.length;
+    employee.id = employeeLength+1;
+    this.employees.push(employee)
+  }
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.formValue = this.formbuilder.group({
-      fullName :[''],
-      department :[''],
-      contact:[''],
-      role:['']
-    })
+    
   }
+
+  
+  displatyle = "none";
+ 
+  openPopu() {
+    this.displatyle = "block";
+  }
+  
+  closePopu() {
+    this.displatyle = "none";
+  }
+
+  dispstyle = "none";
+ 
+  openPop() {
+    this.dispstyle = "block";
+  }
+  
+  closePop() {
+    this.dispstyle = "none";
+  }
+  
 
 }
