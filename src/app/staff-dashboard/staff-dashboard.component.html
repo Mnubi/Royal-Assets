@@ -1,0 +1,179 @@
+
+<div class="container mt-5 d-flex flex-row">
+    <div class="left-side green">
+        <img alt="logo">
+        <nav class="pt-5">
+            <ul type="none">
+                <li class="">
+                  <div class="col-md-12 text-center">
+                    <button class="green">
+                    <a
+                    routerLink="/users/:id"
+                    routerLinkActive="active"
+                    id="2"
+                    type="button"
+                    class="btn onet">
+                    <img class="yyy" style="height: 70px; width: 130px;" src="../../assets/man.png">
+                    Profile
+                    </a>
+                  </button>
+                  </div>
+                </li>
+                <li class="">
+                <div class="col-md-12 text-center">
+                  <button class="green">
+                  <a
+                  id="2"
+                  type="button green"
+                  class="btn onet"
+                  (click)="openPopu()">
+                  <img class="yyy" style="height: 90px; width: 130px;" src="../../assets/message.png">
+                  Messages
+                </a>
+                </button>
+                </div>
+                </li>
+                <div class="twe">
+                  <li class="">
+                    <div class="col-md-12 text-center">
+                      <button class="green">
+                      <a
+                      routerLink="/user/:id/dashboard"
+                      routerLinkActive="active"
+                      id="2"
+                      type="button"
+                      class="btn onet twe">
+                      <img class="yyy" style="height: 70px; width: 130px;" src="../../assets/request.png">
+                      Requests
+                      </a>
+                    </button>
+                    </div>
+                  </li>
+                  <li class="">
+                      <div class="col-md-12 text-center">
+                        <button class="green">
+                        <a
+                        id="2"
+                        type="button"
+                        class="btn onet"
+                        (click)="openPop()">
+                        <img class="yyy" src="../../assets/not.png">
+                        Notifications
+                        </a>
+                      </button>
+                      </div>
+                  </li>
+                </div>
+            </ul>
+        </nav>
+    </div>
+    <div class="right-side">
+        <div class="green d-flex flex-row">
+            <div class="input-group pt-2 pb-2 cen">
+                <div class="form-outline">
+                    <input type="search" id="form1" class="form-control" placeholder="Search"/>
+                </div>
+                  <button type="button" class="btn btn-primary">
+                    <i class="fas fa-search"></i>
+                  </button>
+            </div>
+            <div>
+                <img class="img" src="https://res.cloudinary.com/dante6996-arch/image/upload/v1638895973/odk9aruvpwstqf1tnwyx.png" alt="profile-pic" style="width: 100px; height: 100px;">
+            </div>
+        </div>
+             
+            <div class="down-side">
+              <h4 class="text-center">New Assets</h4>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th class="text-purple" scope="col">PRODUCT</th>
+                        <th class="text-purple" scope="col">QUANTITY</th>
+                        <th class="text-purple" scope="col">STATUS</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr  *ngFor='let request of requests;let i = index'>
+                        <th scope="row"></th>
+                        <td>{{ request.Item }}</td>
+                        <td>{{ request.Quantity }}</td>
+                        <td>{{ request.Urgency }}</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+            </div>
+            <div class="mt-2 down-side">
+              <h4 class="text-center">Repairs</h4>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th class="text-purple" scope="col">PRODUCT</th>
+                        <th class="text-purple" scope="col">QUANTITY</th>
+                        <th class="text-purple" scope="col">STATUS</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                </table>    
+            </div>
+            <div>
+              <app-request-form (addRequest)="addNewRequest($event)"></app-request-form>
+            </div>
+            </div>
+    </div>
+
+
+    <div
+      class="modal"
+      tabindex="-1"
+      role="dialog"
+      [ngStyle]="{'display':displatyle}">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Messages</h4>
+          </div>
+          <div class="modal-body">
+            <h6>No new Messages Yet</h6>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" 
+                    (click)="closePopu()">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal"
+      tabindex="-1"
+      role="dialog"
+      [ngStyle]="{'display':dispstyle}">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Notifications</h4>
+          </div>
+          <div class="modal-body">
+            <h6>No Notifications Yet</h6>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" 
+                    (click)="closePop()">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>

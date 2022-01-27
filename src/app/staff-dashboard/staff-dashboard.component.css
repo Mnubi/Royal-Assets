@@ -1,0 +1,48 @@
+.green{
+    background-color: rgb(20, 99, 86);
+    color: white;
+    margin-bottom: 0vh;
+    padding-bottom: 0.3vh;
+}
+.purple{
+    background-color: rgb(79, 74, 125);
+    color: white;
+    padding-top: 0.3vh;
+}
+.white{
+    background-color: white;
+    margin-top: 0vh;
+    padding-bottom: 2vh;
+}
+.left-side{
+    width: 30vw;
+}
+.right-side{
+    width: 60vw;
+}
+.down-side{
+    background-color: rgb(245, 243, 240);
+}
+.text-purple{
+    color: rgb(79, 74, 125);
+}
+.cen{
+    align-items: center;
+}
+.img{
+    margin-right: 3vh;
+}
+.yyy{
+    width: 8vw;
+    height: 10vh;
+}
+.bck{
+    background-color: transparent;
+}
+.onet{
+    width: 20vw;
+    height: 12vh;
+    align-items: center;
+    display: flex;
+    margin-top: 1vh;
+}

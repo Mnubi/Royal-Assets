@@ -8,8 +8,18 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UserprofileComponent } from './user-profile/userprofile.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserEditComponent } from './user-edit/user-edit.component';
+import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
+import { ManagerComponent } from './manager/manager.component';
+import { AuthService } from './auth.service';
+import { ProductComponent } from './product/product.component';
+import { NavComponent } from './nav/nav.component';
+import { AdminComponent } from './admin/admin.component';
+import { RequestFormComponent } from './request-form/request-form.component';
+import { AddStaffComponent } from './add-staff/add-staff.component';
+
 
 @NgModule({
   declarations: [
@@ -18,16 +28,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     RegistrationComponent,
     UserprofileComponent,
+    UserEditComponent,
+    StaffDashboardComponent,
+    ManagerComponent,
+    ProductComponent,
+    NavComponent,
+    AdminComponent,
+    RequestFormComponent,
+    AddStaffComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule,
     HttpClientModule,
+    FormsModule,
     BrowserAnimationsModule
+    
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 

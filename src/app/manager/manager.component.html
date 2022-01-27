@@ -1,0 +1,159 @@
+<div id="viewport">
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <header>
+            <a href="#">Manager Profile</a>
+        </header>
+        <ul class="nav">
+            <li>
+                <a href="#" routerLink="/users/id">
+                    <img src="../../assets/man.png" width="90"alt=""> Dashboard
+                </a>
+            </li>
+            
+            <li>
+                <a href="#">
+                    <img src="../../assets/message.png" width="80"alt=""> Messages
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="../../assets/request.png" width="65"alt="" style="margin-left: 13px;"> Dashboard
+                </a>
+            </li>
+            
+            <li>
+                <a href="#">
+                    <img src="../../assets/not.png" width="55"alt="" style="margin-left: 13px; padding-top: 15px;"> Messages
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Content -->
+    <div id="content">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#"><i class="zmdi zmdi-notifications text-danger"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- MAin section -->
+        <div class=" tabs container-fluid">
+          
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                  <div class="card h-100">
+                   <div class="card-body">
+                      <h5 class="card-title"><a href="">Staffs</a></h5>
+                      <h5>25</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h5 class="card-title"><a href="">Assets</a></h5>
+                      <h5>15</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    
+                    <div class="card-body">
+                      <h5 class="card-title"><a href="">Repairs</a></h5>
+                      <h5>10</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        
+        <div class="inventory">
+          <h3>New Request List</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr id="scope">
+                      <th scope="col">#</th>
+                      <th scope="col">Item</th>
+                      <th scope="col">Category</th>
+                      <th scope="col">Quantity</th>
+                      <th scope="col">Status</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Hp Laptops</td>
+                      <td>Electonics</td>
+                      <td>5</td>
+                      <td>pending</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Office Desks</td>
+                      <td>Furniture</td>
+                      <td>3</td>
+                      <td>Approved</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Coffee Makers</td>
+                      <td>Kitchen</td>
+                      <td>2</td>
+                      <td>Declined</td>
+                    </tr>
+                  </tbody>
+              </table>
+              <button id="assets">view requests</button>
+        </div>
+
+        <hr>
+
+        <div class="inventory">
+          <h3>List of repair items</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr id="scope">
+                      <th scope="col">#</th>
+                      <th scope="col">Item</th>
+                      <th scope="col">Category</th>
+                      <th scope="col">Urgencey</th>
+                      <th scope="col">Status</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Desktop</td>
+                      <td>Electonics</td>
+                      <td>urgent</td>
+                      <td>pending</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Waiting Bench</td>
+                      <td>Furniture</td>
+                      <td>Very urgent</td>
+                      <td>Approved</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Printer</td>
+                      <td>Electonics</td>
+                      <td>Moderate</td>
+                      <td>Pending</td>
+                    </tr>
+                  </tbody>
+              </table>
+              <button id="assets">view repair</button>
+        </div>
+    </div>
+</div>
