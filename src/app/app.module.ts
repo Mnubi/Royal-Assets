@@ -17,6 +17,7 @@ import { AuthService } from './auth.service';
 import { ProductComponent } from './product/product.component';
 import { NavComponent } from './nav/nav.component';
 import { AdminComponent } from './admin/admin.component';
+import { RequestFormComponent } from './request-form/request-form.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { AdminComponent } from './admin/admin.component';
     ProductComponent,
     NavComponent,
     AdminComponent,
+    RequestFormComponent,
   ],
   imports: [
     BrowserModule,
