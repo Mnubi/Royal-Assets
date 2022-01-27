@@ -14,6 +14,7 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 import { ManagerComponent } from './manager/manager.component';
 import { AuthService } from './auth.service';
 import { ProductComponent } from './product/product.component';
+import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ProductComponent } from './product/product.component';
     UserEditComponent,
     ManagerComponent,
     ProductComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
