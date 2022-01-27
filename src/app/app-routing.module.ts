@@ -7,6 +7,7 @@ import { UserprofileComponent } from './user-profile/userprofile.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
 import { ManagerComponent } from './manager/manager.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'users/edit-profile/:id', component: UserEditComponent},
   {path: 'user/:id/dashboard', component: StaffDashboardComponent}, 
   {path: 'managers/:id',component:ManagerComponent},
+  {path: 'admin',component:AdminComponent},
 ];
 
 @NgModule({

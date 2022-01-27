@@ -14,6 +14,7 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
 import { ManagerComponent } from './manager/manager.component';
 import { AuthService } from './auth.service';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { AuthService } from './auth.service';
     UserEditComponent,
     StaffDashboardComponent,
     ManagerComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
