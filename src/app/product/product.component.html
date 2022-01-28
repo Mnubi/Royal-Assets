@@ -1,158 +1,40 @@
-<header>
-    <!-- Sidebar -->
-    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse">
-      <div class="">
-        <div class="list-group list-group-flush mx-3 mt-4">
-            <header>
-                <a href="#">Manager Profile</a>
-            </header>
-            <ul class="nav">
-                <li>
-                    <a href="#" routerLink="/users/id">
-                        <img src="../../assets/man.png" width="90"alt=""> Dashboard
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="#" routerLink="login">
-                        <img src="../../assets/message.png" width="80"alt=""> Messages
-                    </a>
-                </li>
-                <li>
-                    <a href="#" routerLink="login">
-                        <img src="../../assets/request.png" width="65"alt="" style="margin-left: 13px;"> Dashboard
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="#" routerLink="login">
-                        <img src="../../assets/not.png" width="55"alt="" style="margin-left: 13px; padding-top: 15px;"> Messages
-                    </a>
-                </li>
-            </ul>
-        </div>
-      </div>
-    </nav>
-    <!-- Sidebar -->
-  
+<app-nav></app-nav>
+  <!--Main layout-->
+
+
 
   <!--Main layout-->
   <main style="margin-top: 58px;">
     <div class="container pt-4">
+        <h3>Assets within The company</h3>
         <table class="table table-striped">
             <thead>
                 <tr id="scope">
-                  <th scope="col">#</th>
+                  
+                  <th scope="col"></th>
+                  <th scope="col">No.</th>
                   <th scope="col">Item</th>
                   <th scope="col">Category</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Status</th>
+                  <!-- <th scope="col">Quantity</th> -->
+                  <th scope="col">Assigned</th>
+                  <th scope="col">Stored</th>
+                  <th scope="col">Broken</th>
                   
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Hp Laptops</td>
-                  <td>Electonics</td>
-                  <td>5</td>
-                  <td>pending</td>
+                <tr  *ngFor='let asset of assets;let i = index'>
+                  <th scope="row"></th>
+                  <td>{{ i+1 }}</td>
+                  <td>{{ asset.Item }}</td>
+                  <td>{{ asset.Category }}</td>
+                  <td>{{ asset.Assigned }}</td>
+                  <td>{{ asset.Stored }}</td>
+                  <td>{{ asset.Broken }}</td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Office Desks</td>
-                  <td>Furniture</td>
-                  <td>3</td>
-                  <td>Approved</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Coffee Makers</td>
-                  <td>Kitchen</td>
-                  <td>2</td>
-                  <td>Declined</td>
-                </tr>
-              </tbody>
-          </table>
-          <button id="assets" routerLink="product">view requests</button>
-    </div>
 
-    <div class="container pt-4">
-        <table class="table table-striped">
-            <thead>
-                <tr id="scope">
-                  <th scope="col">#</th>
-                  <th scope="col">Item</th>
-                  <th scope="col">Category</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Status</th>
-                  
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Hp Laptops</td>
-                  <td>Electonics</td>
-                  <td>5</td>
-                  <td>pending</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Office Desks</td>
-                  <td>Furniture</td>
-                  <td>3</td>
-                  <td>Approved</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Coffee Makers</td>
-                  <td>Kitchen</td>
-                  <td>2</td>
-                  <td>Declined</td>
-                </tr>
               </tbody>
           </table>
           <button id="assets" routerLink="product">view requests</button>
     </div>
-    <div class="container pt-4">
-        <table class="table table-striped">
-            <thead>
-                <tr id="scope">
-                  <th scope="col">#</th>
-                  <th scope="col">Item</th>
-                  <th scope="col">Category</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Status</th>
-                  
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Hp Laptops</td>
-                  <td>Electonics</td>
-                  <td>5</td>
-                  <td>pending</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Office Desks</td>
-                  <td>Furniture</td>
-                  <td>3</td>
-                  <td>Approved</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Coffee Makers</td>
-                  <td>Kitchen</td>
-                  <td>2</td>
-                  <td>Declined</td>
-                </tr>
-              </tbody>
-          </table>
-          <button id="assets" routerLink="product">view requests</button>
-    </div>
-
-  </main>
-  <!--Main layout-->
+    
