@@ -1,18 +1,18 @@
-<app-nav></app-nav>
-  <!--Main layout-->
-
-
+<!-- <app-nav></app-nav> -->
 
   <!--Main layout-->
   <main style="margin-top: 58px;">
+    <div>
+      <button style="margin-left: 85px;" class="btn purple mb-2" routerLink="/managers/1" type="submit">Back</button>
+    </div>
     <div class="container pt-4">
-        <h3>Assets within The company</h3>
+        <h3><strong>Assets of Royal Asset Company</strong></h3>
         <table class="table table-striped">
             <thead>
                 <tr id="scope">
                   
                   <th scope="col"></th>
-                  <th scope="col">No.</th>
+                  <th scope="col">#</th>
                   <th scope="col">Item</th>
                   <th scope="col">Category</th>
                   <!-- <th scope="col">Quantity</th> -->
@@ -35,6 +35,6 @@
 
               </tbody>
           </table>
-          <button id="assets" routerLink="product">view requests</button>
+          <button id="assets" type="submit" class="btn purple mb-2">Add Asset</button>
     </div>
     
