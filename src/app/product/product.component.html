@@ -35,6 +35,9 @@
 
               </tbody>
           </table>
-          <button id="assets" type="submit" class="btn purple mb-2">Add Asset</button>
+         
+          <div>
+            <app-asset-form (addAsset)="addNewAsset($event)"></app-asset-form>
+          </div>
     </div>
     
