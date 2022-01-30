@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators  } from '@angular/forms';
+import { UserService } from './../services/user.service';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, NgForm,FormControl,Validators} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,28 +10,24 @@ import { FormBuilder, FormControl, FormGroup, Validators  } from '@angular/forms
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  myForm: any;
+  form!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
-
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private router: Router,
+    private userservice : UserService
+  ) {}
   ngOnInit(): void {
-    this.myForm = new FormGroup({
-      email: new FormControl(null, [
-        Validators.required,
-        Validators.email,
-        Validators.minLength(6)
-      ]),
-      password: new FormControl(null, [
-        Validators.required,
-        Validators.minLength(5),
-      ]),
-    });
+    this.form =new FormGroup({
+      email:new FormControl('', [Validators.required]),
+      password:new FormControl('', [Validators.required]),
+});
   }
-
   
-  Submit(): void {
-    // console.log('Valid?', form.valid); // true or false
-    console.log(this.myForm.getRawValue());
-    // console.log('passord', myForm.value.message);
-  }
+  loginUser() {
+    console.log(this.form.getRawValue());
+    this.http.post('http://127.0.0.1:8000/login/', this.form.getRawValue())
+    .subscribe(() => this.router.navigate(['/manager']));
 }
+  }

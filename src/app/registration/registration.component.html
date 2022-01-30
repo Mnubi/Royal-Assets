@@ -13,9 +13,9 @@
           <h1>Sign up</h1>
           <h6 class="text-muted">Create your account in seconds</h6>
         </div>
-        <form [formGroup]="form" (submit)="submit()">
+        <form #f="ngForm" [formGroup]="form" (ngSubmit)="onSubmit()">
           <div class="mb-2 col-xs-4 ">
-            <input formControlName="name" type="text" class="form-control" name="user" placeholder="Fullname">
+            <input formControlName="username" type="text" class="form-control" name="username" placeholder="Fullname">
           </div>
           
           <div class="mb-2 pt-2">
@@ -23,22 +23,14 @@
             <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
             
           </div>
-          <div class="input-group mb-2 pt-2">
-            <select formControlName="role" class="form-select" id="">
-              <option class="text-muted" selected> <span class="text-muted"></span> Role</option>
-              <option value="1">Admin</option>
-              <option value="1">Manager</option>
-              <option value="2">Staff</option>
-            </select>
-          </div>
           <div class="mb-2 pt-2">
             
             <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
           </div>
-          <!-- <div class="mb-2 pt-2">
+          <div class="mb-2 pt-2">
             
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm password">
-          </div> -->
+            <input formControlName="password" type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm password">
+          </div>
           <div class="mb-2 pt-2">
             <button type="submit" class="btn btn-primary form-control">Create an account</button>
           </div>

@@ -5,18 +5,18 @@
                 <img src="../../assets/undraw_secure_login_pdn4.svg" class="img-fluid" height="600" width="600" alt="Sample image">
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <form id="form" [formGroup]="myForm" (Submit)="Submit()">
+                <form #f="ngForm" [formGroup]="form" (ngSubmit)="loginUser()">
                     <h4>Login</h4>
                     <p>Please enter your login details to sign up</p>
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input formControlName="email" id="form3Example3" type="email" class="form-control form-control-lg"
-                            placeholder="Email address" ng-model="email.text" required/>                          
+                        <input formControlName="email" id="form3Example3" name="email" type="email" class="form-control form-control-lg"
+                            placeholder="Email address" required/>                          
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-3">
-                        <input formControlName="password" type="password" id="form3Example4" class="form-control form-control-lg"
+                        <input formControlName="password" type="password" name="password" id="form3Example4" class="form-control form-control-lg"
                             placeholder="Enter password" />
                     </div>
                     <button id="login" type="submit" class="btn btn-primary form-control"
