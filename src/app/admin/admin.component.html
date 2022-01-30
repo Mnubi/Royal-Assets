@@ -1,118 +1,91 @@
+
 <div id="viewport">
   <!-- Sidebar -->
-  <div id="sidebar">
-    <header>
-      <a href="#">Admin Profile</a>
-    </header>
-    <ul class="nav">
-      <li>
-        <a href="#" routerLink="/users/id">
-          <img src="../../assets/man.png" width="90" alt=""> Dashboard
-        </a>
-      </li>
-
-      <li>
-        <a (click)="openPopu()">
-          <img src="../../assets/message.png" width="80" alt=""> Messages
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <img src="../../assets/request.png" width="65" alt="" style="margin-left: 13px;"> Dashboard
-        </a>
-      </li>
-
-      <li>
-        <a href="#">
-          <img src="../../assets/not.png" width="55" alt="" style="margin-left: 13px; padding-top: 15px;"> Messages
-        </a>
-      </li>
-    </ul>
-  </div>
+  <section class="app-component">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="main-box">
+  
+        
+        <div class="side-menu-list">
+          <ul class="menu-items">
+            <li (click)="goTo('Home')"><fa-icon class="me-4"  [icon]="faUser"></fa-icon>Home</li>
+            <li (click)="goTo('Profile')"><i class="fa-fa-home"></i>Profile</li>
+            <li (click)="goTo('Contact')"><i class="fa-fa-home"></i>Contact</li>
+          </ul>
+        </div>
+      </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="side-menu-content">
+          <div class="tabs" *ngIf="selectedMenu == 'Home'">
+            <div id="content">
+            
+            
+              <!-- MAin section -->
+              <div class=" tabs container-fluid">
+          
+                <div class="row">
+                  <div class="col"></div>
+                  <div class="asset text-center p-2 col m-5">
+                    <fa-icon  [icon]="faUser"></fa-icon>
+                    <h4 class="mt-2 fs-5">Staff</h4>
+                    <h4 class="fs-5">15</h4>
+                  </div>
+                  <div class="asset text-center p-2 col m-5">
+                    <fa-icon  [icon]="faMoneyBillWave"></fa-icon>
+                    <h4 class="mt-2 fs-5" >Assets</h4>
+                    <h4 class="fs-5">15</h4>
+                  </div>
+                  <div class="asset text-center p-2 col m-5">
+                    <fa-icon  [icon]="faToolbox"></fa-icon>
+                    <h4 class="mt-2 fs-5">Repairs</h4>
+                    <h4 class="fs-5">15</h4>
+                  </div>
+                  <div class="col"></div>
+                  
+              
+                </div>
+          
+              </div>
+          
+              <div class="container">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th class="title" scope="col">#</th>
+                      <th class="title" scope="col">NAME</th>
+                      <th class="title" scope="col">DEPARTMENT</th>
+                      <th class="title" scope="col">CONTACT</th>
+                      <th class="title" scope="col">TITLE</th>
+                      <th class="title" scope="col">ACTION</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor='let employee of employees;let i = index'>
+                      <th scope="row"></th>
+                      <td>{{ employee.Name }}</td>
+                      <td>{{ employee.Department }}</td>
+                      <td>{{ employee.Contact }}</td>
+                      <td>{{ employee.Role}}</td>
+                    </tr>
+          
+                  </tbody>
+                </table>
+                <div>
+                  <app-add-staff (addEmployee)="addNewEmployee($event)"></app-add-staff>
+                </div>
+              </div>
+          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <!-- Content -->
-  <div id="content">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="#"><i class="zmdi zmdi-notifications text-danger"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- MAin section -->
-    <div class=" tabs container-fluid">
-
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title"><a href="">Staff</a></h5>
-              <h5>25</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title"><a href="">Assets</a></h5>
-              <h5>15</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-
-            <div class="card-body">
-              <h5 class="card-title"><a href="">Repairs</a></h5>
-              <h5>10</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="container mt-5">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th class="title" scope="col">#</th>
-            <th class="title" scope="col">NAME</th>
-            <th class="title" scope="col">DEPARTMENT</th>
-            <th class="title" scope="col">CONTACT</th>
-            <th class="title" scope="col">TITLE</th>
-            <th class="title" scope="col">ACTION</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor='let employee of employees;let i = index'>
-            <th scope="row"></th>
-            <td>{{ employee.Name }}</td>
-            <td>{{ employee.Department }}</td>
-            <td>{{ employee.Contact }}</td>
-            <td>{{ employee.Role}}</td>
-          </tr>
-
-        </tbody>
-      </table>
-      <div>
-        <app-add-staff (addEmployee)="addNewEmployee($event)"></app-add-staff>
-      </div>
-    </div>
-
-
-    <!-- Button trigger modal -->
-
-
-
-
-
-
-
-
-
-  </div>
+  
 </div>
+
+

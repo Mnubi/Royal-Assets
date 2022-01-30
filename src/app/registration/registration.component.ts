@@ -10,28 +10,28 @@ import {Router} from '@angular/router';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-  form!: FormGroup;
+  username : string = '';
+  email : string ='';
+  role : string ='';
+  password : string ='';
+
+  roles : string[];
   
-  constructor(
-    private formBuilder: FormBuilder,
-    private http: HttpClient,
-    private router: Router
-  ) {
+  constructor( ) {
+    this.roles = [
+      'admin',
+      'manager',
+      'staff'
+    ]
+   }
+
+  ngOnInit(): void { }
+
+  register(){
+    console.log(this.username + " " + this.email + " " + this.role + " " + this.password)
   }
 
-  ngOnInit(): void {
-    this.form = this.formBuilder.group({
-      name: '',
-      email: '',
-      role: '',
-      password: ''
-    });
-  }
-
-  submit(): void {
-    console.log(this.form.getRawValue());
-      
-  }
+  
 }
 
 
