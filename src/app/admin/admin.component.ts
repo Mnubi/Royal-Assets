@@ -32,26 +32,13 @@ export class AdminComponent implements OnInit {
     
   }
 
-  
-  displatyle = "none";
- 
-  openPopu() {
-    this.displatyle = "block";
-  }
-  
-  closePopu() {
-    this.displatyle = "none";
+
+  title = 'my-app';
+  selectedMenu:any ='Home';
+
+  goTo(paramText:string){
+    this.selectedMenu = paramText
   }
 
-  dispstyle = "none";
- 
-  openPop() {
-    this.dispstyle = "block";
-  }
-  
-  closePop() {
-    this.dispstyle = "none";
-  }
-  
 
 }
