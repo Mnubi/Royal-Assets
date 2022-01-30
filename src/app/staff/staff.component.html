@@ -1,0 +1,36 @@
+<!--Main layout-->
+<main style="margin-top: 58px;">
+    <div>
+        <button style="margin-left: 85px;" class="btn purple mb-2" routerLink="/managers/1" type="submit">Back</button>
+    </div>
+    <div class="container pt-4">
+        <h3><strong>Members with company Assetss</strong></h3>
+        <table class="table table-striped">
+            <thead>
+                <tr id="scope">
+
+                    <th scope="col"></th>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">Assigned-item</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let staff of staffs;let i = index'>
+                    <th scope="row"></th>
+                    <td>{{ i+1 }}</td>
+                    <td>{{ staff.Name}}</td>
+                    <td>{{ staff.Department }}</td>
+                    <td>{{ staff.Role }}</td>
+                    <td>{{ staff.Contact }}</td>
+                    <td>{{ staff.Asset }}</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <button id="staffs" type="submit" class="btn purple mb-2">Assign Item</button>
+    </div>
