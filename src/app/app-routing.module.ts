@@ -11,6 +11,7 @@ import { ProductComponent } from './product/product.component';
 import { AdminComponent } from './admin/admin.component';
 import { StaffComponent } from './staff/staff.component';
 
+
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'login',component:LoginComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'managers/:id',component:ManagerComponent},
   {path: 'admin',component:AdminComponent},
   {path: 'staff',component:StaffComponent},
+  
 ];
 
 @NgModule({

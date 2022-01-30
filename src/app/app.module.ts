@@ -21,7 +21,6 @@ import { RequestFormComponent } from './request-form/request-form.component';
 import { AddStaffComponent } from './add-staff/add-staff.component';
 import { StaffComponent } from './staff/staff.component';
 import { AssetFormComponent } from './asset-form/asset-form.component';
-import { RequestComponent } from './request/request.component';
 
 
 @NgModule({
@@ -41,7 +40,7 @@ import { RequestComponent } from './request/request.component';
     AddStaffComponent,
     StaffComponent,
     AssetFormComponent,
-    RequestComponent,
+    
   ],
   imports: [
     BrowserModule,

@@ -18,3 +18,7 @@ export class Staff {
    }
 }
 
+export class Repair {
+   constructor(public Item: string,public Department :string, public Request : string,public Urgency : string){
+   }
+}
