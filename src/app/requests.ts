@@ -17,3 +17,4 @@ export class Staff {
    constructor(public Name: string,public Department: string,public Role: string,public Asset : string,public Contact : number){
    }
 }
+

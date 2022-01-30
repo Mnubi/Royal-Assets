@@ -7,9 +7,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagerComponent implements OnInit {
 
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  
+  displatyle = "none";
+ 
+  openPopu() {
+    this.displatyle = "block";
+  }
+  
+  closePopu() {
+    this.displatyle = "none";
+  }
+
+  dispstyle = "none";
+ 
+  openPop() {
+    this.dispstyle = "block";
+  }
+  
+  closePop() {
+    this.dispstyle = "none";
+  }
+  
+
 }
+

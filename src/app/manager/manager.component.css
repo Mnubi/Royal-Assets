@@ -79,3 +79,13 @@ body {
 .inventory{
     padding-left: 40px;
 }
+
+#dash{
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  padding-right: 90px;
+  
+}
+
+#dash:hover {background-color: #448a7f}
