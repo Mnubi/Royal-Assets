@@ -9,6 +9,7 @@
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  font-family: 'Tenor Sans', sans-serif;
 }
 
 #content {
@@ -81,4 +82,12 @@
 
 .title{
   color: rgb(79, 74, 125);
+}
+
+.asset{
+  background-image: linear-gradient(to bottom right, rgb(79, 74, 125) , white);
+  height: 110px;
+  border: 1px solid rgb(79, 74, 125);
+  border-radius: 30px;
+
 }

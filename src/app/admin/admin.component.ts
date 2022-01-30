@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import{ FormBuilder, FormGroup} from '@angular/forms'
 import { Employee } from '../requests';
+import { faToolbox } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faMoneyBillWave } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-admin',
@@ -9,6 +12,9 @@ import { Employee } from '../requests';
 })
 export class AdminComponent implements OnInit {
   formValue! : FormGroup;
+  faToolbox = faToolbox;
+  faUser = faUser;
+  faMoneyBillWave = faMoneyBillWave;
 
   employees: Employee[] = [
     new Employee('Mary jane','new',72342342,  'urgent'),
