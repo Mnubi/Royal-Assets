@@ -1,0 +1,40 @@
+<!-- <app-nav></app-nav> -->
+
+  <!--Main layout-->
+  <main style="margin-top: 58px;">
+    <div>
+      <button style="margin-left: 85px;" class="btn purple mb-2" routerLink="/managers/1" type="submit">Back</button>
+    </div>
+    <div class="container pt-4">
+        <h3><strong>Assets of Royal Asset Company</strong></h3>
+        <table class="table table-striped">
+            <thead>
+                <tr id="scope">
+                  
+                  <th scope="col"></th>
+                  <th scope="col">#</th>
+                  <th scope="col">Item</th>
+                  <th scope="col">Department</th>
+                  <th scope="col">Request</th>
+                  <th scope="col">urgency</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <!-- <tr  *ngFor='let repair of repairs;let i = index'>
+                  <th scope="row"></th>
+                  <td>{{ i+1 }}</td>
+                  <td>{{ repair.Item }}</td>
+                  <td>{{ repair.Department }}</td>
+                  <td>{{ repair.Request}}</td>
+                  <td>{{ repair.Urgency }}</td>
+                </tr> -->
+
+              </tbody>
+          </table>
+         
+          <div>
+            <app-asset-form (addRepair)="addNewRepair($event)"></app-asset-form>
+          </div>
+    </div>
+    
