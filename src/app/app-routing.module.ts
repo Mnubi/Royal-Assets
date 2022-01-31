@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'users/edit-profile/:id', component: UserEditComponent},
   {path: 'manager',component:ManagerComponent},
   {path: 'product',component:ProductComponent},
-  {path: 'user/:id/dashboard', component: StaffDashboardComponent}, 
+  {path: 'staff', component: StaffDashboardComponent}, 
   {path: 'admin',component:AdminComponent},
 ];
 

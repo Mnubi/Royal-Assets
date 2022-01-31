@@ -7,11 +7,14 @@ import { EmailValidator } from '@angular/forms';
   providedIn: 'root'
 })
 export class UserService {
+
   constructor(private httpClient:HttpClient) { }
-getData():Observable<any>{
+
+  getData():Observable<any>{
   const url = "http://127.0.0.1:8000/api/users/"
   return this.httpClient.get<any>(url)
 }
+
 url = environment.url;
   // create new user
   createUser(username: string, password: string) {
