@@ -10,6 +10,7 @@ import { ManagerComponent } from './manager/manager.component';
 import { ProductComponent } from './product/product.component';
 import { AdminComponent } from './admin/admin.component';
 import { StaffComponent } from './staff/staff.component';
+import { AssignComponent } from './assign/assign.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'staff', component: StaffDashboardComponent}, 
   {path: 'admin',component:AdminComponent},
   {path: 'staff',component:StaffComponent},
+  {path: 'assign',component:AssignComponent},
   
 ];
 

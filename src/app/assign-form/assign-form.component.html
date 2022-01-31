@@ -1,0 +1,50 @@
+<div class="col-md-12 text-center">
+    <button id="1" type="button" class="btn btn-primary purple mt-2" (click)="openPopup()">Assign Assets
+    </button>
+</div>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Assign Assets to staff</h4>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="submitAsset()" #requestForm="ngForm">
+                    <div class="form-group">
+                        <label for="exampleInputItem1">Item</label>
+                        <input [(ngModel)]="newAssign.Item" name="item" type="text" required class="form-control"
+                            class="form-control" id="exampleInputItem1" aria-describedby="" #name="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputCategory1">Department</label>
+                        <input [(ngModel)]="newAssign.Department" name="Department" type="text" class="form-control"
+                            id="exampleInputCategory1" #Department="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputRequest1">Type</label>
+                        <input [(ngModel)]="newAssign.Type" name="request" type="text" required class="form-control"
+                            class="form-control" id="exampleInputRequest1" aria-describedby="" #Type="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputStored1">Name</label>
+                        <input [(ngModel)]="newAssign.Name" name="name" type="text" class="form-control"
+                            id="exampleInputStored1" #name="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputStored1">Role</label>
+                        <input [(ngModel)]="newAssign.Role" name="Stored" type="text" class="form-control"
+                            id="exampleInputStored1" #Role="ngModel">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" (click)="closePopup()">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -21,6 +21,8 @@ import { RequestFormComponent } from './request-form/request-form.component';
 import { AddStaffComponent } from './add-staff/add-staff.component';
 import { StaffComponent } from './staff/staff.component';
 import { AssetFormComponent } from './asset-form/asset-form.component';
+import { AssignComponent } from './assign/assign.component';
+import { AssignFormComponent } from './assign-form/assign-form.component';
 
 
 @NgModule({
@@ -40,6 +42,8 @@ import { AssetFormComponent } from './asset-form/asset-form.component';
     AddStaffComponent,
     StaffComponent,
     AssetFormComponent,
+    AssignComponent,
+    AssignFormComponent,
     
   ],
   imports: [

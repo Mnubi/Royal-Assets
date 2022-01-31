@@ -22,3 +22,8 @@ export class Repair {
    constructor(public Item: string,public Department :string, public Request : string,public Urgency : string){
    }
 }
+
+export class Assign {
+   constructor(public Item: string,public Type :string, public Department : string,public Name : string,public Role : string){
+   }
+}

@@ -1,0 +1,40 @@
+ <!--Main layout-->
+ <main style="margin-top: 58px;">
+    <div>
+      <button style="margin-left: 85px;" class="btn purple mb-2" routerLink="/manager" type="submit">Back</button>
+    </div>
+    <div class="container pt-4">
+        <h3><strong>Assets placement form</strong></h3>
+        <table class="table table-striped">
+            <thead>
+                <tr id="scope">
+                  
+                  <th scope="col"></th>
+                  <th scope="col">#</th>
+                  <th scope="col">Item</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Department</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Role</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr  *ngFor='let assign of assigns;let i = index'>
+                  <th scope="row"></th>
+                  <td>{{ i+1 }}</td>
+                  <td>{{ assign.Item }}</td>
+                  <td>{{ assign.Role}}</td>
+                  <td>{{ assign.Department }}</td>
+                  <td>{{ assign.Name }}</td>
+                  <td>{{ assign.Role }}</td>
+                </tr>
+
+              </tbody>
+          </table>
+         
+          <div>
+            <app-assign-form (addAssign)="addNewAssign($event)"></app-assign-form>
+          </div>
+    </div>
+    
