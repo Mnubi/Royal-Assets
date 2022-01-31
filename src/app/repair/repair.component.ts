@@ -1,30 +1,29 @@
-// import { Component, OnInit } from '@angular/core';
-// import { Repair } from '../requests';
+import { Component, OnInit } from '@angular/core';
+import { Repair } from '../requests';
 
-// @Component({
-//   selector: 'app-repair',
-//   templateUrl: './repair.component.html',
-//   styleUrls: ['./repair.component.css']
-// })
-// export class RepairComponent implements OnInit {
+@Component({
+  selector: 'app-repair',
+  templateUrl: './repair.component.html',
+  styleUrls: ['./repair.component.css']
+})
+export class RepairComponent implements OnInit {
 
 
 
-//   repairs: Repair[] = [
-//     new Repair('Laptop','new', 'j','urgent'),
-//     new Repair('Laptop','new', 'j','urgent'),
-//     new Repair('Laptop','new', 'j','urgent'),
+  repairs: Repair[] = [
+    new Repair('Laptop','new', 'j','urgent', 'Approved'),
     
-//   ];
-//   addNewRepair(repair: any){
-//     let requestLength = this.repairs.length;
-//     repair.id = requestLength+1;
-//     this.repairs.push(repair)
-//   }
+    
+  ];
+  addNewRepair(repair: any){
+    let requestLength = this.repairs.length;
+    repair.id = requestLength+1;
+    this.repairs.push(repair)
+  }
 
-//   constructor() { }
+  constructor() { }
 
-//   ngOnInit(): void {
-//   }
+  ngOnInit(): void {
+  }
 
-// }
+}

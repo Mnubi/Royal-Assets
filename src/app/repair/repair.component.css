@@ -1,0 +1,13 @@
+#scope{
+    background-color: rgb(20, 99, 86);
+    color: ivory;
+}
+h3{
+    text-align: center;
+    color: rgb(20, 99, 86);
+}
+.purple{
+    background-color: rgb(79, 74, 125);
+    color: white;
+    padding-top: 0.3vh;
+}
