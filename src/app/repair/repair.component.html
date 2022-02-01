@@ -3,7 +3,7 @@
   <!--Main layout-->
   <main style="margin-top: 58px;">
     <div>
-      <button style="margin-left: 85px;" class="btn purple mb-2" routerLink="/managers/1" type="submit">Back</button>
+      <button style="margin-left: 85px;" class="btn purple mb-2" routerLink="/manager" type="submit">Back</button>
     </div>
     <div class="container pt-4">
         <h3><strong>List of Repair and Request </strong></h3>
@@ -29,7 +29,22 @@
                   <td>{{ repair.Department }}</td>
                   <td>{{ repair.Request}}</td>
                   <td>{{ repair.Urgency }}</td>
-                  <td>{{ repair.Response}}</td>
+                  <td>
+                      <form class="response d-flex" action="">
+                        <div id="accept" class="form-check">
+                            <input class="form-check-input d-flex" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              Approved
+                            </label>
+                          </div>
+                          <div class="form-check d-flex">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                              Declined
+                            </label>
+                          </div>
+                      </form>
+                  </td>
                   
                   
                 </tr>

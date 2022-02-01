@@ -9,7 +9,7 @@ import { Assign } from './../requests';
 export class AssignComponent implements OnInit {
 
   assigns: Assign[] = [
-    new Assign('Laptops', 'Security', 'Electrical', 'John Mwangi','Manager'),
+    new Assign('Laptops', 'Electrical', 'Security', 'John Mwangi','Manager'),
     
     
   ];

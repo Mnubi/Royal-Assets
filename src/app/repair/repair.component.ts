@@ -11,7 +11,7 @@ export class RepairComponent implements OnInit {
 
 
   repairs: Repair[] = [
-    new Repair('Laptop','new', 'j','urgent', 'Approved'),
+    new Repair('Laptop','Security', 'Repair','urgent', 'Approved'),
     
     
   ];

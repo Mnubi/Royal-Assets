@@ -11,3 +11,11 @@ h3{
     color: white;
     padding-top: 0.3vh;
 }
+
+.response{
+    justify-content: space-evenly;
+    
+}
+#accept{
+    margin-left: -50px;
+}

@@ -6,3 +6,45 @@
   background-color: #4F4A7D;
   color: white;
 }
+.divider:after,
+section{
+    font-size: small;
+}
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.h-custom {
+  height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}
+#form{
+    padding-left: 50px;
+    padding-top: 50px;
+}
+#login{
+    background-color: #4F4A7D;
+    text-align: center;
+    justify-content: center;
+    color: white;
+}
+#form3Example3{
+    font-size: small;
+}
+#form3Example4{
+    font-size: small;
+}
+
+
+
+
+
+
+
+
