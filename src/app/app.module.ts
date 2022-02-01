@@ -22,6 +22,13 @@ import { AddStaffComponent } from './add-staff/add-staff.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { StaffComponent } from './staff/staff.component';
 import { AssetFormComponent } from './asset-form/asset-form.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
+
+
 
 
 @NgModule({
@@ -50,7 +57,11 @@ import { AssetFormComponent } from './asset-form/asset-form.component';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatToolbarModule
     
   ],
   providers: [AuthService],
