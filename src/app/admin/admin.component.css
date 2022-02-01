@@ -1,7 +1,12 @@
-#viewport{
+.admin{
   font-family: 'Tenor Sans', sans-serif;
+  
+  
 }
-/* Toggle Styles */
+a{
+  text-decoration: none;
+  color: black;
+}
 
 
 .row{
@@ -12,7 +17,8 @@
 }
 
 .btn1{
-  background-color: rgb(79, 74, 125);
+  background-color: rgb(20, 99, 86);
+  color: white;
 }
 
 .title{
@@ -26,41 +32,71 @@
   border-radius: 30px;
 
 }
-.app-component{
-  width: 98%;
-}
-.main-box{
-  height: 650px;
-  background-image: linear-gradient(to bottom right, rgb(20, 99, 86) , white);
-  /* width: 65px; */
-}
-.main-box:hover{
-  width: 215px;
-  transition: 0.3s;
-}
 
-.menu-items{
-  list-style: none;
-  line-height: 60px;
-  padding-left: 0px;
-  height: 100%;
-  /* display: flex; */
-}
- .menu-items li{
-   font-size: 18px;
-   font-weight: 600;
-   padding-left: 25px;
-   cursor: pointer;
- }
- .menu-items li:hover{
-   background-color: white;
-   color: #7d7d7d;
+ mat-sidenav-container {
+  height: inherit;
  }
 
- .menu-items li i{
-   width: 35px;
-   font-size:26px ;
-   margin: 0px 20px 0px 0px;
-   position: relative;
-   top: 15px;
- }
+mat-sidenav mat-nav-list  .chevron-button {
+ transition: 300ms ease-in-out;
+ transform: rotate(0deg);
+ right: 0;
+ float: right;
+position: absolute;
+}
+      
+
+mat-sidenav mat-nav-list.chevron-button.rotated {
+        transform: rotate(180deg);
+      }
+.content{
+  background-color: #f3f3f3;
+}     
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 1100px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: rgb(20, 99, 86);
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid rgb(20, 99, 86);
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: rgb(20, 99, 86);
+}
+
+
+
+
+      
+      
+
+     
+  

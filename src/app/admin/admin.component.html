@@ -1,91 +1,167 @@
 
-<div id="viewport">
-  <!-- Sidebar -->
-  <section class="app-component">
-    <div class="row">
-      <div class="col-lg-3">
-        <div class="main-box">
+<section class="admin">
+  
+  <mat-sidenav-container autosize >
+    <mat-sidenav #sidenav mode="side" opened="true" class="">
+      <mat-nav-list>
+  
+        <mat-list-item>
+          <mat-icon mat-list-icon class="chevron-button sidenav-button" (click)="isExpanded = !isExpanded" [ngClass]="{'rotated': isExpanded}">chevron_right</mat-icon>
+        </mat-list-item>
+  
+        <mat-list-item [routerLink]="'/users/id'">
+          <mat-icon mat-list-icon >person</mat-icon>
+          <span *ngIf="isExpanded">Admin</span>
+        </mat-list-item>
+
+        <mat-list-item [routerLink]="'user'">
+          <mat-icon mat-list-icon>supervisor_account</mat-icon>
+          <span *ngIf="isExpanded">Employees</span>
+        </mat-list-item>
+
+        <mat-list-item [routerLink]="'user'">
+          <mat-icon mat-list-icon>inventory</mat-icon>
+          <span *ngIf="isExpanded">Inventory</span>
+        </mat-list-item>
+
+        <mat-list-item [routerLink]="'user'">
+          <mat-icon mat-list-icon>add_task</mat-icon>
+          <span *ngIf="isExpanded">Tasks</span>
+        </mat-list-item>
+  
+        <mat-list-item [routerLink]="'info'">
+          <mat-icon mat-list-icon>account_balance</mat-icon>
+          <span *ngIf="isExpanded">Account</span>
+        </mat-list-item>
+
+        <mat-list-item [routerLink]="'user'">
+          <mat-icon mat-list-icon>attach_money</mat-icon>
+          <span *ngIf="isExpanded">Assets</span>
+        </mat-list-item>
+
+        <mat-list-item [routerLink]="'user'">
+          <mat-icon mat-list-icon>logout</mat-icon>
+          <span *ngIf="isExpanded">Logout</span>
+        </mat-list-item>
   
         
-        <div class="side-menu-list">
-          <ul class="menu-items">
-            <li (click)="goTo('Home')"><fa-icon class="me-4"  [icon]="faUser"></fa-icon>Home</li>
-            <li (click)="goTo('Profile')"><i class="fa-fa-home"></i>Profile</li>
-            <li (click)="goTo('Contact')"><i class="fa-fa-home"></i>Contact</li>
-          </ul>
+  
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <div class="content ">
+      <div class=" tabs container-fluid">
+
+        <!-- <h1 class="text-center fs-3">Dashboard</h1> -->
+                
+          
+        <div class="row">
+          <div class="col"></div>
+          <div class="asset text-center p-2 col m-5">
+            <mat-icon mat-list-icon >person</mat-icon>
+            <h4 class="mt-2 fs-5">Staff</h4>
+            <h4 class="fs-5">15</h4>
+          </div>
+          <div class="asset text-center p-2 col m-5">
+            <mat-icon class="mb-2" mat-list-icon>attach_money</mat-icon> <br>
+            <a class="fs-5 mt-2 fw-normal" routerLink="/product">Assets</a>
+            <h4 class="fs-5 mt-2">15</h4>
+          </div>
+          <div class="asset text-center p-2 col m-5">
+            <fa-icon  [icon]="faToolbox"></fa-icon>
+            <h4 class="mt-2 fs-5">Repairs</h4>
+            <h4 class="fs-5">15</h4>
+          </div>
+          <div class="col"></div>
+          
+      
         </div>
+  
       </div>
-      </div>
-      <div class="col-lg-9">
-        <div class="side-menu-content">
-          <div class="tabs" *ngIf="selectedMenu == 'Home'">
-            <div id="content">
+  
+      <!-- <div class="container">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th class="title" scope="col">#</th>
+              <th class="title" scope="col">NAME</th>
+              <th class="title" scope="col">DEPARTMENT</th>
+              <th class="title" scope="col">CONTACT</th>
+              <th class="title" scope="col">TITLE</th>
+              <th class="title" scope="col">ACTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor='let employee of employees;let i = index'>
+              <th scope="row"></th>
+              <td>{{ employee.Name }}</td>
+              <td>{{ employee.Department }}</td>
+              <td>{{ employee.Contact }}</td>
+              <td>{{ employee.Role}}</td>
+            </tr>
+  
+          </tbody>
+        </table>
+        <div>
+          <app-add-staff (addEmployee)="addNewEmployee($event)"></app-add-staff>
+        </div>
+      </div> -->
+
+      <div class="">
+        <div class="container">
+          <table class=" table content-table table-hover">
+            <thead>
+              <tr>
+                
+                <th scope="col">#</th>
+                <th scope="col">NAME</th>
+                <th scope="col">DEPARTMENT</th>
+                <th scope="col">CONTACT</th>
+                <th scope="col">TITLE</th>
+                <th scope="col">ACTION</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                
+                <td>1</td>
+                <td>Domenic</td>
+                <td>88,110</td>
+                <td>dcode</td>
+                <td>88,110</td>
+                <td><mat-icon class="me-3" mat-list-icon>update</mat-icon> <mat-icon mat-list-icon>delete</mat-icon></td>
+              </tr>
+              <tr class="active-row">
+                <td>2</td>
+                <td>Sally</td>
+                <td>72,400</td>
+                <td>Students</td>
+                <td>72,400</td>
+                <td><mat-icon class="me-3" mat-list-icon>update</mat-icon> <mat-icon mat-list-icon>delete</mat-icon></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Nick</td>
+                <td>52,300</td>
+                <td>dcode</td>
+                <td>52,300</td>
+                <td><mat-icon class="me-3" mat-list-icon>update</mat-icon> <mat-icon mat-list-icon>delete</mat-icon></td>
+              </tr>
+            </tbody>
             
             
-              <!-- MAin section -->
-              <div class=" tabs container-fluid">
-          
-                <div class="row">
-                  <div class="col"></div>
-                  <div class="asset text-center p-2 col m-5">
-                    <fa-icon  [icon]="faUser"></fa-icon>
-                    <h4 class="mt-2 fs-5">Staff</h4>
-                    <h4 class="fs-5">15</h4>
-                  </div>
-                  <div class="asset text-center p-2 col m-5">
-                    <fa-icon  [icon]="faMoneyBillWave"></fa-icon>
-                    <h4 class="mt-2 fs-5" >Assets</h4>
-                    <h4 class="fs-5">15</h4>
-                  </div>
-                  <div class="asset text-center p-2 col m-5">
-                    <fa-icon  [icon]="faToolbox"></fa-icon>
-                    <h4 class="mt-2 fs-5">Repairs</h4>
-                    <h4 class="fs-5">15</h4>
-                  </div>
-                  <div class="col"></div>
-                  
-              
-                </div>
-          
-              </div>
-          
-              <div class="container">
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th class="title" scope="col">#</th>
-                      <th class="title" scope="col">NAME</th>
-                      <th class="title" scope="col">DEPARTMENT</th>
-                      <th class="title" scope="col">CONTACT</th>
-                      <th class="title" scope="col">TITLE</th>
-                      <th class="title" scope="col">ACTION</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor='let employee of employees;let i = index'>
-                      <th scope="row"></th>
-                      <td>{{ employee.Name }}</td>
-                      <td>{{ employee.Department }}</td>
-                      <td>{{ employee.Contact }}</td>
-                      <td>{{ employee.Role}}</td>
-                    </tr>
-          
-                  </tbody>
-                </table>
-                <div>
-                  <app-add-staff (addEmployee)="addNewEmployee($event)"></app-add-staff>
-                </div>
-              </div>
-          
-            </div>
+          </table>
+          <div class="text-center mb-5">
+            <button class="btn btn1">Add Staff</button>
           </div>
         </div>
       </div>
+      
+      
     </div>
-  </section>
   
-  <!-- Content -->
-  
-</div>
+  </mat-sidenav-container>
+
+</section>
 
 
