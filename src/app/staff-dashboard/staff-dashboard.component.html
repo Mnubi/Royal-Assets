@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="container-fluid  d-flex flex-row">
     <div class="left-side green">
         <nav class="pt-5">
@@ -67,54 +67,8 @@
         </nav>
     </div>
     <div class="right-side">
-            <div class="down-side">
-              <h4 class="text-center">New Assets</h4>
-                <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th class="text-purple" scope="col">Product</th>
-                        <th class="text-purple" scope="col">Quantity</th>
-                        <th class="text-purple" scope="col">Urgency</th>
-                        <th class="text-purple" scope="col">Status</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr  *ngFor='let request of requests;let i = index'>
-                        <th scope="row">{{ i+1 }}</th>
-                        <td>{{ request.asset_name }}</td>
-                        <td>{{ request.quantity }}</td>
-                        <td>{{ request.urgency }}</td>
-                        <td>{{ request.is_approved }}</td>
-                      </tr>
-
-                    </tbody>
-                  </table>
-            </div>
-            <div class="mt-2 down-side">
-              <h4 class="text-center">Repairs</h4>
-                <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th class="text-purple" scope="col">PRODUCT</th>
-                        <th class="text-purple" scope="col">QUANTITY</th>
-                        <th class="text-purple" scope="col">STATUS</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                    </tbody>
-                </table>    
-            </div>
-            <div>
-              <app-request-form></app-request-form>
-            </div>
+            
+            
             </div>
     </div>
 
@@ -163,4 +117,135 @@
           </div>
         </div>
       </div>
+    </div> -->
+
+
+<section class="staff">
+  
+  
+
+<mat-sidenav-container autosize>
+<mat-sidenav #sidenav mode="side" opened="true">
+  <mat-nav-list>
+
+    <mat-list-item [routerLink]="'/staff'">
+      <mat-icon mat-list-icon >dashboard</mat-icon>
+      <span *ngIf="isExpanded">Dashboard</span>
+    </mat-list-item>
+
+    
+    <mat-list-item [routerLink]="'user'">
+      <mat-icon mat-list-icon>message</mat-icon>
+      <span *ngIf="isExpanded">Messages</span>
+    </mat-list-item>
+
+    <mat-list-item [routerLink]="'user'">
+      <mat-icon mat-list-icon>addchart</mat-icon>
+      <span *ngIf="isExpanded">Inventory</span>
+    </mat-list-item>
+
+    <mat-list-item [routerLink]="'user'">
+      <mat-icon mat-list-icon>notifications_active</mat-icon>
+      <span *ngIf="isExpanded">Tasks</span>
+    </mat-list-item>
+
+    <mat-list-item [routerLink]="'/users/id'">
+      <mat-icon mat-list-icon >person</mat-icon>
+      <span *ngIf="isExpanded">Profile</span>
+    </mat-list-item>
+
+    <mat-list-item [routerLink]="'user'">
+      <mat-icon mat-list-icon>logout</mat-icon>
+      <span *ngIf="isExpanded">Logout</span>
+    </mat-list-item>
+
+    <mat-list-item>
+      <mat-icon mat-list-icon class="chevron-button sidenav-button" (click)="isExpanded = !isExpanded" [ngClass]="{'rotated': isExpanded}">chevron_right</mat-icon>
+    </mat-list-item>
+
+  </mat-nav-list>
+</mat-sidenav>
+
+<div class="content">
+ 
+  <div class="row container-fluid">
+    <div class="col"></div>
+    <div class="asset text-center p-2 col m-5">
+      <mat-icon mat-list-icon >person</mat-icon>
+      <h4 class="mt-2 fs-5">Staff</h4>
+      <h4 class="fs-5">15</h4>
     </div>
+    <div class="asset text-center p-2 col m-5">
+      <mat-icon class="mb-2" mat-list-icon>attach_money</mat-icon> <br>
+      <a class="fs-5 mt-2 fw-normal" routerLink="/product">Assets</a>
+      <h4 class="fs-5 mt-2">15</h4>
+    </div>
+    <div class="asset text-center p-2 col m-5">
+      <fa-icon  [icon]="faToolbox"></fa-icon>
+      <h4 class="mt-2 fs-5">Repairs</h4>
+      <h4 class="fs-5">15</h4>
+    </div>
+    <div class="col"></div>
+    
+
+  </div>
+  <div class="container">
+    <div class="">
+      <h4 class="text-center fw-b fs-4 title">New Assets</h4>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th class="text-purple" scope="col">Product</th>
+                <th class="text-purple" scope="col">Quantity</th>
+                <th class="text-purple" scope="col">Urgency</th>
+                <th class="text-purple" scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr  *ngFor='let request of requests;let i = index'>
+                <th scope="row">{{ i+1 }}</th>
+                <td>{{ request.asset_name }}</td>
+                <td>{{ request.quantity }}</td>
+                <td>{{ request.urgency }}</td>
+                <td>{{ request.is_approved }}</td>
+              </tr>
+
+            </tbody>
+          </table>
+    </div>
+
+    <div class="mt-2 ">
+      <h4 class="text-center fw-b fs-4 title">Repairs</h4>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th class="text-purple" scope="col">PRODUCT</th>
+                <th class="text-purple" scope="col">QUANTITY</th>
+                <th class="text-purple" scope="col">STATUS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+        </table>    
+    </div>
+    <div>
+      <app-request-form></app-request-form>
+    </div>
+
+
+  </div>
+</div>
+
+</mat-sidenav-container>
+
+</section>
+
+
