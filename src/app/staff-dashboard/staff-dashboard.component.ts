@@ -1,5 +1,6 @@
 import { RequestService } from './../services/request.service';
 import { Component, OnInit} from '@angular/core';
+import { faToolbox } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -8,6 +9,8 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./staff-dashboard.component.css']
 })
 export class StaffDashboardComponent implements OnInit {
+  isExpanded: boolean = false;
+  faToolbox = faToolbox;
 
   requests?:any[]
 
