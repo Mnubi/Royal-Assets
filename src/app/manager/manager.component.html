@@ -6,26 +6,18 @@
         </header>
         <ul class="nav">
             <li>
-                <a href="#" routerLink="/users/id">
-                    <img src="../../assets/man.png" width="90"alt=""> Dashboard
-                </a>
+                <button id="dash" routerLink="/users/id" style="padding-top: 15px; padding-bottom: 10px; margin-bottom: -10px;"><img src="../../assets/man.png" width="70"alt="">Dashboard</button>
             </li>
             
             <li>
-                <a href="#">
-                    <img src="../../assets/message.png" width="80"alt=""> Messages
-                </a>
+                    <button id="dash" (click)="openPopu()" style="margin-top: 15px;"><img src="../../assets/message.png" width="80"alt="">Messages</button>
             </li>
             <li>
-                <a href="#">
-                    <img src="../../assets/request.png" width="65"alt="" style="margin-left: 13px;"> Dashboard
-                </a>
+                <button id="dash" (click)="openPopu()"><img src="../../assets/request.png" width="65"alt="" style="margin-left: 15px;">Requests</button>
             </li>
             
             <li>
-                <a href="#">
-                    <img src="../../assets/not.png" width="55"alt="" style="margin-left: 13px; padding-top: 15px;"> Messages
-                </a>
+                <button id="dash" (click)="openPop()" style="margin-top: 15px;"><img src="../../assets/not.png" width="50"alt="" style="margin-left: 13px; padding-top: 15px;">Notification</button>
             </li>
         </ul>
     </div>
@@ -49,7 +41,7 @@
                 <div class="col">
                   <div class="card h-100">
                    <div class="card-body">
-                      <h5 class="card-title"><a href="">Staffs</a></h5>
+                      <h5 class="card-title"><a routerLink="/staff">Staffs</a></h5>
                       <h5>25</h5>
                     </div>
                   </div>
@@ -57,7 +49,7 @@
                 <div class="col">
                   <div class="card h-100">
                     <div class="card-body">
-                      <h5 class="card-title"><a href="">Assets</a></h5>
+                      <h5 class="card-title"><a routerLink="/product">Assets</a></h5>
                       <h5>15</h5>
                     </div>
                   </div>
@@ -66,7 +58,7 @@
                   <div class="card h-100">
                     
                     <div class="card-body">
-                      <h5 class="card-title"><a href="">Repairs</a></h5>
+                      <h5 class="card-title"><a href="">Request</a></h5>
                       <h5>10</h5>
                     </div>
                   </div>
@@ -158,4 +150,51 @@
               <button id="assets">view repair</button>
         </div>
     </div>
+    
 </div>
+
+<div
+      class="modal"
+      tabindex="-1"
+      role="dialog"
+      [ngStyle]="{'display':displatyle}">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Messages</h4>
+          </div>
+          <div class="modal-body">
+            <h6>No new Messages Yet</h6>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" 
+                    (click)="closePopu()">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal"
+      tabindex="-1"
+      role="dialog"
+      [ngStyle]="{'display':dispstyle}">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Notifications</h4>
+          </div>
+          <div class="modal-body">
+            <h6>No Notifications Yet</h6>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" 
+                    (click)="closePop()">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>

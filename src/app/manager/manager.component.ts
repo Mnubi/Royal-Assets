@@ -49,6 +49,28 @@ export class ManagerComponent implements OnInit {
       console.log(data);
       
     });
+  }
+  
+  displatyle = "none";
+ 
+  openPopu() {
+    this.displatyle = "block";
+  }
+  
+  closePopu() {
+    this.displatyle = "none";
+  }
+
+  dispstyle = "none";
+ 
+  openPop() {
+    this.dispstyle = "block";
+  }
+  
+  closePop() {
+    this.dispstyle = "none";
+  }
+  
 
 }
-}
+

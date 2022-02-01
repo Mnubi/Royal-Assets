@@ -14,30 +14,27 @@
                   <th scope="col"></th>
                   <th scope="col">#</th>
                   <th scope="col">Item</th>
-                  <th scope="col">Category</th>
-                  <!-- <th scope="col">Quantity</th> -->
-                  <th scope="col">Assigned</th>
-                  <th scope="col">Stored</th>
-                  <th scope="col">Broken</th>
-                  
+                  <th scope="col">Department</th>
+                  <th scope="col">Request</th>
+                  <th scope="col">urgency</th>
+
                 </tr>
               </thead>
               <tbody>
-                <tr  *ngFor='let asset of assets;let i = index'>
+                <!-- <tr  *ngFor='let repair of repairs;let i = index'>
                   <th scope="row"></th>
                   <td>{{ i+1 }}</td>
-                  <td>{{ asset.Item }}</td>
-                  <td>{{ asset.Category }}</td>
-                  <td>{{ asset.Assigned }}</td>
-                  <td>{{ asset.Stored }}</td>
-                  <td>{{ asset.Broken }}</td>
-                </tr>
+                  <td>{{ repair.Item }}</td>
+                  <td>{{ repair.Department }}</td>
+                  <td>{{ repair.Request}}</td>
+                  <td>{{ repair.Urgency }}</td>
+                </tr> -->
 
               </tbody>
           </table>
          
           <div>
-            <app-asset-form (addAsset)="addNewAsset($event)"></app-asset-form>
+            <app-asset-form (addRepair)="addNewRepair($event)"></app-asset-form>
           </div>
     </div>
     

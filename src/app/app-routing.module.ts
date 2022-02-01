@@ -9,6 +9,8 @@ import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.compo
 import { ManagerComponent } from './manager/manager.component';
 import { ProductComponent } from './product/product.component';
 import { AdminComponent } from './admin/admin.component';
+import { StaffComponent } from './staff/staff.component';
+
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path: 'product',component:ProductComponent},
   {path: 'staff', component: StaffDashboardComponent}, 
   {path: 'admin',component:AdminComponent},
+  {path: 'staff',component:StaffComponent},
+  
 ];
 
 @NgModule({

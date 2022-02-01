@@ -19,6 +19,9 @@ import { NavComponent } from './nav/nav.component';
 import { AdminComponent } from './admin/admin.component';
 import { RequestFormComponent } from './request-form/request-form.component';
 import { AddStaffComponent } from './add-staff/add-staff.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { StaffComponent } from './staff/staff.component';
+import { AssetFormComponent } from './asset-form/asset-form.component';
 
 
 @NgModule({
@@ -36,6 +39,9 @@ import { AddStaffComponent } from './add-staff/add-staff.component';
     AdminComponent,
     RequestFormComponent,
     AddStaffComponent,
+    StaffComponent,
+    AssetFormComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -43,7 +49,8 @@ import { AddStaffComponent } from './add-staff/add-staff.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FontAwesomeModule
     
   ],
   providers: [RequestService],
