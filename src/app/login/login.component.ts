@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   }
   
   loginUser() {
-    this.http.post('http://127.0.0.1:8000/login/', this.form.getRawValue())
+    this.http.post('https://royalassets111.herokuapp.com/login/', this.form.getRawValue())
     .subscribe((data) =>{
        this.token = data;
        //console.log(this.token);
@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
   }
   
   getUser() {
-    this.http.post('http://127.0.0.1:8000/api/user/', this.token)
+    this.http.post('https://royalassets111.herokuapp.com/api/user/', this.token)
     .subscribe((data) =>{
        this.role = data;
        this.role = this.role.role;
