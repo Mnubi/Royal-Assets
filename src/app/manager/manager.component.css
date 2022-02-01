@@ -89,3 +89,47 @@ body {
 }
 
 #dash:hover {background-color: #448a7f}
+
+.manager{
+  font-family: 'Tenor Sans', sans-serif;
+  
+  
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+.asset{
+  background-image: linear-gradient(to bottom right, rgb(79, 74, 125) , white);
+  height: 110px;
+  border: 1px solid rgb(79, 74, 125);
+  border-radius: 30px;
+
+}
+
+ mat-sidenav-container {
+  height: inherit;
+ }
+
+mat-sidenav mat-nav-list  .chevron-button {
+ transition: 300ms ease-in-out;
+ transform: rotate(0deg);
+ right: 0;
+ float: right;
+position: absolute;
+}
+      
+
+mat-sidenav mat-nav-list.chevron-button.rotated {
+        transform: rotate(180deg);
+      }
+.content{
+  background-color: #f3f3f3;
+}  
+.title{
+    text-decoration: underline;
+} 
+.btn1{
+  background-color: rgb(20, 99, 86);
+  color: white;
+}
