@@ -1,7 +1,7 @@
-
-import { Request } from './../requests';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import {NgForm} from '@angular/forms'
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {FormBuilder, FormGroup, NgForm,FormControl,Validators} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-request-form',
@@ -9,23 +9,40 @@ import {NgForm} from '@angular/forms'
   styleUrls: ['./request-form.component.css']
 })
 export class RequestFormComponent implements OnInit {
+
+  form!: FormGroup;
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private router: Router,
+  ){}
   
-  newRequest = new Request('',0,'','');
-  @Output() addRequest = new EventEmitter<Request>();
-
-  submitted = false;
-
-  onSubmit() { this.submitted = true;
-    console.log("banna")
+  ngOnInit(): void {
+    this.form =new FormGroup({
+      asset_name:new FormControl('', [Validators.required]),
+      quantity:new FormControl('', [Validators.required]),
+      type:new FormControl('', [Validators.required]),
+      urgency:new FormControl('', [Validators.required]),
+      
+});
   }
 
-   //TODO: Remove this when we're done
-  //get diagnostic() { return JSON.stringify(this.model); }
 
-  submitRequest(){
-    this.addRequest.emit(this.newRequest);
-  }
+submitRequest() {
+  console.log(this.form.getRawValue());
+  
+  this.http.post('http://127.0.0.1:8000/api/createrequest/', this.form.getRawValue())
+  .subscribe((data) =>{
+    console.log(data);
+    
+  } );
+}
 
+
+ 
+  //@Output() addRequest = new EventEmitter<Request>();
+
+ 
   displayStyle = "none";
 
   openPopup() {
@@ -37,9 +54,5 @@ export class RequestFormComponent implements OnInit {
   }
 
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
