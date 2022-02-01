@@ -31,7 +31,7 @@ export class RegistrationComponent implements OnInit {
   onSubmit() {
     console.log(this.form.getRawValue());
     
-    this.http.post('http://127.0.0.1:8000/api/users/create/', this.form.getRawValue())
+    this.http.post('https://royalassets111.herokuapp.com/api/users/create/', this.form.getRawValue())
     .subscribe(() => this.router.navigate(['login/']));
 }
   }
