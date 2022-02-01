@@ -13,32 +13,26 @@
           <h1>Sign up</h1>
           <h6 class="text-muted">Create your account in seconds</h6>
         </div>
-        <form >
+        <form #f="ngForm" [formGroup]="form" (ngSubmit)="onSubmit()">
           <div class="mb-2 col-xs-4 ">
-            <input type="text" class="form-control" name="username" [(ngModel)]="username" placeholder="Fullname">
+            <input formControlName="username" type="text" class="form-control" name="username" placeholder="username">
           </div>
           
           <div class="mb-2 pt-2">
             
-            <input formControlName="email" type="email" class="form-control" name="email" [(ngModel)]="email" placeholder="Email">
+            <input formControlName="email" type="email" class="form-control" name="email" placeholder="Email">
             
-          </div>
-          <div class="input-group mb-2 pt-2">
-            <select formControlName="role" class="form-select" name="role" [(ngModel)]="role">
-              <option *ngFor="let r of roles" [value]="r" >{{r}}</option>
-            
-            </select>
           </div>
           <div class="mb-2 pt-2">
             
-            <input formControlName="password" type="password" class="form-control" name="password" [(ngModel)]="password" placeholder="Password">
+            <input formControlName="password" type="password" class="form-control" name="password" placeholder="Password">
           </div>
-          <!-- <div class="mb-2 pt-2">
-            
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm password">
-          </div> -->
           <div class="mb-2 pt-2">
-            <button type="submit" class="btn btn-primary form-control" (click)= "register()">Create an account</button>
+            
+            <input formControlName="password" type="password" class="form-control" id="exampleInputPassword2" placeholder="Confirm password">
+          </div>
+          <div class="mb-2 pt-2">
+            <button type="submit" class="btn btn-primary form-control">Create an account</button>
           </div>
           
           

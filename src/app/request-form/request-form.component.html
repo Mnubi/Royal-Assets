@@ -17,22 +17,22 @@
             <h4 class="modal-title">Add New Request</h4>
           </div>
           <div class="modal-body">
-            <form (ngSubmit)="submitRequest()" #requestForm="ngForm">
+            <form #f="ngForm" [formGroup]="form" (ngSubmit)="submitRequest()">
               <div class="form-group">
                 <label for="exampleInputItem1">Item</label>
-                <input  [(ngModel)]="newRequest.Item" name="item" type="text" required class="form-control" class="form-control" id="exampleInputItem1" aria-describedby="" #name="ngModel">
+                <input formControlName="asset_name" type="text" class="form-control" name="asset_name">
               </div>
               <div class="form-group">
                 <label for="exampleInputQuantity1">Quantity</label>
-                <input [(ngModel)]="newRequest.Quantity" name="quantity" type="number" class="form-control" id="exampleInputQuantity1" #quantity="ngModel">
+                <input formControlName="quantity" type="number" class="form-control" name="quantity">
               </div>
               <div class="form-group">
                 <label for="exampleInputRequest1">Request</label>
-                <input  [(ngModel)]="newRequest.Request" name="request" type="text" required class="form-control" class="form-control" id="exampleInputRequest1" aria-describedby="" #request="ngModel">
+                <input formControlName="type" type="text" class="form-control" name="type">
               </div>
               <div class="form-group">
                 <label for="exampleInputUrgency1">Urgency</label>
-                <input [(ngModel)]="newRequest.Urgency" name="urgency" type="text" class="form-control" id="exampleInputUrgency1" #urgency="ngModel">
+                <input formControlName="urgency" type="text" class="form-control" name="urgency">
               </div>
             
               <button type="submit" class="btn btn-primary mt-3">Submit</button>

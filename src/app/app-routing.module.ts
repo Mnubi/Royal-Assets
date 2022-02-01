@@ -18,10 +18,9 @@ const routes: Routes = [
   {path:'registration',component:RegistrationComponent},
   {path:'users/:id',component: UserprofileComponent},
   {path: 'users/edit-profile/:id', component: UserEditComponent},
-  {path: 'managers/:id',component:ManagerComponent},
+  {path: 'manager',component:ManagerComponent},
   {path: 'product',component:ProductComponent},
-  {path: 'user/:id/dashboard', component: StaffDashboardComponent}, 
-  {path: 'managers/:id',component:ManagerComponent},
+  {path: 'staff', component: StaffDashboardComponent}, 
   {path: 'admin',component:AdminComponent},
   {path: 'staff',component:StaffComponent},
   

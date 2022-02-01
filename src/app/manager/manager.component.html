@@ -68,42 +68,44 @@
         
         <div class="inventory">
           <h3>New Request List</h3>
-            <table class="table table-striped">
-                <thead>
-                    <tr id="scope">
-                      <th scope="col">#</th>
-                      <th scope="col">Item</th>
-                      <th scope="col">Category</th>
-                      <th scope="col">Quantity</th>
-                      <th scope="col">Status</th>
-                      
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Hp Laptops</td>
-                      <td>Electonics</td>
-                      <td>5</td>
-                      <td>pending</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Office Desks</td>
-                      <td>Furniture</td>
-                      <td>3</td>
-                      <td>Approved</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Coffee Makers</td>
-                      <td>Kitchen</td>
-                      <td>2</td>
-                      <td>Declined</td>
-                    </tr>
-                  </tbody>
-              </table>
-              <button routerLink="/product" id="assets">view requests</button>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th class="text-purple" scope="col">Item</th>
+                <th class="text-purple" scope="col">Category</th>
+                <th class="text-purple" scope="col">Quantity</th>
+                <th class="text-purple" scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr  *ngFor='let request of requests;let i = index'>
+                <th scope="row"></th>
+                <td>{{ request.asset_name }}</td>
+                <td>{{ request.category }}</td>
+                <pre>{{ request.quantity }}</pre>
+                <td>{{ request.urgency }}</td>
+                <td>
+                  <form #f="ngForm" [formGroup]="form" (ngSubmit)="submitResponse()">
+                  <div id="accept" class="form-check">
+                    <input formControlName="is_approved" value="approve" type="radio" class="form-check-input d-flex" name="is_approved">
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Approve
+                      </label>
+                    </div>
+                    <div class="form-check d-flex">
+                      <input formControlName="is_approved" value="decline" type="radio" class="form-check-input d-flex" name="is_approved">
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Decline
+                      </label>
+                    </div>
+                    <button type="submit" class=""></button>
+                </form>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+              <button id="assets">view requests</button>
         </div>
 
         <hr>

@@ -1,4 +1,4 @@
-import { Request } from './../requests';
+import { RequestService } from './../services/request.service';
 import { Component, OnInit} from '@angular/core';
 
 
@@ -9,22 +9,20 @@ import { Component, OnInit} from '@angular/core';
 })
 export class StaffDashboardComponent implements OnInit {
 
-
-  requests: Request[] = [
-    new Request('Laptop', 1, 'new', 'urgent'),
-    new Request('Hard Drive 1tb', 1, 'new', 'urgent'),
-    new Request('Water dispenser', 1, 'repair', 'urgent')
-  ];
-  addNewRequest(request: any){
-    let requestLength = this.requests.length;
-    request.id = requestLength+1;
-    this.requests.push(request)
-  }
+  requests?:any[]
 
   
-  constructor() { }
+  constructor(private requestService:RequestService) { }
+
+  getRequest(){
+    this.requestService.getData().then((data)=>{
+      console.log(data);
+      this.requests = data
+    })
+  }
 
   ngOnInit(): void {
+    this.getRequest()
   }
 
   

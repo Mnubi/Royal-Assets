@@ -13,7 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.component';
 import { ManagerComponent } from './manager/manager.component';
-import { AuthService } from './auth.service';
+import { RequestService } from './services/request.service';
 import { ProductComponent } from './product/product.component';
 import { NavComponent } from './nav/nav.component';
 import { AdminComponent } from './admin/admin.component';
@@ -64,7 +64,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatToolbarModule
     
   ],
-  providers: [AuthService],
+  providers: [RequestService],
   bootstrap: [AppComponent]
 })
 
