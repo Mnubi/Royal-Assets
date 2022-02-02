@@ -16,9 +16,8 @@
                   <th scope="col">Item</th>
                   <th scope="col">Category</th>
                   <!-- <th scope="col">Quantity</th> -->
-                  <th scope="col">Assigned</th>
-                  <th scope="col">Stored</th>
-                  <th scope="col">Broken</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Value @item</th>
                   
                 </tr>
               </thead>
@@ -26,18 +25,17 @@
                 <tr  *ngFor='let asset of assets;let i = index'>
                   <th scope="row"></th>
                   <td>{{ i+1 }}</td>
-                  <td>{{ asset.Item }}</td>
-                  <td>{{ asset.Category }}</td>
-                  <td>{{ asset.Assigned }}</td>
-                  <td>{{ asset.Stored }}</td>
-                  <td>{{ asset.Broken }}</td>
+                  <td>{{ asset.name }}</td>
+                  <td>{{ asset.category }}</td>
+                  <td>{{ asset.quantity }}</td>
+                  <td>{{ asset.asset_value }}</td>
                 </tr>
 
               </tbody>
           </table>
          
           <div>
-            <app-asset-form (addAsset)="addNewAsset($event)"></app-asset-form>
+            <app-asset-form></app-asset-form>
           </div>
     </div>
     

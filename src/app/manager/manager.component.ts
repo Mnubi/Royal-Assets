@@ -47,7 +47,7 @@ export class ManagerComponent implements OnInit {
   submitResponse() {
     console.log(this.form.getRawValue());
   
-    this.http.post('https://royalassets111.herokuapp.com/api/createrequest/', this.form.getRawValue())//post== creates new post
+    this.http.put('https://royalassets111.herokuapp.com/api/createrequest/', this.form.getRawValue())//post== creates new post
     .subscribe((data) =>{
       console.log(data);
       

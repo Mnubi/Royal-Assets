@@ -1,5 +1,7 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Asset, Request } from './../requests';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {FormBuilder, FormGroup, NgForm,FormControl,Validators} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-asset-form',
@@ -8,21 +10,32 @@ import { Asset, Request } from './../requests';
 })
 export class AssetFormComponent implements OnInit {
   
-  newAsset= new Asset('','',0,0,0);
-  @Output() addAsset = new EventEmitter<Asset>();
-
-  submitted = false;
-
-  onSubmit() { this.submitted = true;
-    console.log("banna")
+  form!: FormGroup;
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private router: Router,
+  ){}
+  
+  ngOnInit(): void {
+    this.form =new FormGroup({
+      asset_value:new FormControl('', [Validators.required]),
+      category:new FormControl('', [Validators.required]),
+      name:new FormControl('', [Validators.required]),
+      quantity:new FormControl('', [Validators.required]),     
+});
   }
 
-   //TODO: Remove this when we're done
-  //get diagnostic() { return JSON.stringify(this.model); }
 
-  submitAsset(){
-    this.addAsset.emit(this.newAsset);
-  }
+submitRequest() {
+  console.log(this.form.getRawValue());
+  
+  this.http.post('https://royalassets111.herokuapp.com/api/createasset/', this.form.getRawValue())
+  .subscribe((data) =>{
+    console.log(data);
+    
+  } );
+}
 
   displayStyle = "none";
 
@@ -33,11 +46,4 @@ export class AssetFormComponent implements OnInit {
   closePopup() {
     this.displayStyle = "none";
   }
-
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

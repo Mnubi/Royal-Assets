@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Staff } from './../requests';
+import { StaffService } from '../services/staff.service';
 
 
 @Component({
@@ -9,24 +9,20 @@ import { Staff } from './../requests';
 })
 export class StaffComponent implements OnInit {
 
-
-  staffs: Staff[] = [
-    new Staff('Mary Jane', 'IT', 'Manager', 'Hp Laptop', +2547364174),
-    new Staff('James irungu', 'Finance', 'Manager', 'Hp Laptop', +2547934474),
-    new Staff('Lilian Chebet', 'Security', 'Manager', 'Body Scanner', +254736474),
-    new Staff('Aaron Ramsey', 'IT', 'Employee', 'Body Scanner', +254706287),
-    
-  ];
-  addNewStaff(staff: any){
-    let staffLength = this.staffs.length;
-    staff.id = staffLength+1;
-    this.staffs.push(staff)
-  }
+  staff: any;
 
   
-  constructor() { }
+  constructor(private staffService:StaffService) { }
+
+  getAssets(){
+    this.staffService.getData().then((data)=>{
+      console.log(data);
+      this.staff = data
+    })
+  }
 
   ngOnInit(): void {
+    this.getAssets()
   }
 
   
