@@ -8,14 +8,20 @@ import { EmailValidator } from '@angular/forms';
 })
 export class UserService {
 
+  username?: string;
+  url = environment.url;
+  urlProfile = "http://127.0.0.1:8000/api/profile/<username>"
+  
   constructor(private httpClient:HttpClient) { }
 
-  getData():Observable<any>{
-  const url = "http://127.0.0.1:8000/api/users/"
-  return this.httpClient.get<any>(url)
-}
+  // getUser(){ 
+  //   return this.httpClient.get<any>(`${this.urlProfile}${this.username}`).toPromise();
+  // }
+  getUser():Observable<any>{ 
+    return this.httpClient.get<any>(this.urlProfile)
+  }
 
-url = environment.url;
+
   // create new user
   createUser(username: string, password: string) {
     return this.httpClient.post(

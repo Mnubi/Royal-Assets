@@ -1,5 +1,8 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Employee } from '../requests';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {FormBuilder, FormGroup, NgForm,FormControl,Validators} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-add-staff',
@@ -8,20 +11,34 @@ import { Employee } from '../requests';
 })
 export class AddStaffComponent implements OnInit {
 
-  newEmployee = new Employee('','',0,'');
-  @Output() addEmployee = new EventEmitter<Employee>();
-
-  submitted=false;
-
-  onSubmit(){ this.submitted=true;
-
+   form!: FormGroup;
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private router: Router,
+  ){}
+  
+  ngOnInit(): void {
+    this.form =new FormGroup({
+      name:new FormControl('', [Validators.required]),
+      username:new FormControl('', [Validators.required]),
+      password:new FormControl('', [Validators.required]),
+      
+});
   }
 
-  addStaff(){
-    this.addEmployee.emit(this.newEmployee);
-  }
 
-  displayStyle = "none";
+submitStaff() {
+  console.log(this.form.getRawValue());
+  
+  this.http.post('http://127.0.0.1:8000/api/createuser/', this.form.getRawValue())
+  .subscribe((data) =>{
+    console.log(data);
+    
+  } );
+}
+
+displayStyle = "none";
 
   openPopup() {
     this.displayStyle = "block";
@@ -30,10 +47,4 @@ export class AddStaffComponent implements OnInit {
   closePopup() {
     this.displayStyle = "none";
   }
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
