@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Asset } from './../requests';
+import { RequestService } from '../services/request.service';
+
 
 @Component({
   selector: 'app-product',
@@ -8,24 +9,20 @@ import { Asset } from './../requests';
 })
 export class ProductComponent implements OnInit {
 
-  assets: Asset[] = [
-    new Asset('Laptops', 'Electrical', 1225, 600,60),
-    new Asset('Printers', 'Electrical', 4, 1,1),
-    new Asset('Office Desks', 'Furniture', 120, 20,4),
-    new Asset('Office Chairs', 'Furniture', 120, 20,10),
-    new Asset('Projectors', 'Electrical', 5, 1,1),
-    
-  ];
-  addNewAsset(asset: any){
-    let assetLength = this.assets.length;
-    asset.id = assetLength+1;
-    this.assets.push(asset)
-  }
+  assets: any;
 
   
-  constructor() { }
+  constructor(private requestService:RequestService) { }
+
+  getAssets(){
+    this.requestService.getAsset().then((data)=>{
+      console.log(data);
+      this.assets = data
+    })
+  }
 
   ngOnInit(): void {
+    this.getAssets()
   }
 
   

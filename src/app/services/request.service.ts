@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RequestService {
 
-  url = "http://127.0.0.1:8000/api/request/"
+  url = "https://royalassets111.herokuapp.com/api/request/"
 
-  urlUser = "http://127.0.0.1:8000/api/user/"
+  urlAsset = "https://royalassets111.herokuapp.com/api/asset/"
 
   constructor(private httpClient:HttpClient) { }
   
@@ -17,7 +17,8 @@ export class RequestService {
     return this.httpClient.get<any>(`${this.url}`).toPromise();
   }
 
-  getUsers(){ 
-    return this.httpClient.get<any>(`${this.urlUser}`).toPromise();
+  getAsset(){ 
+    return this.httpClient.get<any>(`${this.urlAsset}`).toPromise();
   }
+
 }

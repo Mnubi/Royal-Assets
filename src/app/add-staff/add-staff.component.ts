@@ -20,9 +20,9 @@ export class AddStaffComponent implements OnInit {
   
   ngOnInit(): void {
     this.form =new FormGroup({
-      name:new FormControl('', [Validators.required]),
       username:new FormControl('', [Validators.required]),
-      password:new FormControl('', [Validators.required]),
+      contact:new FormControl('', [Validators.required]),
+      department:new FormControl('', [Validators.required]),
       
 });
   }
@@ -31,7 +31,7 @@ export class AddStaffComponent implements OnInit {
 submitStaff() {
   console.log(this.form.getRawValue());
   
-  this.http.post('http://127.0.0.1:8000/api/createuser/', this.form.getRawValue())
+  this.http.post('https://royalassets111.herokuapp.com/api/addstaff/', this.form.getRawValue())
   .subscribe((data) =>{
     console.log(data);
     

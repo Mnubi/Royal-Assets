@@ -1,4 +1,4 @@
-import { RequestService } from './../services/request.service';
+import { StaffService } from './../services/staff.service';
 import { Component, OnInit} from '@angular/core';
 import { faToolbox } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,10 +16,10 @@ export class AdminComponent implements OnInit {
   employees?:any[]
 
   
-  constructor(private requestService:RequestService) { }
+  constructor(private staffService:StaffService) { }
 
   getusers(){
-    this.requestService.getUsers().then((data)=>{
+    this.staffService.getData().then((data)=>{
       console.log(data);
       this.employees = data
     })

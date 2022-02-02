@@ -22,7 +22,7 @@ const routes: Routes = [
   {path: 'product',component:ProductComponent},
   {path: 'staff', component: StaffDashboardComponent}, 
   {path: 'admin',component:AdminComponent},
-  {path: 'staff',component:StaffComponent},
+  {path: 'staff-asset',component:StaffComponent},
   
 ];
 

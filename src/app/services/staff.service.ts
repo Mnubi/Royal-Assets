@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StaffService {
 
-  url = "http://127.0.0.1:8000/api/user"
+  url = "https://royalassets111.herokuapp.com/api/stafflist/"
 
   constructor(private httpClient:HttpClient) { }
   

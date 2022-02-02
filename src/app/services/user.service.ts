@@ -10,7 +10,8 @@ export class UserService {
 
   username?: string;
   url = environment.url;
-  urlProfile = "http://127.0.0.1:8000/api/profile/<username>"
+  urlProfile = "https://royalassets111.herokuapp.com/api/profile/<username>"
+  token : any;
   
   constructor(private httpClient:HttpClient) { }
 
@@ -18,7 +19,7 @@ export class UserService {
   //   return this.httpClient.get<any>(`${this.urlProfile}${this.username}`).toPromise();
   // }
   getUser():Observable<any>{ 
-    return this.httpClient.get<any>(this.urlProfile)
+    return this.httpClient.get<any>(`${this.urlProfile}${this.token}`)
   }
 
 
