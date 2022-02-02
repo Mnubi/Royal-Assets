@@ -1,7 +1,11 @@
 <div class="col-md-12 text-center">
-    <button id="1" type="button" class="btn btn-primary purple mt-2" (click)="openPopup()">Add Staff
-    </button>
-</div>
+    <button
+    id="1"
+    type="button"
+    class="btn btn-primary purple mt-2"
+    (click)="openPopup()">Add Staff
+  </button>
+</div>   
 <!-- Modal -->
 <div class="modal"
 tabindex="-1"
@@ -11,33 +15,29 @@ role="dialog"
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Add Staff</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form (ngSubmit)="addStaff()" #staffForm="ngForm">
+                <form #f="ngForm" [formGroup]="form" (ngSubmit)="submitStaff()">
                     <div class="mb-3">
                         <label class="form-label">Full name</label>
-                        <input [(ngModel)]="newEmployee.Name" name="Name" type="text" required class="form-control" class="form-control" id="exampleInputItem1" aria-describedby="" #fullname="ngModel">
-
+                        <input FormControlName= "name" type="text" class="form-control" name="name">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Department</label>
-                        <input [(ngModel)]="newEmployee.Department" name="Department" type="text" required class="form-control" class="form-control" id="exampleInputItem1" aria-describedby="" #department="ngModel">
+                        <label class="form-label">Username</label>
+                        <input FormControlName= "username" type="text" class="form-control" name="username">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Contact</label>
-                        <input [(ngModel)]="newEmployee.Contact" name="Contact" type="text" required class="form-control" class="form-control" id="exampleInputItem1" aria-describedby="" #contact="ngModel">
+                        <label class="form-label">Password</label>
+                        <input FormControlName= "password" type="text" class="form-control" name="password">
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Role</label>
-                        <input [(ngModel)]="newEmployee.Role" name="role" type="text" required class="form-control" class="form-control" id="exampleInputItem1" aria-describedby="" #role="ngModel">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" 
+                    (click)="closePopup()">
+              Close
+            </button>
                 
             </div>
         </div>

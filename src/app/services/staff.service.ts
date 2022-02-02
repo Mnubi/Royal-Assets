@@ -1,23 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-
 @Injectable({
   providedIn: 'root'
 })
-export class RequestService {
+export class StaffService {
 
-  url = "http://127.0.0.1:8000/api/request/"
-
-  urlUser = "http://127.0.0.1:8000/api/user/"
+  url = "http://127.0.0.1:8000/api/user"
 
   constructor(private httpClient:HttpClient) { }
   
   getData(){ 
     return this.httpClient.get<any>(`${this.url}`).toPromise();
-  }
-
-  getUsers(){ 
-    return this.httpClient.get<any>(`${this.urlUser}`).toPromise();
   }
 }

@@ -1,41 +1,5 @@
 
 <section class="admin">
-  
-  
-    
-  
-    
-  
-      <!-- <div class="container">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th class="title" scope="col">#</th>
-              <th class="title" scope="col">NAME</th>
-              <th class="title" scope="col">DEPARTMENT</th>
-              <th class="title" scope="col">CONTACT</th>
-              <th class="title" scope="col">TITLE</th>
-              <th class="title" scope="col">ACTION</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor='let employee of employees;let i = index'>
-              <th scope="row"></th>
-              <td>{{ employee.Name }}</td>
-              <td>{{ employee.Department }}</td>
-              <td>{{ employee.Contact }}</td>
-              <td>{{ employee.Role}}</td>
-            </tr>
-  
-          </tbody>
-        </table>
-        <div>
-          <app-add-staff (addEmployee)="addNewEmployee($event)"></app-add-staff>
-        </div>
-      </div> -->
-
-    
-  
   <mat-sidenav-container autosize>
     <mat-sidenav #sidenav mode="side" opened="true">
       <mat-nav-list>
@@ -121,37 +85,17 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              
-              <td>1</td>
-              <td>Domenic</td>
-              <td>88,110</td>
-              <td>dcode</td>
-              <td>88,110</td>
-              <td><mat-icon class="me-3" mat-list-icon>update</mat-icon> <mat-icon mat-list-icon>delete</mat-icon></td>
-            </tr>
-            <tr class="active-row">
-              <td>2</td>
-              <td>Sally</td>
-              <td>72,400</td>
-              <td>Students</td>
-              <td>72,400</td>
-              <td><mat-icon class="me-3" mat-list-icon>update</mat-icon> <mat-icon mat-list-icon>delete</mat-icon></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Nick</td>
-              <td>52,300</td>
-              <td>dcode</td>
-              <td>52,300</td>
-              <td><mat-icon class="me-3" mat-list-icon>update</mat-icon> <mat-icon mat-list-icon>delete</mat-icon></td>
+            <tr *ngFor='let employee of employees;let i = index'>
+              <th scope="row"></th>
+              <td>{{ employee.name }}</td>
+              <td>{{ employee.Department }}</td>
+              <td>{{ employee.Contact }}</td>
+              <td>{{ employee.Role}}</td>
             </tr>
           </tbody>
-          
-          
         </table>
-        <div class="text-center mb-5">
-          <button class="btn btn1">Add Staff</button>
+        <div>
+          <app-add-staff></app-add-staff>
         </div>
       </div>
     </div>

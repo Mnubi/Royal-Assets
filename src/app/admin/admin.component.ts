@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import{ FormBuilder, FormGroup} from '@angular/forms'
-import { Employee } from '../requests';
+import { RequestService } from './../services/request.service';
+import { Component, OnInit} from '@angular/core';
 import { faToolbox } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -12,32 +11,43 @@ import { faToolbox } from '@fortawesome/free-solid-svg-icons';
 export class AdminComponent implements OnInit {
 
   isExpanded: boolean = false;
-  formValue! : FormGroup;
   faToolbox = faToolbox;
+
+  employees?:any[]
+
   
+  constructor(private requestService:RequestService) { }
 
-  employees: Employee[] = [
-    new Employee('Mary jane','new',72342342,  'urgent'),
-    
-  ];
-  addNewEmployee(employee: any){
-    let employeeLength = this.employees.length;
-    employee.id = employeeLength+1;
-    this.employees.push(employee)
+  getusers(){
+    this.requestService.getUsers().then((data)=>{
+      console.log(data);
+      this.employees = data
+    })
   }
-
-  constructor() { }
 
   ngOnInit(): void {
-    
+    this.getusers()
   }
 
+  
+  displatyle = "none";
+ 
+  openPopu() {
+    this.displatyle = "block";
+  }
+  
+  closePopu() {
+    this.displatyle = "none";
+  }
 
-  title = 'my-app';
-  selectedMenu:any ='Home';
-
-  goTo(paramText:string){
-    this.selectedMenu = paramText
+  dispstyle = "none";
+ 
+  openPop() {
+    this.dispstyle = "block";
+  }
+  
+  closePop() {
+    this.dispstyle = "none";
   }
 
 
