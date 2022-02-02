@@ -4,13 +4,11 @@
     <mat-sidenav #sidenav mode="side" opened="true">
       <mat-nav-list>
   
-        
-  
-        <mat-list-item [routerLink]="'/users/id'">
-          <mat-icon mat-list-icon >person</mat-icon>
-          <span *ngIf="isExpanded">Admin</span>
+        <mat-list-item [routerLink]="'/admin'">
+          <mat-icon mat-list-icon >dashboard</mat-icon>
+          <span *ngIf="isExpanded">Dashboard</span>
         </mat-list-item>
-
+  
         <mat-list-item [routerLink]="'user'">
           <mat-icon mat-list-icon>supervisor_account</mat-icon>
           <span *ngIf="isExpanded">Employees</span>
@@ -26,14 +24,14 @@
           <span *ngIf="isExpanded">Tasks</span>
         </mat-list-item>
   
-        <mat-list-item [routerLink]="'info'">
-          <mat-icon mat-list-icon>account_balance</mat-icon>
-          <span *ngIf="isExpanded">Account</span>
-        </mat-list-item>
-
         <mat-list-item [routerLink]="'user'">
           <mat-icon mat-list-icon>attach_money</mat-icon>
           <span *ngIf="isExpanded">Assets</span>
+        </mat-list-item>
+
+        <mat-list-item [routerLink]="'/users/id'">
+          <mat-icon mat-list-icon >person</mat-icon>
+          <span *ngIf="isExpanded">Profile</span>
         </mat-list-item>
 
         <mat-list-item [routerLink]="'user'">
@@ -103,5 +101,6 @@
   </mat-sidenav-container>
 
 </section>
+<app-footer></app-footer>
 
 

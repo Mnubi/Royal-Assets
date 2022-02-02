@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, NgForm,FormControl,Validators} from '@angular/fo
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import { RequestService } from '../services/request.service';
+import { faToolbox } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-manager',
@@ -10,6 +11,8 @@ import { RequestService } from '../services/request.service';
   styleUrls: ['./manager.component.css']
 })
 export class ManagerComponent implements OnInit {
+  isExpanded: boolean = false;
+  faToolbox = faToolbox;
 
   form!: FormGroup;
   requests?:any[]
