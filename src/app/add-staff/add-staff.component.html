@@ -19,16 +19,16 @@ role="dialog"
             <div class="modal-body">
                 <form #f="ngForm" [formGroup]="form" (ngSubmit)="submitStaff()">
                     <div class="mb-3">
-                        <label class="form-label">Full name</label>
-                        <input FormControlName= "name" type="text" class="form-control" name="name">
-                    </div>
-                    <div class="mb-3">
                         <label class="form-label">Username</label>
                         <input FormControlName= "username" type="text" class="form-control" name="username">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input FormControlName= "password" type="text" class="form-control" name="password">
+                        <label class="form-label">Contact</label>
+                        <input FormControlName= "contact" type="text" class="form-control" name="contact">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Department</label>
+                        <input FormControlName= "department" type="text" class="form-control" name="department">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

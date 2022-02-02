@@ -31,7 +31,7 @@ export class RequestFormComponent implements OnInit {
 submitRequest() {
   console.log(this.form.getRawValue());
   
-  this.http.post('http://127.0.0.1:8000/api/createrequest/', this.form.getRawValue())
+  this.http.post('https://royalassets111.herokuapp.com/api/createrequest/', this.form.getRawValue())
   .subscribe((data) =>{
     console.log(data);
     
