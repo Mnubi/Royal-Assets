@@ -1,7 +1,9 @@
 .container{
   font-family: 'Tenor Sans', sans-serif;
+  height: 100vh;
 }
 
 .btn{
   background-color: rgb(79, 74, 125);
 }
+

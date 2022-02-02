@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Employee } from '../requests';
 
 @Component({
@@ -8,18 +11,39 @@ import { Employee } from '../requests';
 })
 export class AddStaffComponent implements OnInit {
 
-  newEmployee = new Employee('','',0,'');
-  @Output() addEmployee = new EventEmitter<Employee>();
-
-  submitted=false;
-
-  onSubmit(){ this.submitted=true;
+  form!: FormGroup;
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private router: Router,
+  ){
 
   }
-
-  addStaff(){
-    this.addEmployee.emit(this.newEmployee);
+  
+  ngOnInit(): void {
+    this.form =new FormGroup({
+      Name:new FormControl('', [Validators.required]),
+      Department:new FormControl('', [Validators.required]),
+      Contact:new FormControl('', [Validators.required]),
+      Title:new FormControl('', [Validators.required]),
+      Action:new FormControl('', [Validators.required]),
+      
+});
   }
+   //TODO: Remove this when we're done
+  //get diagnostic() { return JSON.stringify(this.model); }
+
+  addStaff() {
+    console.log(this.form.getRawValue());
+    
+    this.http.post('https://royalassets111.herokuapp.com/api/addstaff/', this.form.getRawValue())
+    .subscribe((data) =>{
+      console.log(data);
+      
+    } );
+  }
+
+   //@Output() addRequest = new EventEmitter<Request>();
 
   displayStyle = "none";
 
@@ -29,11 +53,6 @@ export class AddStaffComponent implements OnInit {
 
   closePopup() {
     this.displayStyle = "none";
-  }
-
-  constructor() { }
-
-  ngOnInit(): void {
   }
 
 }

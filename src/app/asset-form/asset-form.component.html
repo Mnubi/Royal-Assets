@@ -9,42 +9,38 @@
                 <h4 class="modal-title">Add New Assets</h4>
             </div>
             <div class="modal-body">
-                <form (ngSubmit)="submitAsset()" #requestForm="ngForm">
+                <form (ngSubmit)="submitAsset()" [formGroup]="form" #requestForm="ngForm">
                     <div class="form-group">
                         <label for="exampleInputItem1">Item</label>
-                        <input [(ngModel)]="newAsset.Item" name="item" type="text" required class="form-control"
-                            class="form-control" id="exampleInputItem1" aria-describedby="" #name="ngModel">
+                        <input  name="item" type="text" required class="form-control"
+                            class="form-control" id="exampleInputItem1" aria-describedby="">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputCategory1">Category</label>
-                        <input [(ngModel)]="newAsset.Category" name="Category" type="text" class="form-control"
-                            id="exampleInputCategory1" #category="ngModel">
+                        <input  name="Category" type="text" class="form-control"
+                            id="exampleInputCategory1" >
                     </div>
                     <div class="form-group">
                         <label for="exampleInputRequest1">Assigned</label>
-                        <input [(ngModel)]="newAsset.Assigned" name="request" type="number" required class="form-control"
-                            class="form-control" id="exampleInputRequest1" aria-describedby="" #assigned="ngModel">
+                        <input  name="request" type="number" required class="form-control"
+                            class="form-control" id="exampleInputRequest1" aria-describedby="">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputStored1">Stored</label>
-                        <input [(ngModel)]="newAsset.Stored" name="Stored" type="Number" class="form-control"
-                            id="exampleInputStored1" #stored="ngModel">
+                        <input  name="Stored" type="Number" class="form-control"
+                            id="exampleInputStored1" >
                     </div>
                     <div class="form-group">
                         <label for="exampleInputStored1">Broken</label>
-                        <input [(ngModel)]="newAsset.Broken" name="Stored" type="text" class="form-control"
-                            id="exampleInputStored1" #broken="ngModel">
+                        <input  name="Stored" type="text" class="form-control"
+                            id="exampleInputStored1" >
                     </div>
 
                     <button type="submit" class="btn btn-primary mt-3">Submit</button>
                 </form>
 
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" (click)="closePopup()">
-                    Close
-                </button>
-            </div>
+            
         </div>
     </div>
 </div>
