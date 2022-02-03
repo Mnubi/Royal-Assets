@@ -1,15 +1,32 @@
-.admin{
-  font-family: 'Tenor Sans', sans-serif;
-  height: 100vh;
-  
-  
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+mat-nav-list{
+  color: white;
+  background-color: rgb(20, 99, 86);
 }
-a{
-  text-decoration: none;
-  color: black;
+
+mat-sidenav{
+  
+  background-color: rgb(20, 99, 86);
 }
 
 
+#sidebar .nav a{
+  background: none;
+  border-bottom: 1px solid #646245;
+  color: #CFD8DC;
+  font-size: 14px;
+  padding: 16px 24px;
+}
+
+#sidebar .nav a:hover{
+  background: none;
+  color: #ECEFF1;
+}
+
+#sidebar .nav a i{
+  margin-right: 16px;
+}
 .row{
     text-align: center;
 }
@@ -17,15 +34,25 @@ a{
     padding-left: 40px;
 }
 
-.btn1{
-  background-color: rgb(20, 99, 86);
-  color: white;
+#dash{
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  padding-right: 90px;
+  
 }
 
-.title{
-  color: rgb(79, 74, 125);
-}
+#dash:hover {background-color: #448a7f}
 
+.manager{
+  font-family: 'Tenor Sans', sans-serif;
+  /* height: 100vh; */
+  
+}
+a{
+  text-decoration: none;
+  color: black;
+}
 .asset{
   background-image: linear-gradient(to bottom right, rgb(79, 74, 125) , white);
   height: 110px;
@@ -36,6 +63,7 @@ a{
 
  mat-sidenav-container {
   height: inherit;
+  
  }
 
 mat-sidenav mat-nav-list  .chevron-button {
@@ -43,61 +71,41 @@ mat-sidenav mat-nav-list  .chevron-button {
  transform: rotate(0deg);
  right: 0;
  float: right;
-position: absolute;
+ position: absolute;
 }
       
-
+#side{
+  background-color: rgb(20, 99, 86);
+}
 mat-sidenav mat-nav-list.chevron-button.rotated {
         transform: rotate(180deg);
       }
 .content{
   background-color: #f3f3f3;
-}     
+}  
 
-.content-table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  min-width: 1100px;
-  border-radius: 5px 5px 0 0;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.content-table thead tr {
+.btn1{
   background-color: rgb(20, 99, 86);
-  color: #ffffff;
-  text-align: left;
-  font-weight: bold;
+  color: white;
+  font-size: small;
+  padding: 5;
+}
+#scope{
+  background-color: rgb(20, 99, 86);
+  color: white;
 }
 
-.content-table th,
-.content-table td {
-  padding: 12px 15px;
-}
-
-.content-table tbody tr {
-  border-bottom: 1px solid #dddddd;
-}
-
-.content-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
-.content-table tbody tr:last-of-type {
-  border-bottom: 2px solid rgb(20, 99, 86);
-}
-
-.content-table tbody tr.active-row {
-  font-weight: bold;
-  color: rgb(20, 99, 86);
-}
-
-
-
-
-      
-      
-
-     
+#choose{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-left: -45px;
   
+}
+
+h3{
+  padding-bottom: 50px;
+  margin-bottom: -30px;
+  text-align: center;
+  font-size: 20px;
+}
