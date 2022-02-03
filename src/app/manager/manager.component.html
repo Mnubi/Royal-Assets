@@ -71,26 +71,29 @@
       </div>
       <div class="container">
         <div class="inventory">
-          <h3 class="text-center fs-4 fw-b title">New Request List</h3>
+          <h3 id="scope" class="text-center fs-4 fw-b title">New Request List</h3>
           <table class="table">
             <thead>
-              <tr>
-                ? <th scope="col">#</th>
+              <tr id="scope">
+                <th scope="col"></th>
+                <th scope="col">#</th>
                 <th class="text-purple" scope="col">Item</th>
                 <th class="text-purple" scope="col">Category</th>
                 <th class="text-purple" scope="col">Quantity</th>
                 <th class="text-purple" scope="col">Status</th>
+                <th class="text-purple" scope="col">Response</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor='let request of requests;let i = index'>
-                <th scope="row"></th>
+                <th  scope="row"></th>
+                <td>{{i+1}}</td>
                 <td>{{ request.asset_name }}</td>
                 <td>{{ request.category }}</td>
                 <pre>{{ request.quantity }}</pre>
                 <td>{{ request.urgency }}</td>
                 <td>
-                  <form #f="ngForm" [formGroup]="form" (ngSubmit)="submitResponse()">
+                  <form #f="ngForm" id="choose" [formGroup]="form" (ngSubmit)="submitResponse()">
                     <div id="accept" class="form-check">
                       <input formControlName="is_approved" value="approve" type="radio" class="form-check-input d-flex"
                         name="is_approved">
@@ -106,7 +109,7 @@
                       </label>
                     </div>
                     <div class="text-center">
-                      <button type="submit" class="btn btn1"></button>
+                      <button type="submit" class="btn btn1">Confirm</button>
                     </div>
 
                   </form>
