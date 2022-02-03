@@ -4,7 +4,7 @@
         <button style="margin-left: 85px;" class="btn purple mb-2" routerLink="/managers/1" type="submit">Back</button>
     </div>
     <div class="container pt-4">
-        <h3><strong>Members with company Assets</strong></h3>
+        <h3 id="scope"><strong>Members with company Assets</strong></h3>
         <table class="table table-striped">
             <thead>
                 <tr id="scope">
@@ -21,7 +21,7 @@
             </thead>
             <tbody>
                 <tr *ngFor='let staff of staff;let i = index'>
-                    <th scope="row"></th>
+                    <th id="scope" scope="row"></th>
                     <td>{{ i+1 }}</td>
                     <td>{{ staff.user}}</td>
                     <td>{{ staff.Department }}</td>
