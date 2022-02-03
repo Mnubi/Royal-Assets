@@ -1,5 +1,5 @@
 <div class="container mt-3">
-  <a routerLink="/users/:id" routerLinkActive="active" href="" class="btn purple mb-2">Back</a>
+  <a routerLink="/users/{{username}}" routerLinkActive="active" href="" class="btn purple mb-2">Back</a>
   <h2 class="green">Profile Update</h2>
     <form #f="ngForm" [formGroup]="form" (ngSubmit)="updateProfile()">
         <div class="form-group">

@@ -40,10 +40,12 @@ submitRequest() {
   
   this.http.post('https://royalassets111.herokuapp.com/api/createrequest/', this.form.getRawValue())
   .subscribe((data) =>{
-    // console.log(data);
+     console.log(data);
     this.requests = data
     this.requests.id = this.requests.id
     localStorage.setItem('id', this.requests.id)
+
+  //  window.location.reload();
     
   } );
 }

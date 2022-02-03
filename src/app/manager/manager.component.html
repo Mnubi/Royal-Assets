@@ -58,12 +58,12 @@
         <div class="asset text-center p-2 col m-5">
           <mat-icon class="mb-2" mat-list-icon>attach_money</mat-icon> <br>
           <a class="fs-5 mt-2 fw-normal" routerLink="/product">Assets</a>
-          <h4 class="fs-5 mt-2">15</h4>
+          <h4 class="fs-5 mt-2">{{ len }}</h4>
         </div>
         <div class="asset text-center p-2 col m-5">
           <fa-icon [icon]="faToolbox"></fa-icon>
-          <h4 class="mt-2 fs-5">Repairs</h4>
-          <h4 class="fs-5">15</h4>
+          <h4 class="mt-2 fs-5">Requests</h4>
+          <h4 class="fs-5">{{ length }}</h4>
         </div>
         <div class="col"></div>
 
@@ -78,7 +78,6 @@
                 <th scope="col"></th>
                 <th scope="col">#</th>
                 <th class="text-purple" scope="col">Item</th>
-                <th class="text-purple" scope="col">Category</th>
                 <th class="text-purple" scope="col">Quantity</th>
                 <th class="text-purple" scope="col">Status</th>
                 <th class="text-purple" scope="col">Response</th>
@@ -89,7 +88,6 @@
                 <th  scope="row"></th>
                 <td>{{i+1}}</td>
                 <td>{{ request.asset_name }}</td>
-                <td>{{ request.category }}</td>
                 <td>{{ request.quantity }}</td>
                 <td>{{ request.urgency }}</td>
                 <td>
@@ -119,49 +117,6 @@
           </table>
           <div class="text-center">
             <button class="btn btn1 mb-4" id="assets">view requests</button>
-          </div>
-
-        </div>
-
-        <div class="inventory">
-          <h3 id="scope" class="text-center fs-4 fw-b title">List of repair items</h3>
-          <table class="table table-striped">
-            <thead>
-              <tr id="scope">
-                <th scope="col">#</th>
-                <th scope="col">Item</th>
-                <th scope="col">Category</th>
-                <th scope="col">Urgencey</th>
-                <th scope="col">Status</th>
-
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Desktop</td>
-                <td>Electonics</td>
-                <td>urgent</td>
-                <td>pending</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Waiting Bench</td>
-                <td>Furniture</td>
-                <td>Very urgent</td>
-                <td>Approved</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Printer</td>
-                <td>Electonics</td>
-                <td>Moderate</td>
-                <td>Pending</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="text-center">
-            <button class="btn btn1 mb-5" id="assets">view repair</button>
           </div>
 
         </div>

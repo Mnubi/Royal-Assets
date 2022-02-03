@@ -1,6 +1,7 @@
 import { RequestService } from './../services/request.service';
 import { Component, OnInit} from '@angular/core';
 import { faToolbox } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,20 +17,29 @@ export class StaffDashboardComponent implements OnInit {
   token: any;
   type:any;
   id:any;
+  length:any;
+
+ username = localStorage.getItem('username')
 
   
-  constructor(private requestService:RequestService) { }
+  constructor(private requestService:RequestService, private router: Router){ }
 
   getRequest(){
     this.requestService.getData().then((data)=>{
       this.requests = data
-      console.log(this.requests);
+      this.length = this.requests?.length
+      console.log(this.length);
     })
+  }
+
+  route(){
+    const username = this.username
+    this.router.navigate(['/users/'+ {username}])
   }
 
   ngOnInit(): void {
     this.getRequest()
-    console.log(localStorage.getItem(this.token));
+    this.username = this.username
     
   }
 

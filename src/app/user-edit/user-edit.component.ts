@@ -14,7 +14,7 @@ export class UserEditComponent implements OnInit {
   form!: FormGroup;
   requests?:any[]
   rawValue: any;
-  username = localStorage.getItem('username');
+  username :any;
   creds: any;
 
 
@@ -28,16 +28,18 @@ export class UserEditComponent implements OnInit {
 
   
   ngOnInit(): void {
+    this.username = localStorage.getItem('username');
+
     this.form =new FormGroup({
       first_name:new FormControl('', [Validators.required]),
       last_name:new FormControl('', [Validators.required]),
-      email:new FormControl('', [Validators.required]),
-     
-      
+      email:new FormControl('', [Validators.required])
+  
 });
   }
 
   updateProfile() {
+    this.username = localStorage.getItem('username');
     //console.log(this.form.getRawValue());
     this.http.put('https://royalassets111.herokuapp.com/api/profile/'+ this.username, this.form.getRawValue())//post== creates new post
     .subscribe((data) =>{

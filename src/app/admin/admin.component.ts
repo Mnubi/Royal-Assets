@@ -1,3 +1,4 @@
+import { RequestService } from './../services/request.service';
 import { StaffService } from './../services/staff.service';
 import { Component, OnInit} from '@angular/core';
 import { faToolbox } from '@fortawesome/free-solid-svg-icons';
@@ -12,11 +13,11 @@ export class AdminComponent implements OnInit {
 
   isExpanded: boolean = false;
   faToolbox = faToolbox;
-
+  assets: any;
   employees?:any[]
-
+  length: any;
   
-  constructor(private staffService:StaffService) { }
+  constructor(private staffService:StaffService, private requestService:RequestService) { }
 
   getusers(){
     this.staffService.getData().then((data)=>{
@@ -25,8 +26,18 @@ export class AdminComponent implements OnInit {
     })
   }
 
+  getAssets(){
+    this.requestService.getAsset().then((data)=>{
+      console.log(data);
+      this.assets = data
+      
+     this.length = this.assets.length
+    })
+  }
+
   ngOnInit(): void {
     this.getusers()
+    this.getAssets()
   }
 
   

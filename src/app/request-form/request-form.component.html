@@ -19,12 +19,45 @@
             <input formControlName="quantity" type="number" class="form-control" name="quantity">
           </div>
           <div class="form-group">
-            <label for="exampleInputRequest1">Request</label>
-            <input formControlName="type" type="text" class="form-control" name="type">
+            <h3 class="border-bottom">Request type</h3>
+            <div class="form-check d-flex">
+              <input formControlName="type" value="Request" type="radio" class="form-check-input d-flex"
+                name="type">
+              <label class="form-check-label" for="flexRadioDefault1">
+                New
+              </label>
+            </div>
+            <div class="form-check d-flex">
+              <input formControlName="type" value="Repair" type="radio" class="form-check-input d-flex"
+                name="type">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Repair
+              </label>
+            </div>
           </div>
           <div class="form-group">
-            <label for="exampleInputUrgency1">Urgency</label>
-            <input formControlName="urgency" type="text" class="form-control" name="urgency">
+            <h3 class="border-bottom">Urgency</h3>
+            <div class="form-check d-flex">
+              <input formControlName="urgency" value="High" type="radio" class="form-check-input d-flex"
+                name="urgency">
+              <label class="form-check-label" for="flexRadioDefault1">
+                High
+              </label>
+            </div>
+            <div class="form-check d-flex">
+              <input formControlName="urgency" value="Medium" type="radio" class="form-check-input d-flex"
+                name="urgency">
+              <label class="form-check-label" for="flexRadioDefault2">
+                Medium
+              </label>
+            </div>
+            <div class="form-check d-flex">
+              <input formControlName="urgency" value="Low" type="radio" class="form-check-input d-flex"
+                name="urgency">
+              <label class="form-check-label" for="flexRadioDefault3">
+                Low
+              </label>
+            </div>
           </div>
 
           <button type="submit" class="btn btn-primary mt-3">Submit</button>

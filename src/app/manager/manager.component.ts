@@ -19,6 +19,9 @@ export class ManagerComponent implements OnInit {
   rawValue: any;
   request_id = localStorage.getItem('id');
   approvals: any;
+  length: any;
+  assets: any;
+  len: any;
 
 
 
@@ -33,20 +36,30 @@ export class ManagerComponent implements OnInit {
     this.requestService.getData().then((data)=>{
       console.log(data);
       this.requests = data
+      this.length = this.requests?.length
+      
     })
   }
 
 
+  getAssets(){
+    this.requestService.getAsset().then((data)=>{
+      console.log(data);
+      this.assets = data
+      
+     this.len = this.assets.length
+    })
+  }
+
   ngOnInit(): void {
     this.getRequest()
+    this.getAssets()
     this.form =new FormGroup({
       is_approved:new FormControl('', [Validators.required]),
       
 });
   }
   
-
-
   submitResponse() {
     console.log(this.form.getRawValue());
   if(this.form.getRawValue() === 'approved' ){
