@@ -45,7 +45,7 @@ submitRequest() {
     this.requests.id = this.requests.id
     localStorage.setItem('id', this.requests.id)
 
-  //  window.location.reload();
+    window.location.reload();
     
   } );
 }

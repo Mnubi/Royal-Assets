@@ -31,7 +31,6 @@ export class AddStaffComponent implements OnInit {
 
 addStaff() {
   console.log(this.form.getRawValue());
-  console.log('hello');
 
   this.http.post('https://royalassets111.herokuapp.com/api/addstaff/', this.form.getRawValue())
   .subscribe((data) =>{
