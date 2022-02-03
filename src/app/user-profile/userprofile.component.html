@@ -5,12 +5,10 @@
     <div class="d-flex flex-row white">
         <div style="width: 70vw;" class="p-left">
             <h4 class="">Profile Information</h4>
-            <ul [ngClass]="'repo'" *ngFor="let cred of creds">
-                <p class="purple-text"><span class="text-dark">Full Name: </span> {{cred.full_name}}</p>
-                <p class="purple-text"><span class="text-dark">Full Name: </span> {{cred.user}}</p>
-                <p class="purple-text"><span class="text-dark">Email: </span> {{cred.email}}</p>
-                <p class="purple-text"><span class="text-dark">Phone: </span> {{cred.contact}}</p>
-                <p class="text-dark">Role: <a href="{{cred.user}}" [ngClass]="'link'" target="_blank">{{cred.user}}</a></p>
+            <ul>
+                <p class="purple-text"><span class="text-dark">Username: </span> {{creds.username}}</p>
+                <p class="purple-text"><span class="text-dark">Email: </span> {{creds.email}}</p>
+                <p class="purple-text"><span class="text-dark">Role: </span> {{creds.role}}</p>
             </ul>
             <button class="btn purple" routerLink="/users/edit-profile/:id" type="submit">Edit</button>
         </div>

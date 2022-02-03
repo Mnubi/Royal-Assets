@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserprofileComponent implements OnInit {
 
-  creds?:any[]
+  creds?:any
   token = localStorage.getItem('token')
   username = localStorage.getItem('username')
   currentUser: any;
@@ -21,8 +21,19 @@ export class UserprofileComponent implements OnInit {
     }
   
     getUser(username : any) {
-      this.http.get('https://royalassets111.herokuapp.com/api/profile/'+ {username})
+      this.http.get('https://royalassets111.herokuapp.com/api/profile/'+ this.username)
       .subscribe((data) =>{
+        console.log(data);
+        this.creds = data;
+        
+        if(this.creds.role === 3){
+          this.creds.role = 'Employee'
+        }else if(this.creds.role === 2){
+          this.creds.role = 'Manager'
+        }else{
+          this.creds.role = 'Admin'
+        }
+        
          
       }); 
     }

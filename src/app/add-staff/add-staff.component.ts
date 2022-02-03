@@ -11,7 +11,9 @@ import {Router} from '@angular/router';
 })
 export class AddStaffComponent implements OnInit {
 
-   form!: FormGroup;
+  form!: FormGroup;
+  RawValue: any;
+
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,

@@ -14,14 +14,16 @@ export class StaffDashboardComponent implements OnInit {
 
   requests?:any[]
   token: any;
+  type:any;
+  id:any;
 
   
   constructor(private requestService:RequestService) { }
 
   getRequest(){
     this.requestService.getData().then((data)=>{
-      console.log(data);
       this.requests = data
+      console.log(this.requests);
     })
   }
 

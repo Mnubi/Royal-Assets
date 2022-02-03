@@ -17,6 +17,9 @@ export class ManagerComponent implements OnInit {
   form!: FormGroup;
   requests?:any[]
   rawValue: any;
+  request_id = localStorage.getItem('id');
+  approvals: any;
+
 
 
   constructor(
@@ -46,12 +49,24 @@ export class ManagerComponent implements OnInit {
 
   submitResponse() {
     console.log(this.form.getRawValue());
-  
-    this.http.put('https://royalassets111.herokuapp.com/api/createrequest/', this.form.getRawValue())//post== creates new post
+  if(this.form.getRawValue() === 'approved' ){
+    this.http.put('https://royalassets111.herokuapp.com/api/approve-request/'+ this.request_id, this.form.getRawValue())//post== creates new post
     .subscribe((data) =>{
       console.log(data);
+      this.approvals = data
+      this.approvals.request_id = this.approvals.id
       
     });
+  }else{
+    this.http.put('https://royalassets111.herokuapp.com/api/decline-request/'+ this.request_id, this.form.getRawValue())//post== creates new post
+    .subscribe((data) =>{
+      console.log(data);
+      this.approvals = data
+      this.approvals.request_id = this.approvals.id
+      
+    });
+  }
+    
   }
   
   displatyle = "none";
