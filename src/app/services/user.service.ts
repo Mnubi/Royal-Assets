@@ -8,18 +8,17 @@ import { EmailValidator } from '@angular/forms';
 })
 export class UserService {
 
-  username?: string;
+  username?: any;
   url = environment.url;
   urlProfile = "https://royalassets111.herokuapp.com/api/profile/<username>"
   token : any;
   
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient) {
+    
+   }
 
-  // getUser(){ 
-  //   return this.httpClient.get<any>(`${this.urlProfile}${this.username}`).toPromise();
-  // }
   getUser():Observable<any>{ 
-    return this.httpClient.get<any>(`${this.urlProfile}${this.token}`)
+    return this.httpClient.get<any>(this.urlProfile)
   }
 
 

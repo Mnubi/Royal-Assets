@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   data: any;
   token: any;
   role: any;
+  username: any;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -38,8 +39,10 @@ export class LoginComponent implements OnInit {
     this.http.post('https://royalassets111.herokuapp.com/login/', this.form.getRawValue())
     .subscribe((data) =>{
        this.token = data;
-       //console.log(this.token);
+       //console.log(this.token.username);
        localStorage.setItem('token', this.token.token)
+       localStorage.setItem('username', this.token.username)
+       localStorage.setItem('email', this.token.email)
 
       this.getUser();
     }); 

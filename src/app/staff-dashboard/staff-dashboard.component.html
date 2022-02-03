@@ -82,8 +82,8 @@
       <span *ngIf="isExpanded">Tasks</span>
     </mat-list-item>
 
-    <mat-list-item [routerLink]="'users/:id'">
-      <mat-icon mat-list-icon >person</mat-icon>
+    <mat-list-item  (click)="route()">
+      <mat-icon mat-list-icon>person</mat-icon>
       <span *ngIf="isExpanded">Profile</span>
     </mat-list-item>
 
@@ -104,19 +104,14 @@
   <div class="row container-fluid">
     <div class="col"></div>
     <div class="asset text-center p-2 col m-5">
-      <mat-icon mat-list-icon >person</mat-icon>
-      <h4 class="mt-2 fs-5">Staff</h4>
-      <h4 class="fs-5">15</h4>
-    </div>
-    <div class="asset text-center p-2 col m-5">
       <mat-icon class="mb-2" mat-list-icon>attach_money</mat-icon> <br>
       <a class="fs-5 mt-2 fw-normal" routerLink="/product">Assets</a>
       <h4 class="fs-5 mt-2">15</h4>
     </div>
     <div class="asset text-center p-2 col m-5">
       <fa-icon  [icon]="faToolbox"></fa-icon>
-      <h4 class="mt-2 fs-5">Repairs</h4>
-      <h4 class="fs-5">15</h4>
+      <h4 class="mt-2 fs-5">Requests</h4>
+      <h4 class="fs-5">{{ length }}</h4>
     </div>
     <div class="col"></div>
     
@@ -124,7 +119,7 @@
   </div>
   <div class="container">
     <div class="">
-      <h4 id="scope" class="text-center fw-b fs-4 title">New Assets</h4>
+      <h4 id="scope" class="text-center fw-b fs-4 title">Requests</h4>
         <table class="table table-striped">
             <thead>
               <tr id="scope">
@@ -132,6 +127,7 @@
                 <th class="text-purple" scope="col">Product</th>
                 <th class="text-purple" scope="col">Quantity</th>
                 <th class="text-purple" scope="col">Urgency</th>
+                <th class="text-purple" scope="col">Type</th>
                 <th class="text-purple" scope="col">Status</th>
               </tr>
             </thead>
@@ -141,33 +137,12 @@
                 <td>{{ request.asset_name }}</td>
                 <td>{{ request.quantity }}</td>
                 <td>{{ request.urgency }}</td>
+                <td>{{ request.type }}</td>
                 <td>{{ request.is_approved }}</td>
               </tr>
 
             </tbody>
           </table>
-    </div>
-
-    <div class="mt-2 ">
-      <h4 id="scope" class="text-center fw-b fs-4 title">Repairs</h4>
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th class="text-purple" scope="col">PRODUCT</th>
-                <th class="text-purple" scope="col">QUANTITY</th>
-                <th class="text-purple" scope="col">STATUS</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-        </table>    
     </div>
     <div>
       <app-request-form></app-request-form>
