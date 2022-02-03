@@ -1,50 +1,41 @@
-    <div class="col-md-12 text-center">
-              <button
-              id="1"
-              type="button"
-              class="btn btn-primary purple mt-2"
-              (click)="openPopup()">Add Request
-            </button>
-    </div>        
-    <div
-      class="modal"
-      tabindex="-1"
-      role="dialog"
-      [ngStyle]="{'display':displayStyle}">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Add New Request</h4>
+<div class="col-md-12 text-center">
+  <button id="1" type="button" class="btn btn-primary purple mt-2" (click)="openPopup()">Add Request
+  </button>
+</div>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add New Request</h4>
+      </div>
+      <div class="modal-body">
+        <form #f="ngForm" id="form" [formGroup]="form" (ngSubmit)="submitRequest()">
+          <div class="form-group">
+            <label for="exampleInputItem1">Item</label>
+            <input formControlName="asset_name" type="text" class="form-control" name="asset_name">
           </div>
-          <div class="modal-body">
-            <form #f="ngForm" [formGroup]="form" (ngSubmit)="submitRequest()">
-              <div class="form-group">
-                <label for="exampleInputItem1">Item</label>
-                <input formControlName="asset_name" type="text" class="form-control" name="asset_name">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputQuantity1">Quantity</label>
-                <input formControlName="quantity" type="number" class="form-control" name="quantity">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputRequest1">Request</label>
-                <input formControlName="type" type="text" class="form-control" name="type">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputUrgency1">Urgency</label>
-                <input formControlName="urgency" type="text" class="form-control" name="urgency">
-              </div>
-            
-              <button type="submit" class="btn btn-primary mt-3">Submit</button>
-            </form>
-      
+          <div class="form-group">
+            <label for="exampleInputQuantity1">Quantity</label>
+            <input formControlName="quantity" type="number" class="form-control" name="quantity">
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" 
-                    (click)="closePopup()">
-              Close
-            </button>
+          <div class="form-group">
+            <label for="exampleInputRequest1">Request</label>
+            <input formControlName="type" type="text" class="form-control" name="type">
           </div>
-        </div>
+          <div class="form-group">
+            <label for="exampleInputUrgency1">Urgency</label>
+            <input formControlName="urgency" type="text" class="form-control" name="urgency">
+          </div>
+
+          <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="closePopup()">
+          Close
+        </button>
       </div>
     </div>
+  </div>
+</div>

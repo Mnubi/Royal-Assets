@@ -15,6 +15,7 @@ import { StaffDashboardComponent } from './staff-dashboard/staff-dashboard.compo
 import { ManagerComponent } from './manager/manager.component';
 import { RequestService } from './services/request.service';
 import { ProductComponent } from './product/product.component';
+import { NavlogComponent } from './navlog/navlog.component';
 import { NavComponent } from './nav/nav.component';
 import { AdminComponent } from './admin/admin.component';
 import { RequestFormComponent } from './request-form/request-form.component';
@@ -27,6 +28,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FooterComponent } from './footer/footer.component';
+
 
 
 
@@ -50,6 +52,8 @@ import { FooterComponent } from './footer/footer.component';
     StaffComponent,
     AssetFormComponent,
     FooterComponent,
+    NavlogComponent,
+
     
   ],
   imports: [

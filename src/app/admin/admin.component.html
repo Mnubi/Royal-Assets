@@ -1,4 +1,4 @@
-
+<app-nav></app-nav>
 <section class="admin">
   <mat-sidenav-container autosize>
     <mat-sidenav #sidenav mode="side" opened="true">
@@ -47,7 +47,7 @@
     </mat-sidenav>
   
     <div class="content">
-     
+      
       <div class="row container-fluid">
         <div class="col"></div>
         <div class="asset text-center p-2 col m-5">
@@ -70,9 +70,11 @@
     
       </div>
       <div class="container">
+        <h3 id="scope"><strong>List of Staff in Royal Assets</strong></h3>
+        
         <table class=" table content-table table-hover">
           <thead>
-            <tr>
+            <tr id="scope">
               
               <th scope="col">#</th>
               <th scope="col">NAME</th>

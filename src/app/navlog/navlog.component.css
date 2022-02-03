@@ -14,13 +14,3 @@
     color: rgb(79, 74, 125);
     border: 2px solid rgb(79, 74, 125); /* Green */
   }
-  #user{
-    color: white;
-    font-size: 20px;
-  }
-
-  #img{
-    height: 50px;
-    width: 50px;
-    padding-top: 0;
-  }

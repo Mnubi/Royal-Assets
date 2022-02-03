@@ -1,87 +1,102 @@
-.green{
-    background-color: rgb(20, 99, 86);
-    color: white;
-    margin-bottom: 0vh;
-    padding-bottom: 0.3vh;
+mat-nav-list{
+  color: white;
+  background-color: rgb(20, 99, 86);
 }
-.purple{
-    background-color: rgb(79, 74, 125);
-    color: white;
-    padding-top: 0.3vh;
+
+mat-sidenav{
+  
+  background-color: rgb(20, 99, 86);
 }
-.white{
-    background-color: white;
-    margin-top: 0vh;
-    padding-bottom: 2vh;
+
+
+#sidebar .nav a{
+  background: none;
+  border-bottom: 1px solid #646245;
+  color: #CFD8DC;
+  font-size: 14px;
+  padding: 16px 24px;
 }
-.left-side{
-    width: 30vw;
+
+#sidebar .nav a i{
+  margin-right: 16px;
 }
-.right-side{
-    width: 70vw;
+.row{
+    text-align: center;
 }
-.down-side{
-    background-color: rgb(245, 243, 240);
+.inventory{
+    padding-left: 40px;
 }
-.text-purple{
-    color: rgb(79, 74, 125);
+
+#dash{
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  padding-right: 90px;
+  
 }
-.cen{
-    align-items: center;
+
+#dash:hover {background-color: #448a7f}
+
+.manager{
+  font-family: 'Tenor Sans', sans-serif;
+  /* height: 100vh; */
+  
 }
-.img{
-    margin-right: 3vh;
-}
-.yyy{
-    width: 8vw;
-    height: 10vh;
-}
-.bck{
-    background-color: transparent;
-}
-.onet{
-    width: 20vw;
-    height: 12vh;
-    align-items: center;
-    display: flex;
-    margin-top: 1vh;
-}
-.staff{
-    font-family: 'Tenor Sans', sans-serif;
-    height: 100vh;
-    
-  }
 a{
-    text-decoration: none;
-    color: black;
-  }
-  .asset{
-    background-image: linear-gradient(to bottom right, rgb(79, 74, 125) , white);
-    height: 110px;
-    border: 1px solid rgb(79, 74, 125);
-    border-radius: 30px;
+  text-decoration: none;
+  color: black;
+}
+.asset{
+  background-image: linear-gradient(to bottom right, rgb(79, 74, 125) , white);
+  height: 110px;
+  border: 1px solid rgb(79, 74, 125);
+  border-radius: 30px;
+
+}
+
+ mat-sidenav-container {
+  height: inherit;
   
-  }
+ }
+
+mat-sidenav mat-nav-list  .chevron-button {
+ transition: 300ms ease-in-out;
+ transform: rotate(0deg);
+ right: 0;
+ float: right;
+ position: absolute;
+}
+      
+#side{
+  background-color: rgb(20, 99, 86);
+}
+mat-sidenav mat-nav-list.chevron-button.rotated {
+        transform: rotate(180deg);
+      }
+.content{
+  background-color: #f3f3f3;
+}  
+
+.btn1{
+  background-color: rgb(20, 99, 86);
+  color: white;
+  font-size: small;
+  padding: 5;
+}
+#scope{
+  background-color: rgb(20, 99, 86);
+  color: white;
+}
+
+#choose{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-left: -45px;
   
-   mat-sidenav-container {
-    height: inherit;
-   }
-  
-  mat-sidenav mat-nav-list  .chevron-button {
-   transition: 300ms ease-in-out;
-   transform: rotate(0deg);
-   right: 0;
-   float: right;
-  position: absolute;
-  }
-        
-  
-  mat-sidenav mat-nav-list.chevron-button.rotated {
-          transform: rotate(180deg);
-        }
-  .content{
-    background-color: #f3f3f3;
-  }  
-  .title{
-      text-decoration: underline;
-  } 
+}
+
+h4{
+  padding-bottom: 50px;
+  margin-bottom: -30px;
+}

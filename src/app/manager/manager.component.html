@@ -1,290 +1,174 @@
-<!-- <div id="viewport"> -->
-    <!-- Sidebar -->
-    <!-- <div id="sidebar">
-        <header>
-            <a href="#">Manager Profile</a>
-        </header>
-        <ul class="nav">
-            <li>
-                <button id="dash" routerLink="/users/id" style="padding-top: 15px; padding-bottom: 10px; margin-bottom: -10px;"><img src="../../assets/man.png" width="70"alt="">Dashboard</button>
-            </li>
-            
-            <li>
-                    <button id="dash" (click)="openPopu()" style="margin-top: 15px;"><img src="../../assets/message.png" width="80"alt="">Messages</button>
-            </li>
-            <li>
-                <button id="dash" (click)="openPopu()"><img src="../../assets/request.png" width="65"alt="" style="margin-left: 15px;">Requests</button>
-            </li>
-            
-            <li>
-                <button id="dash" (click)="openPop()" style="margin-top: 15px;"><img src="../../assets/not.png" width="50"alt="" style="margin-left: 13px; padding-top: 15px;">Notification</button>
-            </li>
-        </ul>
-    </div> -->
-    <!-- Content -->
-    <!-- <div id="content">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#"><i class="zmdi zmdi-notifications text-danger"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav> -->
+<app-nav></app-nav>
+<section class="manager">
 
-        <!-- MAin section -->
-        <!-- <div class=" tabs container-fluid">
-          
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                  <div class="card h-100">
-                   <div class="card-body">
-                      <h5 class="card-title"><a routerLink="/staff">Staffs</a></h5>
-                      <h5>25</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <h5 class="card-title"><a routerLink="/product">Assets</a></h5>
-                      <h5>15</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    
-                    <div class="card-body">
-                      <h5 class="card-title"><a href="">Request</a></h5>
-                      <h5>10</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div> -->
-        
-        
 
-        <!-- <hr>
 
-        
-    </div>
-    
-</div>
+  <mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="side" opened="true">
+      <mat-nav-list>
 
-<div
-      class="modal"
-      tabindex="-1"
-      role="dialog"
-      [ngStyle]="{'display':displatyle}">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Messages</h4>
-          </div>
-          <div class="modal-body">
-            <h6>No new Messages Yet</h6>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" 
-                    (click)="closePopu()">
-              Close
-            </button>
-          </div>
+        <mat-list-item [routerLink]="'/manager'">
+          <mat-icon mat-list-icon>dashboard</mat-icon>
+          <span *ngIf="isExpanded">Dashboard</span>
+        </mat-list-item>
+
+
+        <mat-list-item [routerLink]="'user'">
+          <mat-icon mat-list-icon>message</mat-icon>
+          <span *ngIf="isExpanded">Messages</span>
+        </mat-list-item>
+
+        <mat-list-item [routerLink]="'user'">
+          <mat-icon mat-list-icon>addchart</mat-icon>
+          <span *ngIf="isExpanded">Requests</span>
+        </mat-list-item>
+
+        <mat-list-item [routerLink]="'user'">
+          <mat-icon mat-list-icon>notifications_active</mat-icon>
+          <span *ngIf="isExpanded">Notifications</span>
+        </mat-list-item>
+
+        <mat-list-item [routerLink]="'/users/id'">
+          <mat-icon mat-list-icon>person</mat-icon>
+          <span *ngIf="isExpanded">Profile</span>
+        </mat-list-item>
+
+        <mat-list-item [routerLink]="'user'">
+          <mat-icon mat-list-icon>logout</mat-icon>
+          <span *ngIf="isExpanded">Logout</span>
+        </mat-list-item>
+
+        <mat-list-item>
+          <mat-icon mat-list-icon class="chevron-button sidenav-button" (click)="isExpanded = !isExpanded"
+            [ngClass]="{'rotated': isExpanded}">chevron_right</mat-icon>
+        </mat-list-item>
+
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <div class="content">
+
+      <div class="row container-fluid">
+        <div class="col"></div>
+        <div class="asset text-center p-2 col m-5">
+          <mat-icon mat-list-icon>person</mat-icon>
+          <a class="fs-5 mt-2 fw-normal" routerLink="/staff-asset">Staff</a>
+          <h4 class="fs-5">15</h4>
         </div>
+        <div class="asset text-center p-2 col m-5">
+          <mat-icon class="mb-2" mat-list-icon>attach_money</mat-icon> <br>
+          <a class="fs-5 mt-2 fw-normal" routerLink="/product">Assets</a>
+          <h4 class="fs-5 mt-2">15</h4>
+        </div>
+        <div class="asset text-center p-2 col m-5">
+          <fa-icon [icon]="faToolbox"></fa-icon>
+          <h4 class="mt-2 fs-5">Repairs</h4>
+          <h4 class="fs-5">15</h4>
+        </div>
+        <div class="col"></div>
+
+
       </div>
-    </div>
-
-    <div
-      class="modal"
-      tabindex="-1"
-      role="dialog"
-      [ngStyle]="{'display':dispstyle}">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Notifications</h4>
-          </div>
-          <div class="modal-body">
-            <h6>No Notifications Yet</h6>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" 
-                    (click)="closePop()">
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-    <section class="manager">
-  
-  
-
-      <mat-sidenav-container autosize>
-      <mat-sidenav #sidenav mode="side" opened="true">
-        <mat-nav-list>
-      
-          <mat-list-item [routerLink]="'/manager'">
-            <mat-icon mat-list-icon >dashboard</mat-icon>
-            <span *ngIf="isExpanded">Dashboard</span>
-          </mat-list-item>
-      
-          
-          <mat-list-item [routerLink]="'user'">
-            <mat-icon mat-list-icon>message</mat-icon>
-            <span *ngIf="isExpanded">Messages</span>
-          </mat-list-item>
-      
-          <mat-list-item [routerLink]="'user'">
-            <mat-icon mat-list-icon>addchart</mat-icon>
-            <span *ngIf="isExpanded">Requests</span>
-          </mat-list-item>
-      
-          <mat-list-item [routerLink]="'user'">
-            <mat-icon mat-list-icon>notifications_active</mat-icon>
-            <span *ngIf="isExpanded">Notifications</span>
-          </mat-list-item>
-      
-          <mat-list-item [routerLink]="'/users/id'">
-            <mat-icon mat-list-icon >person</mat-icon>
-            <span *ngIf="isExpanded">Profile</span>
-          </mat-list-item>
-      
-          <mat-list-item [routerLink]="'user'">
-            <mat-icon mat-list-icon>logout</mat-icon>
-            <span *ngIf="isExpanded">Logout</span>
-          </mat-list-item>
-      
-          <mat-list-item>
-            <mat-icon mat-list-icon class="chevron-button sidenav-button" (click)="isExpanded = !isExpanded" [ngClass]="{'rotated': isExpanded}">chevron_right</mat-icon>
-          </mat-list-item>
-      
-        </mat-nav-list>
-      </mat-sidenav>
-      
-      <div class="content">
-       
-        <div class="row container-fluid">
-          <div class="col"></div>
-          <div class="asset text-center p-2 col m-5">
-            <mat-icon mat-list-icon >person</mat-icon>
-            <a class="fs-5 mt-2 fw-normal" routerLink="/staff-asset">Staff</a>
-            <h4 class="fs-5">15</h4>
-          </div>
-          <div class="asset text-center p-2 col m-5">
-            <mat-icon class="mb-2" mat-list-icon>attach_money</mat-icon> <br>
-            <a class="fs-5 mt-2 fw-normal" routerLink="/product">Assets</a>
-            <h4 class="fs-5 mt-2">15</h4>
-          </div>
-          <div class="asset text-center p-2 col m-5">
-            <fa-icon  [icon]="faToolbox"></fa-icon>
-            <h4 class="mt-2 fs-5">Repairs</h4>
-            <h4 class="fs-5">15</h4>
-          </div>
-          <div class="col"></div>
-          
-      
-        </div>
-        <div class="container">
-          <div class="inventory">
-            <h3 class="text-center fs-4 fw-b title">New Request List</h3>
-            <table class="table">
-              <thead>
-                <tr>
-             ?  <th scope="col">#</th>
-                  <th class="text-purple" scope="col">Item</th>
-                  <th class="text-purple" scope="col">Category</th>
-                  <th class="text-purple" scope="col">Quantity</th>
-                  <th class="text-purple" scope="col">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr  *ngFor='let request of requests;let i = index'>
-                  <th scope="row"></th>
-                  <td>{{ request.asset_name }}</td>
-                  <td>{{ request.category }}</td>
-                  <pre>{{ request.quantity }}</pre>
-                  <td>{{ request.urgency }}</td>
-                  <td>
-                    <form #f="ngForm" [formGroup]="form" (ngSubmit)="submitResponse()">
+      <div class="container">
+        <div class="inventory">
+          <h3 id="scope" class="text-center fs-4 fw-b title">New Request List</h3>
+          <table class="table table-striped">
+            <thead>
+              <tr id="scope">
+                <th scope="col"></th>
+                <th scope="col">#</th>
+                <th class="text-purple" scope="col">Item</th>
+                <th class="text-purple" scope="col">Category</th>
+                <th class="text-purple" scope="col">Quantity</th>
+                <th class="text-purple" scope="col">Status</th>
+                <th class="text-purple" scope="col">Response</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor='let request of requests;let i = index'>
+                <th  scope="row"></th>
+                <td>{{i+1}}</td>
+                <td>{{ request.asset_name }}</td>
+                <td>{{ request.category }}</td>
+                <td>{{ request.quantity }}</td>
+                <td>{{ request.urgency }}</td>
+                <td>
+                  <form #f="ngForm" id="choose" [formGroup]="form" (ngSubmit)="submitResponse()">
                     <div id="accept" class="form-check">
-                      <input formControlName="is_approved" value="approve" type="radio" class="form-check-input d-flex" name="is_approved">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          Approve
-                        </label>
-                      </div>
-                      <div class="form-check d-flex">
-                        <input formControlName="is_approved" value="decline" type="radio" class="form-check-input d-flex" name="is_approved">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                          Decline
-                        </label>
-                      </div>
-                      <div class="text-center">
-                        <button type="submit" class="btn btn1"></button>
-                      </div>
-                      
+                      <input formControlName="is_approved" value="approve" type="radio" class="form-check-input d-flex"
+                        name="is_approved">
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Approve
+                      </label>
+                    </div>
+                    <div class="form-check d-flex">
+                      <input formControlName="is_approved" value="decline" type="radio" class="form-check-input d-flex"
+                        name="is_approved">
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Decline
+                      </label>
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn1">Confirm</button>
+                    </div>
+
                   </form>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="text-center">
-              <button class="btn btn1 mb-4" id="assets">view requests</button>
-            </div>
-                
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="text-center">
+            <button class="btn btn1 mb-4" id="assets">view requests</button>
           </div>
 
-          <div class="inventory">
-            <h3 class="text-center fs-4 fw-b title">List of repair items</h3>
-              <table class="table table-striped">
-                  <thead>
-                      <tr id="scope">
-                        <th scope="col">#</th>
-                        <th scope="col">Item</th>
-                        <th scope="col">Category</th>
-                        <th scope="col">Urgencey</th>
-                        <th scope="col">Status</th>
-                        
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Desktop</td>
-                        <td>Electonics</td>
-                        <td>urgent</td>
-                        <td>pending</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Waiting Bench</td>
-                        <td>Furniture</td>
-                        <td>Very urgent</td>
-                        <td>Approved</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Printer</td>
-                        <td>Electonics</td>
-                        <td>Moderate</td>
-                        <td>Pending</td>
-                      </tr>
-                    </tbody>
-                </table>
-                <div class="text-center">
-                  <button class="btn btn1 mb-5" id="assets">view repair</button>
-                </div>
-                
+        </div>
+
+        <div class="inventory">
+          <h3 id="scope" class="text-center fs-4 fw-b title">List of repair items</h3>
+          <table class="table table-striped">
+            <thead>
+              <tr id="scope">
+                <th scope="col">#</th>
+                <th scope="col">Item</th>
+                <th scope="col">Category</th>
+                <th scope="col">Urgencey</th>
+                <th scope="col">Status</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Desktop</td>
+                <td>Electonics</td>
+                <td>urgent</td>
+                <td>pending</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Waiting Bench</td>
+                <td>Furniture</td>
+                <td>Very urgent</td>
+                <td>Approved</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Printer</td>
+                <td>Electonics</td>
+                <td>Moderate</td>
+                <td>Pending</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="text-center">
+            <button class="btn btn1 mb-5" id="assets">view repair</button>
           </div>
+
         </div>
       </div>
-      
-      </mat-sidenav-container>
-      
-      </section>
-      <app-footer></app-footer>
+    </div>
+
+  </mat-sidenav-container>
+
+</section>
+<app-footer></app-footer>

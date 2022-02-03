@@ -1,0 +1,14 @@
+.modal{
+    color: white;
+    background-color: 	transparent;
+}
+.modal-title{
+    font-size: 25px;
+    text-align: center;
+}
+.modal-body{
+    background-color: rgb(105, 40, 121);
+}
+.modal-content{
+    background-color: rgb(105, 40, 121);
+}
