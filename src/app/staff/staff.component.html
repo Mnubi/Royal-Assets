@@ -4,33 +4,29 @@
         <button style="margin-left: 85px;" class="btn purple mb-2" routerLink="/managers/1" type="submit">Back</button>
     </div>
     <div class="container pt-4">
-        <h3 id="scope"><strong>Members with company Assets</strong></h3>
+        <h3 id="scope"><strong>All Company Employees</strong></h3>
         <table class="table table-striped">
             <thead>
                 <tr id="scope">
 
                     <th scope="col"></th>
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
+                    <th scope="col">Username</th>
                     <th scope="col">Department</th>
                     <th scope="col">Role</th>
                     <th scope="col">Contact</th>
-                    <th scope="col">Assigned-item</th>
-
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor='let staff of staff;let i = index'>
+                <tr *ngFor='let employee of employees;let i = index'>
                     <th id="scope" scope="row"></th>
                     <td>{{ i+1 }}</td>
-                    <td>{{ staff.user}}</td>
-                    <td>{{ staff.Department }}</td>
-                    <td>{{ staff.role }}</td>
-                    <td>{{ staff.Contact }}</td>
-                    <td>{{ staff.Asset }}</td>
+                    <td>{{ employee.username}}</td>
+                    <td>{{ employee.department }}</td>
+                    <td>{{ employee.role }}</td>
+                    <td>{{ employee.contact }}</td>
                 </tr>
 
             </tbody>
         </table>
-        <button id="staffs" type="submit" class="btn purple mb-2">Assign Item</button>
     </div>

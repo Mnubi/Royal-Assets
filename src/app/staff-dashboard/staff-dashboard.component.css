@@ -75,6 +75,7 @@ mat-sidenav mat-nav-list.chevron-button.rotated {
       }
 .content{
   background-color: #f3f3f3;
+  font-family: 'Tenor Sans', sans-serif;
 }  
 
 .btn1{
@@ -99,4 +100,10 @@ mat-sidenav mat-nav-list.chevron-button.rotated {
 h4{
   padding-bottom: 50px;
   margin-bottom: -30px;
+}
+.staff-dash{
+  height: 100vh;
+}
+#2{
+  color: white;
 }

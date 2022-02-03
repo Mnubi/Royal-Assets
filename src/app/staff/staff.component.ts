@@ -9,20 +9,25 @@ import { StaffService } from '../services/staff.service';
 })
 export class StaffComponent implements OnInit {
 
-  staff: any;
+  employees: any;
+  len: any;
+
 
   
   constructor(private staffService:StaffService) { }
 
-  getAssets(){
+
+  getusers(){
     this.staffService.getData().then((data)=>{
       console.log(data);
-      this.staff = data
+      this.employees = data
+
+      this.len = this.employees?.length
     })
   }
 
   ngOnInit(): void {
-    this.getAssets()
+    this.getusers()
   }
 
   

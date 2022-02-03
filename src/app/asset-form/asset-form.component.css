@@ -1,0 +1,15 @@
+.modal{
+    color: black;
+    background-color: 	transparent;
+    font-size: 1rem;
+}
+.modal-title{
+    font-size: 25px;
+    text-align: center;
+}
+.modal-body{
+    background-color: #f3f3f3;
+}
+.modal-content{
+    background-image: linear-gradient(to bottom right, rgb(79, 74, 125) , white);
+}
