@@ -13,6 +13,7 @@ export class StaffDashboardComponent implements OnInit {
   faToolbox = faToolbox;
 
   requests?:any[]
+  token: any;
 
   
   constructor(private requestService:RequestService) { }
@@ -26,6 +27,8 @@ export class StaffDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRequest()
+    console.log(localStorage.getItem(this.token));
+    
   }
 
   
