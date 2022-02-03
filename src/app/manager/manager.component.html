@@ -72,7 +72,7 @@
       <div class="container">
         <div class="inventory">
           <h3 id="scope" class="text-center fs-4 fw-b title">New Request List</h3>
-          <table class="table">
+          <table class="table table-striped">
             <thead>
               <tr id="scope">
                 <th scope="col"></th>
@@ -90,7 +90,7 @@
                 <td>{{i+1}}</td>
                 <td>{{ request.asset_name }}</td>
                 <td>{{ request.category }}</td>
-                <pre>{{ request.quantity }}</pre>
+                <td>{{ request.quantity }}</td>
                 <td>{{ request.urgency }}</td>
                 <td>
                   <form #f="ngForm" id="choose" [formGroup]="form" (ngSubmit)="submitResponse()">
@@ -124,7 +124,7 @@
         </div>
 
         <div class="inventory">
-          <h3 class="text-center fs-4 fw-b title">List of repair items</h3>
+          <h3 id="scope" class="text-center fs-4 fw-b title">List of repair items</h3>
           <table class="table table-striped">
             <thead>
               <tr id="scope">
