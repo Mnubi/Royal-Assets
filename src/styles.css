@@ -1,11 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Tenor+Sans&family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@0;1&family=Pacifico&family=Tenor+Sans&family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap');
+
+
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 
 body{
     background-color: rgb(245, 243, 240);
     
+    
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

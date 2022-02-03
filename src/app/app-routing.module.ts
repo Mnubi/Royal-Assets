@@ -10,6 +10,7 @@ import { ManagerComponent } from './manager/manager.component';
 import { ProductComponent } from './product/product.component';
 import { AdminComponent } from './admin/admin.component';
 import { StaffComponent } from './staff/staff.component';
+import { AuthGuard } from './services/auth.guard';
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }
