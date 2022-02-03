@@ -1,3 +1,4 @@
+import { StaffService } from './../services/staff.service';
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {FormBuilder, FormGroup, NgForm,FormControl,Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
@@ -22,6 +23,8 @@ export class ManagerComponent implements OnInit {
   length: any;
   assets: any;
   len: any;
+  lenn: any;
+  employees:any;
 
 
 
@@ -29,7 +32,8 @@ export class ManagerComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private router: Router,
-    private requestService:RequestService
+    private requestService:RequestService,
+    private staffService:StaffService
   ){}
 
   getRequest(){
@@ -41,6 +45,14 @@ export class ManagerComponent implements OnInit {
     })
   }
 
+  getusers(){
+    this.staffService.getData().then((data)=>{
+      console.log(data);
+      this.employees = data
+
+      this.lenn = this.employees?.length
+    })
+  }
 
   getAssets(){
     this.requestService.getAsset().then((data)=>{
@@ -54,6 +66,7 @@ export class ManagerComponent implements OnInit {
   ngOnInit(): void {
     this.getRequest()
     this.getAssets()
+    this.getusers()
     this.form =new FormGroup({
       is_approved:new FormControl('', [Validators.required]),
       
@@ -68,6 +81,8 @@ export class ManagerComponent implements OnInit {
       console.log(data);
       this.approvals = data
       this.approvals.request_id = this.approvals.id
+      console.log(this.approvals.request_id);
+      
       
     });
   }else{

@@ -51,9 +51,9 @@
       <div class="row container-fluid">
         <div class="col"></div>
         <div class="asset text-center p-2 col m-5">
-          <mat-icon mat-list-icon >person</mat-icon>
+          <mat-icon mat-list-icon >person</mat-icon> <br>
           <a class="fs-5 mt-2 fw-normal" routerLink="/staff-asset">Staff</a>
-          <h4 class="fs-5">15</h4>
+          <h4 class="fs-5">{{ len }}</h4>
         </div>
         <div class="asset text-center p-2 col m-5">
           <mat-icon class="mb-2" mat-list-icon>attach_money</mat-icon> <br>
@@ -65,27 +65,26 @@
     
       </div>
       <div class="container">
-        <h3 id="scope"><strong>List of Staff in Royal Assets</strong></h3>
+        <h3 class="fs-4 pt-1" id="scope">List of Staff</h3>
         
         <table class=" table content-table table-hover">
           <thead>
             <tr id="scope">
               
-              <th scope="col">#</th>
-              <th scope="col">NAME</th>
-              <th scope="col">DEPARTMENT</th>
-              <th scope="col">CONTACT</th>
-              <th scope="col">TITLE</th>
-              <th scope="col">ACTION</th>
+              <th class="fs-5" scope="col">#</th>
+              <th class="fs-5" scope="col">Name</th>
+              <th class="fs-5" scope="col">Department</th>
+              <th class="fs-5" scope="col">Contact</th>
+              <th class="fs-5" scope="col">Role</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor='let employee of employees;let i = index'>
-              <th scope="row"></th>
-              <td>{{ employee.name }}</td>
-              <td>{{ employee.department }}</td>
-              <td>{{ employee.contact }}</td>
-              <td>{{ employee.role}}</td>
+              <th scope="row">{{ i+1 }}</th>
+              <td class="fs-6">{{ employee.username }}</td>
+              <td class="fs-6">{{ employee.department }}</td>
+              <td class="fs-6">{{ employee.contact }}</td>
+              <td class="fs-6">{{ employee.role}}</td>
             </tr>
           </tbody>
         </table>

@@ -35,6 +35,7 @@ submitRequest() {
     console.log(data);
     
   } );
+  window.location.reload()
 }
 
   displayStyle = "none";

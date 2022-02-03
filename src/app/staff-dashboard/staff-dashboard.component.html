@@ -1,4 +1,5 @@
-<app-nav></app-nav>
+<div class="staff-dash">
+  <app-nav></app-nav>
 <div
       class="modal"
       tabindex="-1"
@@ -7,10 +8,10 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">Messages</h4>
+            <h4 class="modal-title fs-5">Messages</h4>
           </div>
           <div class="modal-body">
-            <h6>No new Messages Yet</h6>
+            <h6 class="fs-6">No new Messages Yet</h6>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" 
@@ -31,10 +32,10 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">Notifications</h4>
+            <h4 class="modal-title fs-5">Notifications</h4>
           </div>
           <div class="modal-body">
-            <h6>No Notifications Yet</h6>
+            <h6 class="fs-6">No Notifications Yet</h6>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" 
@@ -61,8 +62,8 @@
     <mat-list-item [routerLink]="'user'">
       <mat-icon mat-list-icon
       id="2"
-      type="button green"
-      class="btn onet"
+      type="button"
+      class=""
       (click)="openPopu()">message</mat-icon>
       <span *ngIf="isExpanded">Messages</span>
     </mat-list-item>
@@ -75,8 +76,8 @@
     <mat-list-item [routerLink]="'user'">
       <mat-icon mat-list-icon 
       id="2"
-      type="button green"
-      class="btn onet"
+      type="button"
+      class=""
       (click)="openPop()">
     notifications_active</mat-icon>
       <span *ngIf="isExpanded">Tasks</span>
@@ -105,12 +106,12 @@
     <div class="col"></div>
     <div class="asset text-center p-2 col m-5">
       <mat-icon class="mb-2" mat-list-icon>attach_money</mat-icon> <br>
-      <a class="fs-5 mt-2 fw-normal" routerLink="/product">Assets</a>
+      <a class="fs-5 mt-2 fw-normal text-dark" routerLink="/product">Assets</a>
       <h4 class="fs-5 mt-2">15</h4>
     </div>
     <div class="asset text-center p-2 col m-5">
       <fa-icon  [icon]="faToolbox"></fa-icon>
-      <h4 class="mt-2 fs-5">Requests</h4>
+      <h4 class="mt-2 fs-5 fw-normal text-dark">Requests</h4>
       <h4 class="fs-5">{{ length }}</h4>
     </div>
     <div class="col"></div>
@@ -119,26 +120,26 @@
   </div>
   <div class="container">
     <div class="">
-      <h4 id="scope" class="text-center fw-b fs-4 title">Requests</h4>
+      <h4 id="scope" class="text-center fw-b fs-4 title pt-1">Requests</h4>
         <table class="table table-striped">
             <thead>
               <tr id="scope">
                 <th scope="col">#</th>
-                <th class="text-purple" scope="col">Product</th>
-                <th class="text-purple" scope="col">Quantity</th>
-                <th class="text-purple" scope="col">Urgency</th>
-                <th class="text-purple" scope="col">Type</th>
-                <th class="text-purple" scope="col">Status</th>
+                <th class="text-purple fs-5" scope="col">Product</th>
+                <th class="text-purple fs-5" scope="col">Quantity</th>
+                <th class="text-purple fs-5" scope="col">Urgency</th>
+                <th class="text-purple fs-5" scope="col">Type</th>
+                <th class="text-purple fs-5" scope="col">Status</th>
               </tr>
             </thead>
             <tbody>
               <tr  *ngFor='let request of requests;let i = index'>
                 <th style="background-color: rgb(212, 203, 203);"scope="row">{{ i+1 }}</th>
-                <td>{{ request.asset_name }}</td>
-                <td>{{ request.quantity }}</td>
-                <td>{{ request.urgency }}</td>
-                <td>{{ request.type }}</td>
-                <td>{{ request.is_approved }}</td>
+                <td class="fs-6">{{ request.asset_name }}</td>
+                <td class="fs-6">{{ request.quantity }}</td>
+                <td class="fs-6">{{ request.urgency }}</td>
+                <td class="fs-6">{{ request.type }}</td>
+                <td class="fs-6">{{ request.is_approved }}</td>
               </tr>
 
             </tbody>
@@ -155,5 +156,7 @@
 </mat-sidenav-container>
 
 </section>
+</div>
 <app-footer></app-footer>
+
 

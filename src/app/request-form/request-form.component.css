@@ -1,14 +1,19 @@
 .modal{
-    color: white;
+    color: black;
     background-color: 	transparent;
+    font-size: 1rem;
 }
 .modal-title{
     font-size: 25px;
     text-align: center;
 }
 .modal-body{
-    background-color: rgb(105, 40, 121);
+    background-color: #f3f3f3;
 }
 .modal-content{
-    background-color: rgb(105, 40, 121);
+    background-image: linear-gradient(to bottom right, rgb(79, 74, 125) , white);
+}
+.purple{
+    background-color: #4F4A7D;
+    color: white;
 }

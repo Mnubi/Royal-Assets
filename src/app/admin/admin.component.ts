@@ -16,6 +16,7 @@ export class AdminComponent implements OnInit {
   assets: any;
   employees?:any[]
   length: any;
+  len: any;
   
   constructor(private staffService:StaffService, private requestService:RequestService) { }
 
@@ -23,6 +24,8 @@ export class AdminComponent implements OnInit {
     this.staffService.getData().then((data)=>{
       console.log(data);
       this.employees = data
+
+      this.len = this.employees?.length
     })
   }
 
@@ -30,7 +33,7 @@ export class AdminComponent implements OnInit {
     this.requestService.getAsset().then((data)=>{
       console.log(data);
       this.assets = data
-      
+
      this.length = this.assets.length
     })
   }

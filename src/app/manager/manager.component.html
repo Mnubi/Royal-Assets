@@ -1,4 +1,5 @@
-<app-nav></app-nav>
+<div class="man-dash">
+  <app-nav></app-nav>
 <section class="manager">
 
 
@@ -51,9 +52,9 @@
       <div class="row container-fluid">
         <div class="col"></div>
         <div class="asset text-center p-2 col m-5">
-          <mat-icon mat-list-icon>person</mat-icon>
+          <mat-icon class="mb-2" mat-list-icon>person</mat-icon><br>
           <a class="fs-5 mt-2 fw-normal" routerLink="/staff-asset">Staff</a>
-          <h4 class="fs-5">15</h4>
+          <h4 class="fs-5">{{ lenn }}</h4>
         </div>
         <div class="asset text-center p-2 col m-5">
           <mat-icon class="mb-2" mat-list-icon>attach_money</mat-icon> <br>
@@ -62,7 +63,7 @@
         </div>
         <div class="asset text-center p-2 col m-5">
           <fa-icon [icon]="faToolbox"></fa-icon>
-          <h4 class="mt-2 fs-5">Requests</h4>
+          <h4 class="mt-2 fs-5 text-dark fw-normal">Requests</h4>
           <h4 class="fs-5">{{ length }}</h4>
         </div>
         <div class="col"></div>
@@ -77,20 +78,20 @@
               <tr id="scope">
                 <th scope="col"></th>
                 <th scope="col">#</th>
-                <th class="text-purple" scope="col">Item</th>
-                <th class="text-purple" scope="col">Quantity</th>
-                <th class="text-purple" scope="col">Status</th>
-                <th class="text-purple" scope="col">Response</th>
+                <th class="text-purple fs-6" scope="col">Item</th>
+                <th class="text-purple fs-6" scope="col">Quantity</th>
+                <th class="text-purple fs-6" scope="col">Status</th>
+                <th class="text-purple fs-6" scope="col">Response</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor='let request of requests;let i = index'>
                 <th  scope="row"></th>
-                <td>{{i+1}}</td>
-                <td>{{ request.asset_name }}</td>
-                <td>{{ request.quantity }}</td>
-                <td>{{ request.urgency }}</td>
-                <td>
+                <td class="fs-6">{{i+1}}</td>
+                <td class="fs-6">{{ request.asset_name }}</td>
+                <td class="fs-6">{{ request.quantity }}</td>
+                <td class="fs-6">{{ request.urgency }}</td>
+                <td class="fs-6">
                   <form #f="ngForm" id="choose" [formGroup]="form" (ngSubmit)="submitResponse()">
                     <div id="accept" class="form-check">
                       <input formControlName="is_approved" value="approve" type="radio" class="form-check-input d-flex"
@@ -126,4 +127,5 @@
   </mat-sidenav-container>
 
 </section>
+</div>
 <app-footer></app-footer>
