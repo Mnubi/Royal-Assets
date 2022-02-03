@@ -17,18 +17,18 @@ role="dialog"
                 <h5 class="modal-title" id="exampleModalLabel">Add Staff</h5>
             </div>
             <div class="modal-body">
-                <form #f="ngForm" [formGroup]="form" (ngSubmit)="submitStaff()">
-                    <div class="mb-3">
+                <form #f="ngForm" [formGroup]="form" (ngSubmit)="addStaff()">
+                    <div class="mb-3 form-group">
                         <label class="form-label">Username</label>
-                        <input FormControlName= "username" type="text" class="form-control" name="username">
+                        <input formControlName="username" type="text" class="form-control" name="username">
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 form-group">
                         <label class="form-label">Contact</label>
-                        <input FormControlName= "contact" type="text" class="form-control" name="contact">
+                        <input formControlName="contact" type="number" class="form-control" name="contact">
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 form-group">
                         <label class="form-label">Department</label>
-                        <input FormControlName= "department" type="text" class="form-control" name="department">
+                        <input formControlName="department" type="text" class="form-control" name="department">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

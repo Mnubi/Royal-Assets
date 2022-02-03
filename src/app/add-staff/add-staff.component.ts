@@ -11,7 +11,9 @@ import {Router} from '@angular/router';
 })
 export class AddStaffComponent implements OnInit {
 
-   form!: FormGroup;
+  form!: FormGroup;
+  RawValue: any;
+
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
@@ -22,15 +24,14 @@ export class AddStaffComponent implements OnInit {
     this.form =new FormGroup({
       username:new FormControl('', [Validators.required]),
       contact:new FormControl('', [Validators.required]),
-      department:new FormControl('', [Validators.required]),
-      
+      department:new FormControl('', [Validators.required]),  
 });
   }
 
 
-submitStaff() {
+addStaff() {
   console.log(this.form.getRawValue());
-  
+
   this.http.post('https://royalassets111.herokuapp.com/api/addstaff/', this.form.getRawValue())
   .subscribe((data) =>{
     console.log(data);

@@ -11,11 +11,19 @@ import {Router} from '@angular/router';
 export class RequestFormComponent implements OnInit {
 
   form!: FormGroup;
+  requests: any;
+  type: any;
+  request: any;
+  repair: any;
+
+
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private router: Router,
-  ){}
+  ){
+    localStorage
+  }
   
   ngOnInit(): void {
     this.form =new FormGroup({
@@ -32,7 +40,12 @@ submitRequest() {
   
   this.http.post('https://royalassets111.herokuapp.com/api/createrequest/', this.form.getRawValue())
   .subscribe((data) =>{
-    console.log(data);
+     console.log(data);
+    this.requests = data
+    this.requests.id = this.requests.id
+    localStorage.setItem('id', this.requests.id)
+
+    window.location.reload();
     
   } );
 }
