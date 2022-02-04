@@ -24,3 +24,14 @@
     width: 50px;
     padding-top: 0;
   }
+
+#button-logout{
+  
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 19px;
+  margin-top: 18px;
+}
+
+#button-logout:hover {background-color: #3e8e41}
