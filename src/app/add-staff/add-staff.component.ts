@@ -34,11 +34,6 @@ addStaff() {
 
   this.http.post('https://royalassets111.herokuapp.com/api/addstaff/', this.form.getRawValue())
   .subscribe((data) =>{
-    //console.log(data);
-    for(data in data){
-      console.log(data);
-      
-    }
     
   } );
   window.location.reload()

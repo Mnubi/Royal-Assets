@@ -75,13 +75,14 @@ export class ManagerComponent implements OnInit {
   
   submitResponse() {
     console.log(this.form.getRawValue());
+    
   if(this.form.getRawValue() === 'approved' ){
     this.http.put('https://royalassets111.herokuapp.com/api/approve-request/'+ this.request_id, this.form.getRawValue())//post== creates new post
     .subscribe((data) =>{
       console.log(data);
-      this.approvals = data
-      this.approvals.request_id = this.approvals.id
-      console.log(this.approvals.request_id);
+      // this.approvals = data
+      // this.request_id = this.approvals.id
+      // console.log( this.request_id);
       
       
     });
@@ -89,12 +90,14 @@ export class ManagerComponent implements OnInit {
     this.http.put('https://royalassets111.herokuapp.com/api/decline-request/'+ this.request_id, this.form.getRawValue())//post== creates new post
     .subscribe((data) =>{
       console.log(data);
-      this.approvals = data
-      this.approvals.request_id = this.approvals.id
-      
+      // this.approvals = data
+      // this.request_id = this.approvals.id
+      // window.location.reload()
     });
   }
-    
+
+  
+
   }
   
   displatyle = "none";

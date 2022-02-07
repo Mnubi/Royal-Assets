@@ -18,6 +18,8 @@ export class StaffDashboardComponent implements OnInit {
   type:any;
   id:any;
   length:any;
+  assets: any;
+  len:any;
 
  username = localStorage.getItem('username')
 
@@ -37,8 +39,18 @@ export class StaffDashboardComponent implements OnInit {
     this.router.navigate(['/users/'+ {username}])
   }
 
+  getAssets(){
+    this.requestService.getAsset().then((data)=>{
+      console.log(data);
+      this.assets = data
+      
+     this.len = this.assets.length
+    })
+  }
+
   ngOnInit(): void {
     this.getRequest()
+    this.getAssets()
     this.username = this.username
     
   }
