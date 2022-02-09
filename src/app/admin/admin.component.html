@@ -34,7 +34,7 @@
           <span *ngIf="isExpanded">Profile</span>
         </mat-list-item>
 
-        <mat-list-item [routerLink]="['home']">
+        <mat-list-item [routerLink]="'/login'">
           <mat-icon mat-list-icon>logout</mat-icon>
           <span *ngIf="isExpanded">Logout</span>
         </mat-list-item>
@@ -75,7 +75,6 @@
               <th class="fs-5" scope="col">Name</th>
               <th class="fs-5" scope="col">Department</th>
               <th class="fs-5" scope="col">Contact</th>
-              <th class="fs-5" scope="col">Role</th>
             </tr>
           </thead>
           <tbody>
@@ -84,7 +83,6 @@
               <td class="fs-6">{{ employee.username }}</td>
               <td class="fs-6">{{ employee.department }}</td>
               <td class="fs-6">{{ employee.contact }}</td>
-              <td class="fs-6">{{ employee.role}}</td>
             </tr>
           </tbody>
         </table>
